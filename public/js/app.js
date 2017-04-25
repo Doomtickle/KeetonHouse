@@ -11102,7 +11102,7 @@ $(document).ready(function () {
                 $("#residentCreate").trigger("reset");
             },
             error: function error(xhr, ajaxOptions, thrownError) {
-                alert('There was an error processing your request. Please notify an administrator \n Error: ' + thrownError);
+                alert('There was an error processing your request. Please notify an administrator.');
                 console.log(xhr.status);
                 console.log(xhr.responseText);
                 console.log(thrownError);

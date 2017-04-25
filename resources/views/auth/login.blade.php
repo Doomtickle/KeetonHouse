@@ -13,7 +13,7 @@
         <section class="hero is-fullheight">
             <div class="hero-heading">
                 <div class="section has-text-centered">
-                    <h1 class="title is-1">Company Name</h1>
+                    <h1 class="title is-1">Keeton House</h1>
                 </div>
             </div>
             <div class="hero-body">
