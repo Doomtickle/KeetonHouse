@@ -14,7 +14,9 @@ class ResidentController extends Controller
      */
     public function index()
     {
-        //
+        $residents = Resident::all();
+
+        return view('residents.index', compact('residents'));
     }
 
     /**
