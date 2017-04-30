@@ -20,7 +20,7 @@
                 <div class="level-item has-text-centered">
                     <div class="column">
                         <p class="heading">Residents</p>
-                        <p class="title">56</p>
+                        <p class="title">{{ App\Resident::all()->count() }}</p>
                     </div>
                 </div>
                 <div class="level-item has-text-centered">

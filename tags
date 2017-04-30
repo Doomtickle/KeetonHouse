@@ -112,7 +112,7 @@ render	app/Exceptions/Handler.php	/^    public function render($request, Excepti
 report	app/Exceptions/Handler.php	/^    public function report(Exception $exception)$/;"	f
 request	public/index.php	/^    $request = Illuminate\\Http\\Request::capture()$/;"	v
 resident	app/Http/Controllers/ResidentController.php	/^        $resident = Resident::create($request->all());$/;"	v
-residents	app/Http/Controllers/ResidentController.php	/^        $residents = Resident::all();$/;"	v
+residents	app/Http/Controllers/ResidentController.php	/^        $residents = DB::table('residents')->orderBy('last_name')->get();$/;"	v
 response	public/index.php	/^$response = $kernel->handle($/;"	v
 response	tests/Feature/ExampleTest.php	/^        $response = $this->get('\/');$/;"	v
 return	public/js/app.js	/^\/******\/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };$/;"	c

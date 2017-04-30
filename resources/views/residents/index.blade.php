@@ -31,7 +31,7 @@
                                     <footer class="card-footer">
                                         <a class="card-footer-item">Account</a>
                                         <a class="card-footer-item">Edit</a>
-                                        <a class="card-footer-item">Delete</a>
+                                        <a class="card-footer-item danger">Delete</a>
                                     </footer>
                                 </div>
                             </div>

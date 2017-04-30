@@ -57,7 +57,7 @@ html,body {
 }
 
 .hero-banner .hero {
-  background: url('https://unsplash.it/2000/1000');
+  background: url('/img/mountain.jpg');
   background-position: center;
   background-size: cover;
   background-blend-mode: screen;
@@ -115,4 +115,10 @@ html,body {
 }
 .quicksearch{
   margin-top: 40px;
+}
+#residentCreate{
+  margin-top: 40px;
+}
+.danger{
+  color:red;
 }

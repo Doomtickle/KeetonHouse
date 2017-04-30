@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Resident;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ResidentController extends Controller
 {
@@ -14,7 +15,7 @@ class ResidentController extends Controller
      */
     public function index()
     {
-        $residents = Resident::all();
+        $residents = DB::table('residents')->orderBy('last_name')->get();
 
         return view('residents.index', compact('residents'));
     }
@@ -50,7 +51,7 @@ class ResidentController extends Controller
      */
     public function show(Resident $resident)
     {
-        //
+        return view('residents.show', compact('resident'));
     }
 
     /**
