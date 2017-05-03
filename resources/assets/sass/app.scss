@@ -7,6 +7,7 @@ html,body {
   height: 100%;
   padding: 0;
   margin: 0;
+  overflow-x: auto;
 }
 
 .email-input,
@@ -15,6 +16,13 @@ html,body {
   font-size: 20px;
   padding-left: 15px;
   color: #95A5A6;
+}
+.container{
+  padding: 0 50px;
+}
+
+.title{
+  padding: 25px 0 0;
 }
 
 .icon.user,
@@ -57,8 +65,7 @@ html,body {
 }
 
 .hero-banner .hero {
-  background: url('/img/mountain.jpg');
-  background-position: center;
+  background: url('/img/mountain.jpg') center;
   background-size: cover;
   background-blend-mode: screen;
 }
@@ -98,7 +105,7 @@ html,body {
 .content {
   display: block;
   background-color: #fff;
-  padding: 40px 20px;
+  padding: 20px 10px;
 }
 .hero .tabs ul {
     border-bottom: 1px solid #d3d6db;
@@ -121,4 +128,19 @@ html,body {
 }
 .danger{
   color:red;
+}
+.debit{
+  color:red;
+}
+.credit{
+  color:green;
+}
+table{
+    overflow-x: scroll;
+}
+.wide-table{
+  overflow-x: auto;
+}
+.select2-container .select2-selection--single{
+  height: 35px !important;
 }

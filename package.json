@@ -20,6 +20,7 @@
   },
   "dependencies": {
     "flatpickr": "^2.5.7",
+    "jquery-maskmoney": "^3.0.2",
     "moment": "^2.18.1"
   }
 }

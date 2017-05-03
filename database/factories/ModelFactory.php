@@ -49,3 +49,13 @@ $factory->define(App\Resident::class, function (Faker\Generator $faker) {
         'referral_source' => $faker->company
     ];
 });
+$factory->define(App\Transaction::class, function (Faker\Generator $faker) {
+
+    return [
+//        'resident_id' => factory('App\Resident')->create()->id,
+        'date' => $faker->date('Y-m-d'),
+        'reason' => $faker->word,
+        'debit' => $faker->numberBetween(0, 10000),
+        'credit' => $faker->numberBetween(0, 10000),
+    ];
+});

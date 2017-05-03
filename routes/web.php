@@ -19,3 +19,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 Route::resource('resident', 'ResidentController');
+Route::resource('transaction', 'TransactionController', ['except' => 'create']);
+Route::get('/transaction/{resident}/create', 'TransactionController@create')->name('transaction.create');
+Route::get('/report/last-name', 'ReportsController@lastName');
+Route::get('/report/dob', 'ReportsController@dob');

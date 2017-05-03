@@ -28,6 +28,18 @@ $(document).ready(function() {
             $("#age").val(getAge(dateStr));
        }
     });
+    $("#payment-method").select2();
+    $("#referral-source").select2();
+    $("#status").select2();
+    $("#status").select2();
+    $("#status-at-discharge").select2();
+    $("#treatment-level-placement").select2();
+    $("#program-level").select2();
+    $("#payment-method").select2();
+    $("#referral-source").select2();
+    $("#drug").select2();
+    $("#reason").select2();
+
     $("#date_of_admission").flatpickr({
         onChange: function(selectedDates, dateStr, instance){
             var date = new moment(dateStr);
@@ -43,6 +55,8 @@ $(document).ready(function() {
     $("#actual_date_of_discharge").flatpickr({});
 
     $("#employment_date").flatpickr({});
+
+    $("#transaction_date").flatpickr({});
 
     $("#residentCreate").submit(function(e){
             e.preventDefault();
@@ -89,4 +103,3 @@ function getAge(dateStr){
     }
     return age;
 }
-
