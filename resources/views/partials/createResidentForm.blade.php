@@ -126,6 +126,7 @@
                     <p class="control">
                         <span class="select">
                             <select name="status" id="status">
+                                <option value="">Status</option>
                                 <option value="DOP">DOP</option>
                                 <option value="Prob">Prob</option>
                                 <option value="PDO">PDO</option>
@@ -141,6 +142,7 @@
                     <p class="control">
                         <span class="select">
                             <select name="status_at_discharge" id="status-at-discharge">
+                                <option value="">Select Status at Discharge</option>
                                 <option value="Successful">Successful</option>
                                 <option value="Unsuccessful">Unsuccessful</option>
                                 <option value="Abscond">Abscond</option>

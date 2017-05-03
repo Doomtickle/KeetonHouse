@@ -140,7 +140,19 @@ table{
 }
 .wide-table{
   overflow-x: auto;
+  padding: 10px;
+  font-size: 0.8rem;
 }
 .select2-container .select2-selection--single{
   height: 35px !important;
 }
+.padding-40{
+  padding:40px;
+}
+.align-center{
+  align-items: center;
+}
+.blackish{
+  color:#252525;
+}
+

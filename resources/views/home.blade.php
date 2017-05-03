@@ -7,13 +7,6 @@
 @section('content')
     <section class="hero is-small">
         <!-- Hero content: will be in the middle -->
-        <div class="hero-body">
-            <div class="container">
-                <h1 class="title">
-                    Admin Dashboard
-                </h1>
-            </div>
-        </div>
         <!-- Hero footer: will stick at the bottom -->
         <div class="hero-foot">
             <div class="level">
@@ -25,17 +18,18 @@
                 </div>
                 <div class="level-item has-text-centered">
                     <div class="column">
-                        <p class="heading">Totoal Debits</p>
-                        <p class="title">$123</p>
+                        <p class="heading">Current Balance</p>
+                        <p class="title green">$1260</p>
                     </div>
                 </div>
                 <div class="level-item has-text-centered">
                     <div class="column">
                         <p class="heading">Due this week</p>
-                        <p class="title">$560</p>
+                        <p class="title">$2560</p>
                     </div>
                 </div>
             </div>
+            <img src="/img/chart_line.png" alt="" style="padding: 40px;">
         </div>
     </section>
 @endsection

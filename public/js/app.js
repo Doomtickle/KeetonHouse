@@ -27136,6 +27136,7 @@ $(document).ready(function () {
     $("#drug").select2();
     $("#reason").select2();
 
+    $("#note-date").flatpickr();
     $("#date_of_admission").flatpickr({
         onChange: function onChange(selectedDates, dateStr, instance) {
             var date = new moment(dateStr);

@@ -8,6 +8,7 @@ AppServiceProvider	app/Providers/AppServiceProvider.php	/^class AppServiceProvid
 AuthServiceProvider	app/Providers/AuthServiceProvider.php	/^class AuthServiceProvider extends ServiceProvider$/;"	c
 BroadcastServiceProvider	app/Providers/BroadcastServiceProvider.php	/^class BroadcastServiceProvider extends ServiceProvider$/;"	c
 Controller	app/Http/Controllers/Controller.php	/^class Controller extends BaseController$/;"	c
+CreateNotesTable	database/migrations/2017_05_03_160448_create_notes_table.php	/^class CreateNotesTable extends Migration$/;"	c
 CreatePasswordResetsTable	database/migrations/2014_10_12_100000_create_password_resets_table.php	/^class CreatePasswordResetsTable extends Migration$/;"	c
 CreateResidentsTable	database/migrations/2017_04_23_181645_create_residents_table.php	/^class CreateResidentsTable extends Migration$/;"	c
 CreateTransactionsTable	database/migrations/2017_04_30_052843_create_transactions_table.php	/^class CreateTransactionsTable extends Migration$/;"	c
@@ -24,6 +25,8 @@ Kernel	app/Console/Kernel.php	/^class Kernel extends ConsoleKernel$/;"	c
 Kernel	app/Http/Kernel.php	/^class Kernel extends HttpKernel$/;"	c
 LARAVEL_START	bootstrap/autoload.php	/^define('LARAVEL_START', microtime(true));$/;"	d
 LoginController	app/Http/Controllers/Auth/LoginController.php	/^class LoginController extends Controller$/;"	c
+Note	app/Note.php	/^class Note extends Model$/;"	c
+NoteController	app/Http/Controllers/NoteController.php	/^class NoteController extends Controller$/;"	c
 RedirectIfAuthenticated	app/Http/Middleware/RedirectIfAuthenticated.php	/^class RedirectIfAuthenticated$/;"	c
 RegisterController	app/Http/Controllers/Auth/RegisterController.php	/^class RegisterController extends Controller$/;"	c
 ReportsController	app/Http/Controllers/ReportsController.php	/^class ReportsController extends Controller$/;"	c
@@ -46,7 +49,10 @@ __currentLoopData	storage/framework/views/2ce6a49a3101cc294c91e0e8a5da36d7bdb5fa
 __currentLoopData	storage/framework/views/5dfa7378b4a7a4719784f65ce130e760c9630cc0.php	/^<?php $__currentLoopData = $residentInfo->transactions(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $transaction): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>$/;"	v
 __currentLoopData	storage/framework/views/6539c80e55a8b1ffb211527dac3be0aafa6fa8ea.php	/^                        <?php $__currentLoopData = $residents; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $resident): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>$/;"	v
 __currentLoopData	storage/framework/views/7e41ce10005359f64c090e022afa53f73396e885.php	/^                <?php $__currentLoopData = $residentInfo->transactions; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $transaction): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>$/;"	v
-__currentLoopData	storage/framework/views/c92a323516a3bf0d5c5dc66bf7b0ed4d50251dfe.php	/^        <?php $__currentLoopData = $residents; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $resident): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>$/;"	v
+__currentLoopData	storage/framework/views/9c44794d0cee10edd0f92a3f2163acc44643fe13.php	/^                <?php $__currentLoopData = $resident->transactions; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $transaction): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>$/;"	v
+__currentLoopData	storage/framework/views/9c44794d0cee10edd0f92a3f2163acc44643fe13.php	/^            <?php $__currentLoopData = $resident->notes; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $note): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>$/;"	v
+__currentLoopData	storage/framework/views/b26c428c9864f1be450f58d7dec36354a5ce85a2.php	/^<?php $__currentLoopData = $resident->transactions; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $transaction): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>$/;"	v
+__currentLoopData	storage/framework/views/c92a323516a3bf0d5c5dc66bf7b0ed4d50251dfe.php	/^            <?php $__currentLoopData = $residents; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $resident): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>$/;"	v
 __webpack_require__	public/js/app.js	/^\/******\/ 	function __webpack_require__(moduleId) {$/;"	f
 __webpack_require__.d	public/js/app.js	/^\/******\/ 	__webpack_require__.d = function(exports, name, getter) {$/;"	f
 __webpack_require__.i	public/js/app.js	/^\/******\/ 	__webpack_require__.i = function(value) { return value; };$/;"	f
@@ -57,10 +63,14 @@ app	bootstrap/app.php	/^$app = new Illuminate\\Foundation\\Application($/;"	v
 app	public/index.php	/^$app = require_once __DIR__.'\/..\/bootstrap\/app.php';$/;"	v
 app	tests/CreatesApplication.php	/^        $app = require __DIR__.'\/..\/bootstrap\/app.php';$/;"	v
 as	config/mail.php	/^    | Laravel supports both SMTP and PHP's "mail" function as drivers for the$/;"	f
+balanceColor	resources/views/residents/show.blade.php	/^                        $balanceColor = 'credit';$/;"	v
+balanceColor	resources/views/residents/show.blade.php	/^                    $balanceColor = 'debit';$/;"	v
 balanceColor	resources/views/transactions/create.blade.php	/^                        $balanceColor = 'credit';$/;"	v
 balanceColor	resources/views/transactions/create.blade.php	/^                    $balanceColor = 'debit';$/;"	v
 balanceColor	storage/framework/views/7e41ce10005359f64c090e022afa53f73396e885.php	/^                        $balanceColor = 'credit';$/;"	v
 balanceColor	storage/framework/views/7e41ce10005359f64c090e022afa53f73396e885.php	/^                    $balanceColor = 'debit';$/;"	v
+balanceColor	storage/framework/views/9c44794d0cee10edd0f92a3f2163acc44643fe13.php	/^                        $balanceColor = 'credit';$/;"	v
+balanceColor	storage/framework/views/9c44794d0cee10edd0f92a3f2163acc44643fe13.php	/^                    $balanceColor = 'debit';$/;"	v
 boot	app/Providers/AppServiceProvider.php	/^    public function boot()$/;"	f
 boot	app/Providers/AuthServiceProvider.php	/^    public function boot()$/;"	f
 boot	app/Providers/BroadcastServiceProvider.php	/^    public function boot()$/;"	f
@@ -69,14 +79,17 @@ boot	app/Providers/RouteServiceProvider.php	/^    public function boot()$/;"	f
 commands	app/Console/Kernel.php	/^    protected $commands = [$/;"	v
 commands	app/Console/Kernel.php	/^    protected function commands()$/;"	f
 create	app/Http/Controllers/Auth/RegisterController.php	/^    protected function create(array $data)$/;"	f
+create	app/Http/Controllers/NoteController.php	/^    public function create()$/;"	f
 create	app/Http/Controllers/ResidentController.php	/^    public function create()$/;"	f
 create	app/Http/Controllers/TransactionController.php	/^    public function create(Resident $resident)$/;"	f
 createApplication	tests/CreatesApplication.php	/^    public function createApplication()$/;"	f
 credit	app/Http/Controllers/TransactionController.php	/^        $credit = Transaction::parseCurrency($request->credit);$/;"	v
 currency	app/Transaction.php	/^        $currency = ((float) $currency) * 100;$/;"	v
 currency	app/Transaction.php	/^        $currency = preg_replace('\/\\$\/', '', $currencyString);$/;"	v
+currentBalance	resources/views/residents/show.blade.php	/^                    $currentBalance = $resident->transactions()->sum('credit') \/ 100 - $resident->transactions()->sum('debit') \/ 100;$/;"	v
 currentBalance	resources/views/transactions/create.blade.php	/^                    $currentBalance = $residentInfo->transactions()->sum('credit') \/ 100 - $residentInfo->transactions()->sum('debit') \/ 100;$/;"	v
 currentBalance	storage/framework/views/7e41ce10005359f64c090e022afa53f73396e885.php	/^                    $currentBalance = $residentInfo->transactions()->sum('credit') \/ 100 - $residentInfo->transactions()->sum('debit') \/ 100;$/;"	v
+currentBalance	storage/framework/views/9c44794d0cee10edd0f92a3f2163acc44643fe13.php	/^                    $currentBalance = $resident->transactions()->sum('credit') \/ 100 - $resident->transactions()->sum('debit') \/ 100;$/;"	v
 debit	app/Http/Controllers/TransactionController.php	/^        $debit = Transaction::parseCurrency($request->debit);$/;"	v
 debounce	resources/views/residents/index.blade.php	/^        function debounce(fn, threshold) {$/;"	f
 debounce	storage/framework/views/6539c80e55a8b1ffb211527dac3be0aafa6fa8ea.php	/^        function debounce(fn, threshold) {$/;"	f
@@ -84,6 +97,7 @@ debounced	resources/views/residents/index.blade.php	/^            return functio
 debounced	storage/framework/views/6539c80e55a8b1ffb211527dac3be0aafa6fa8ea.php	/^            return function debounced() {$/;"	f
 delayed	resources/views/residents/index.blade.php	/^                function delayed() {$/;"	f
 delayed	storage/framework/views/6539c80e55a8b1ffb211527dac3be0aafa6fa8ea.php	/^                function delayed() {$/;"	f
+destroy	app/Http/Controllers/NoteController.php	/^    public function destroy(Note $note)$/;"	f
 destroy	app/Http/Controllers/ResidentController.php	/^    public function destroy(Resident $resident)$/;"	f
 destroy	app/Http/Controllers/TransactionController.php	/^    public function destroy(Transaction $transaction)$/;"	f
 dob	app/Http/Controllers/ReportsController.php	/^    public function dob()$/;"	f
@@ -92,6 +106,8 @@ down	database/migrations/2014_10_12_000000_create_users_table.php	/^    public f
 down	database/migrations/2014_10_12_100000_create_password_resets_table.php	/^    public function down()$/;"	f
 down	database/migrations/2017_04_23_181645_create_residents_table.php	/^    public function down()$/;"	f
 down	database/migrations/2017_04_30_052843_create_transactions_table.php	/^    public function down()$/;"	f
+down	database/migrations/2017_05_03_160448_create_notes_table.php	/^    public function down()$/;"	f
+edit	app/Http/Controllers/NoteController.php	/^    public function edit(Note $note)$/;"	f
 edit	app/Http/Controllers/ResidentController.php	/^    public function edit(Resident $resident)$/;"	f
 edit	app/Http/Controllers/TransactionController.php	/^    public function edit(Transaction $transaction)$/;"	f
 except	app/Http/Middleware/EncryptCookies.php	/^    protected $except = [$/;"	v
@@ -106,10 +122,12 @@ getAge	resources/assets/js/app.js	/^function getAge(dateStr){$/;"	f
 grid	resources/views/residents/index.blade.php	/^        var $grid = $('.grid').isotope({$/;"	v
 grid	storage/framework/views/6539c80e55a8b1ffb211527dac3be0aafa6fa8ea.php	/^        var $grid = $('.grid').isotope({$/;"	v
 guard	app/Http/Middleware/RedirectIfAuthenticated.php	/^    public function handle($request, Closure $next, $guard = null)$/;"	v
+guarded	app/Note.php	/^    protected $guarded = [];$/;"	v
 guarded	app/Resident.php	/^    protected $guarded = [];$/;"	v
 handle	app/Http/Middleware/RedirectIfAuthenticated.php	/^    public function handle($request, Closure $next, $guard = null)$/;"	f
 hidden	app/User.php	/^    protected $hidden = [$/;"	v
 index	app/Http/Controllers/HomeController.php	/^    public function index()$/;"	f
+index	app/Http/Controllers/NoteController.php	/^    public function index()$/;"	f
 index	app/Http/Controllers/ResidentController.php	/^    public function index()$/;"	f
 index	app/Http/Controllers/TransactionController.php	/^    public function index()$/;"	f
 kernel	public/index.php	/^$kernel = $app->make(Illuminate\\Contracts\\Http\\Kernel::class);$/;"	v
@@ -121,7 +139,10 @@ loop	storage/framework/views/2ce6a49a3101cc294c91e0e8a5da36d7bdb5fa19.php	/^    
 loop	storage/framework/views/5dfa7378b4a7a4719784f65ce130e760c9630cc0.php	/^<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>/;"	v
 loop	storage/framework/views/6539c80e55a8b1ffb211527dac3be0aafa6fa8ea.php	/^                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>$/;"	v
 loop	storage/framework/views/7e41ce10005359f64c090e022afa53f73396e885.php	/^                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>$/;"	v
-loop	storage/framework/views/c92a323516a3bf0d5c5dc66bf7b0ed4d50251dfe.php	/^        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>$/;"	v
+loop	storage/framework/views/9c44794d0cee10edd0f92a3f2163acc44643fe13.php	/^                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>$/;"	v
+loop	storage/framework/views/9c44794d0cee10edd0f92a3f2163acc44643fe13.php	/^            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>$/;"	v
+loop	storage/framework/views/b26c428c9864f1be450f58d7dec36354a5ce85a2.php	/^<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>/;"	v
+loop	storage/framework/views/c92a323516a3bf0d5c5dc66bf7b0ed4d50251dfe.php	/^            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>$/;"	v
 map	app/Providers/RouteServiceProvider.php	/^    public function map()$/;"	f
 mapApiRoutes	app/Providers/RouteServiceProvider.php	/^    protected function mapApiRoutes()$/;"	f
 mapWebRoutes	app/Providers/RouteServiceProvider.php	/^    protected function mapWebRoutes()$/;"	f
@@ -129,6 +150,9 @@ middleware	app/Http/Kernel.php	/^    protected $middleware = [$/;"	v
 middlewareGroups	app/Http/Kernel.php	/^    protected $middlewareGroups = [$/;"	v
 moment	resources/assets/js/app.js	/^var moment = require('moment');$/;"	v
 namespace	app/Providers/RouteServiceProvider.php	/^    protected $namespace = 'App\\Http\\Controllers';$/;"	v
+note	app/Http/Controllers/NoteController.php	/^        $note = Note::create($request->all());$/;"	v
+notes	app/Resident.php	/^    public function notes()$/;"	f
+notes	app/User.php	/^    public function notes()$/;"	f
 parseCurrency	app/Transaction.php	/^    public static function parseCurrency($currencyString)$/;"	f
 password	database/factories/ModelFactory.php	/^        'password' => $password ?: $password = bcrypt('secret'),$/;"	v
 password	database/factories/ModelFactory.php	/^    static $password;$/;"	v
@@ -143,6 +167,8 @@ render	app/Exceptions/Handler.php	/^    public function render($request, Excepti
 report	app/Exceptions/Handler.php	/^    public function report(Exception $exception)$/;"	f
 request	public/index.php	/^    $request = Illuminate\\Http\\Request::capture()$/;"	v
 resident	app/Http/Controllers/ResidentController.php	/^        $resident = Resident::create($request->all());$/;"	v
+resident	app/Http/Controllers/ResidentController.php	/^        $resident = Resident::with('notes', 'transactions')->find($resident->id);$/;"	v
+resident	app/Note.php	/^    public function resident()$/;"	f
 resident	app/Transaction.php	/^    public function resident()$/;"	f
 residentInfo	app/Http/Controllers/TransactionController.php	/^        $residentInfo = $resident->with('transactions')->find($resident->id);$/;"	v
 residents	app/Http/Controllers/ReportsController.php	/^        $residents = Resident::all()->sortBy('dob');$/;"	v
@@ -155,10 +181,12 @@ return.hasOwnProperty	public/js/app.js	/^\/******\/ 	__webpack_require__.o = fun
 routeMiddleware	app/Http/Kernel.php	/^    protected $routeMiddleware = [$/;"	v
 run	database/seeds/DatabaseSeeder.php	/^    public function run()$/;"	f
 schedule	app/Console/Kernel.php	/^    protected function schedule(Schedule $schedule)$/;"	f
+show	app/Http/Controllers/NoteController.php	/^    public function show(Note $note)$/;"	f
 show	app/Http/Controllers/ResidentController.php	/^    public function show(Resident $resident)$/;"	f
 show	app/Http/Controllers/TransactionController.php	/^    public function show(Transaction $transaction)$/;"	f
 sortType	app/Http/Controllers/ReportsController.php	/^        $sortType = 'date of birth';$/;"	v
 sortType	app/Http/Controllers/ReportsController.php	/^        $sortType = 'last name';$/;"	v
+store	app/Http/Controllers/NoteController.php	/^    public function store(Request $request)$/;"	f
 store	app/Http/Controllers/ResidentController.php	/^    public function store(Request $request)$/;"	f
 store	app/Http/Controllers/TransactionController.php	/^    public function store(Request $request)$/;"	f
 testBasicTest	tests/Feature/ExampleTest.php	/^    public function testBasicTest()$/;"	f
@@ -170,7 +198,10 @@ up	database/migrations/2014_10_12_000000_create_users_table.php	/^    public fun
 up	database/migrations/2014_10_12_100000_create_password_resets_table.php	/^    public function up()$/;"	f
 up	database/migrations/2017_04_23_181645_create_residents_table.php	/^    public function up()$/;"	f
 up	database/migrations/2017_04_30_052843_create_transactions_table.php	/^    public function up()$/;"	f
+up	database/migrations/2017_05_03_160448_create_notes_table.php	/^    public function up()$/;"	f
+update	app/Http/Controllers/NoteController.php	/^    public function update(Request $request, Note $note)$/;"	f
 update	app/Http/Controllers/ResidentController.php	/^    public function update(Request $request, Resident $resident)$/;"	f
 update	app/Http/Controllers/TransactionController.php	/^    public function update(Request $request, Transaction $transaction)$/;"	f
 uri	server.php	/^$uri = urldecode($/;"	v
+user	app/Note.php	/^    public function user()$/;"	f
 validator	app/Http/Controllers/Auth/RegisterController.php	/^    protected function validator(array $data)$/;"	f

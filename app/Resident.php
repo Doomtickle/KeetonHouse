@@ -13,4 +13,9 @@ class Resident extends Model
         return $this->hasMany(Transaction::class);
     }
 
+    public function notes()
+    {
+        return $this->hasMany(Note::class);
+    }
+
 }

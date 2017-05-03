@@ -19,27 +19,13 @@
 <body>
 <div id="root">
     <div class="columns">
-        <aside class="column is-2 aside hero is-fullheight is-dark is-hidden-mobile">
-            <div>
-                <div class="main">
-                    <a href="/home" :class="{'active': onPage('/home')}" class="item"><span class="icon"><i
-                                    class="fa fa-tachometer"></i></span><span class="name">Dashboard</span></a>
-                    <a href="{{ route('resident.index') }}" class="item"><span class="icon"><i class="fa fa-user"></i></span><span
-                                class="name">Residents</span></a>
-                    <a href="/report/last-name" class="item"><span class="icon"><i class="fa fa-file-text"></i></span><span
-                                class="name">Reports</span></a>
-                </div>
-            </div>
-        </aside>
-        <div class="column is-10 admin-panel">
+        <div class="column admin-panel">
             <section class="hero is-info is-bold is-small">
                 <!-- Hero content: will be in the middle -->
                 <div class="hero-body">
-                    <div class="container">
-                        <h1 class="title">
-                            @yield('title')
-                        </h1>
-                    </div>
+                    <h1 class="title" style="padding: 10px 40px;">
+                        @yield('title')
+                    </h1>
                 </div>
             </section>
             @yield('content')

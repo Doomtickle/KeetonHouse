@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'HomeController@index');
 
 Auth::routes();
 
@@ -23,3 +21,5 @@ Route::resource('transaction', 'TransactionController', ['except' => 'create']);
 Route::get('/transaction/{resident}/create', 'TransactionController@create')->name('transaction.create');
 Route::get('/report/last-name', 'ReportsController@lastName');
 Route::get('/report/dob', 'ReportsController@dob');
+
+Route::post('/notes', 'NoteController@store')->name('note.store');

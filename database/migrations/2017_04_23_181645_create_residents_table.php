@@ -17,7 +17,7 @@ class CreateResidentsTable extends Migration
             $table->increments('id');
             $table->string('last_name');
             $table->string('first_name');
-            $table->string('middle_initial');
+            $table->string('middle_initial')->nullable();
             $table->char('sex', 1);
             $table->string('race');
             $table->string('document_number');
@@ -27,13 +27,13 @@ class CreateResidentsTable extends Migration
             $table->string('drug');
             $table->date('date_of_admission');
             $table->date('projected_date_of_discharge');
-            $table->date('actual_date_of_discharge');
+            $table->date('actual_date_of_discharge')->nullable();
             $table->string('status');
-            $table->string('status_at_discharge');
+            $table->string('status_at_discharge')->nullable();
             $table->string('treatment_level_placement');
-            $table->string('counselor');
+            $table->string('counselor')->nullable();
             $table->string('program_level');
-            $table->date('employment_date');
+            $table->date('employment_date')->nullable();
             $table->string('payment_method');
             $table->string('referral_source');
             $table->timestamps();

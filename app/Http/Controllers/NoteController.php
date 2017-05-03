@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Resident;
+use App\Note;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
-class ResidentController extends Controller
+class NoteController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +14,7 @@ class ResidentController extends Controller
      */
     public function index()
     {
-        $residents = DB::table('residents')->orderBy('last_name')->get();
-
-        return view('residents.index', compact('residents'));
+        //
     }
 
     /**
@@ -27,7 +24,7 @@ class ResidentController extends Controller
      */
     public function create()
     {
-        return view('residents.create');
+
     }
 
     /**
@@ -38,30 +35,29 @@ class ResidentController extends Controller
      */
     public function store(Request $request)
     {
-        $resident = Resident::create($request->all());
+        $note = Note::create($request->all());
 
-        return "Success"; 
+        return back();
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Resident  $resident
+     * @param  \App\Note  $note
      * @return \Illuminate\Http\Response
      */
-    public function show(Resident $resident)
+    public function show(Note $note)
     {
-        $resident = Resident::with('notes', 'transactions')->find($resident->id);
-        return view('residents.show', compact('resident'));
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Resident  $resident
+     * @param  \App\Note  $note
      * @return \Illuminate\Http\Response
      */
-    public function edit(Resident $resident)
+    public function edit(Note $note)
     {
         //
     }
@@ -70,10 +66,10 @@ class ResidentController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Resident  $resident
+     * @param  \App\Note  $note
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Resident $resident)
+    public function update(Request $request, Note $note)
     {
         //
     }
@@ -81,10 +77,10 @@ class ResidentController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Resident  $resident
+     * @param  \App\Note  $note
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Resident $resident)
+    public function destroy(Note $note)
     {
         //
     }
