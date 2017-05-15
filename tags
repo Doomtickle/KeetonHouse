@@ -58,6 +58,7 @@ __webpack_require__.d	public/js/app.js	/^\/******\/ 	__webpack_require__.d = fun
 __webpack_require__.i	public/js/app.js	/^\/******\/ 	__webpack_require__.i = function(value) { return value; };$/;"	f
 __webpack_require__.n	public/js/app.js	/^\/******\/ 	__webpack_require__.n = function(module) {$/;"	f
 __webpack_require__.o	public/js/app.js	/^\/******\/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };$/;"	f
+admitDate	app/Http/Controllers/ReportsController.php	/^    public function admitDate()$/;"	f
 aliases	config/app.php	/^    | This array of class aliases will be registered when this application$/;"	c
 app	bootstrap/app.php	/^$app = new Illuminate\\Foundation\\Application($/;"	v
 app	public/index.php	/^$app = require_once __DIR__.'\/..\/bootstrap\/app.php';$/;"	v
@@ -163,6 +164,7 @@ redirectTo	app/Http/Controllers/Auth/LoginController.php	/^    protected $redire
 redirectTo	app/Http/Controllers/Auth/RegisterController.php	/^    protected $redirectTo = '\/home';$/;"	v
 redirectTo	app/Http/Controllers/Auth/ResetPasswordController.php	/^    protected $redirectTo = '\/home';$/;"	v
 register	app/Providers/AppServiceProvider.php	/^    public function register()$/;"	f
+releaseDate	app/Http/Controllers/ReportsController.php	/^    public function releaseDate()$/;"	f
 render	app/Exceptions/Handler.php	/^    public function render($request, Exception $exception)$/;"	f
 report	app/Exceptions/Handler.php	/^    public function report(Exception $exception)$/;"	f
 request	public/index.php	/^    $request = Illuminate\\Http\\Request::capture()$/;"	v
@@ -171,8 +173,10 @@ resident	app/Http/Controllers/ResidentController.php	/^        $resident = Resid
 resident	app/Note.php	/^    public function resident()$/;"	f
 resident	app/Transaction.php	/^    public function resident()$/;"	f
 residentInfo	app/Http/Controllers/TransactionController.php	/^        $residentInfo = $resident->with('transactions')->find($resident->id);$/;"	v
+residents	app/Http/Controllers/ReportsController.php	/^        $residents = Resident::all()->sortBy('date_of_admission');$/;"	v
 residents	app/Http/Controllers/ReportsController.php	/^        $residents = Resident::all()->sortBy('dob');$/;"	v
 residents	app/Http/Controllers/ReportsController.php	/^        $residents = Resident::all()->sortBy('last_name');$/;"	v
+residents	app/Http/Controllers/ReportsController.php	/^        $residents = Resident::all()->sortBy('projected_date_of_discharge');$/;"	v
 residents	app/Http/Controllers/ResidentController.php	/^        $residents = DB::table('residents')->orderBy('last_name')->get();$/;"	v
 response	public/index.php	/^$response = $kernel->handle($/;"	v
 response	tests/Feature/ExampleTest.php	/^        $response = $this->get('\/');$/;"	v
@@ -184,8 +188,10 @@ schedule	app/Console/Kernel.php	/^    protected function schedule(Schedule $sche
 show	app/Http/Controllers/NoteController.php	/^    public function show(Note $note)$/;"	f
 show	app/Http/Controllers/ResidentController.php	/^    public function show(Resident $resident)$/;"	f
 show	app/Http/Controllers/TransactionController.php	/^    public function show(Transaction $transaction)$/;"	f
+sortType	app/Http/Controllers/ReportsController.php	/^        $sortType = 'date of admission';$/;"	v
 sortType	app/Http/Controllers/ReportsController.php	/^        $sortType = 'date of birth';$/;"	v
 sortType	app/Http/Controllers/ReportsController.php	/^        $sortType = 'last name';$/;"	v
+sortType	app/Http/Controllers/ReportsController.php	/^        $sortType = 'projected date of discharge';$/;"	v
 store	app/Http/Controllers/NoteController.php	/^    public function store(Request $request)$/;"	f
 store	app/Http/Controllers/ResidentController.php	/^    public function store(Request $request)$/;"	f
 store	app/Http/Controllers/TransactionController.php	/^    public function store(Request $request)$/;"	f

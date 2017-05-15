@@ -20,4 +20,18 @@ class ReportsController extends Controller
         $residents = Resident::all()->sortBy('dob');
         return view('reports.residentIndex', compact('residents', 'sortType'));
     }
+
+    public function admitDate()
+    {
+        $sortType = 'date of admission';
+        $residents = Resident::all()->sortBy('date_of_admission');
+        return view('reports.residentIndex', compact('residents', 'sortType'));
+    }
+
+    public function releaseDate()
+    {
+        $sortType = 'projected date of discharge';
+        $residents = Resident::all()->sortBy('projected_date_of_discharge');
+        return view('reports.residentIndex', compact('residents', 'sortType'));
+    }
 }

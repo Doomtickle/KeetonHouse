@@ -192,12 +192,12 @@
                         </span>
                     </p>
                 </div>
-                <div class="column">
-                    <label class="label">Employment Date</label>
-                    <p class="control">
-                        <input class="input" type="text" name="employment_date" id="employment_date">
-                    </p>
-                </div>
+            </div>
+            <div class="column is-half">
+                <label class="label">Employment Date</label>
+                <p class="control">
+                    <input class="input" type="text" name="employment_date" id="employment_date">
+                </p>
             </div>
             <hr>
             <div class="columns">
