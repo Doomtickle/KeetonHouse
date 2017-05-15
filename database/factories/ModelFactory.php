@@ -30,7 +30,7 @@ $factory->define(App\Resident::class, function (Faker\Generator $faker) {
         'last_name' => $faker->lastName,
         'middle_initial' => $faker->randomLetter,
         'sex' => $faker->randomElement($array = array('M','F')),
-        'race' => $faker->randomElement($array = array('Caucasian','African-American', 'Hispanic')),
+        'race' => $faker->randomElement($array = array('White','Native Hawaiian or Other Pacific Islander', 'Black or African American', 'Asian', 'American Indian or Alaskan Native', 'Hispanic or Latino')),
         'document_number' => $faker->bothify('##########'),
         'service_center_number' => $faker->bothify('########'),
         'dob' => $faker->date(),

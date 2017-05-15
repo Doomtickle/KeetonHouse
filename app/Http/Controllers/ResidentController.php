@@ -63,7 +63,7 @@ class ResidentController extends Controller
      */
     public function edit(Resident $resident)
     {
-        //
+        return view('residents.edit', compact('resident'));
     }
 
     /**
@@ -75,7 +75,9 @@ class ResidentController extends Controller
      */
     public function update(Request $request, Resident $resident)
     {
-        //
+        $resident->update($request->all());
+
+        return view('home');
     }
 
     /**
