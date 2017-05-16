@@ -62,20 +62,20 @@
             </div>
         </div>
         <hr>
-        <table class="table">
+        <table class="table" style="table-layout: fixed; max-width: 90%;">
             <thead>
             <tr>
                 <th>Date</th>
                 <th>Note</th>
-                <th>Updated By</th>
+                <th style="text-align:right;">Updated By</th>
             </tr>
             </thead>
             <tbody>
             @foreach($resident->notes as $note)
-                <tr class="has-text-centered">
+                <tr>
                     <td>{{ $note->date }}</td>
-                    <td>{{ $note->note }}</td>
-                    <td>{{ App\User::find($note->updated_by)->name }}</td>
+                    <td style="word-wrap: break-word;">{{ $note->note }}</td>
+                    <td style="text-align:right;">{{ App\User::find($note->updated_by)->name }}</td>
                 </tr>
             @endforeach
             </tbody>
