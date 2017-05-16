@@ -45,10 +45,13 @@ __construct	app/Http/Controllers/Auth/LoginController.php	/^    public function 
 __construct	app/Http/Controllers/Auth/RegisterController.php	/^    public function __construct()$/;"	f
 __construct	app/Http/Controllers/Auth/ResetPasswordController.php	/^    public function __construct()$/;"	f
 __construct	app/Http/Controllers/HomeController.php	/^    public function __construct()$/;"	f
+__currentLoopData	storage/framework/views/12e544fcf3ad1bf7e5230fdc3f5f0cf2781907fe.php	/^            <?php $__currentLoopData = $transactions; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $transaction): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>$/;"	v
+__currentLoopData	storage/framework/views/21bcabccb9f3993d730d36f621316dee5280695e.php	/^            <?php $__currentLoopData = $residents; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $resident): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>$/;"	v
 __currentLoopData	storage/framework/views/2ce6a49a3101cc294c91e0e8a5da36d7bdb5fa19.php	/^        <?php $__currentLoopData = $residents; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $resident): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>$/;"	v
 __currentLoopData	storage/framework/views/5dfa7378b4a7a4719784f65ce130e760c9630cc0.php	/^<?php $__currentLoopData = $residentInfo->transactions(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $transaction): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>$/;"	v
 __currentLoopData	storage/framework/views/6539c80e55a8b1ffb211527dac3be0aafa6fa8ea.php	/^                        <?php $__currentLoopData = $residents; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $resident): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>$/;"	v
 __currentLoopData	storage/framework/views/7e41ce10005359f64c090e022afa53f73396e885.php	/^                <?php $__currentLoopData = $residentInfo->transactions; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $transaction): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>$/;"	v
+__currentLoopData	storage/framework/views/8b444cf9ce84a4e8a56f72b4183de613ab8a4ed1.php	/^            <?php $__currentLoopData = $residents; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $resident): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>$/;"	v
 __currentLoopData	storage/framework/views/9c44794d0cee10edd0f92a3f2163acc44643fe13.php	/^                <?php $__currentLoopData = $resident->transactions; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $transaction): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>$/;"	v
 __currentLoopData	storage/framework/views/9c44794d0cee10edd0f92a3f2163acc44643fe13.php	/^            <?php $__currentLoopData = $resident->notes; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $note): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>$/;"	v
 __currentLoopData	storage/framework/views/b26c428c9864f1be450f58d7dec36354a5ce85a2.php	/^<?php $__currentLoopData = $resident->transactions; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $transaction): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>$/;"	v
@@ -133,13 +136,17 @@ index	app/Http/Controllers/ResidentController.php	/^    public function index()$
 index	app/Http/Controllers/TransactionController.php	/^    public function index()$/;"	f
 kernel	public/index.php	/^$kernel = $app->make(Illuminate\\Contracts\\Http\\Kernel::class);$/;"	v
 lastName	app/Http/Controllers/ReportsController.php	/^    public function lastName()$/;"	f
+lastNameDownload	app/Http/Controllers/ReportsController.php	/^    public function lastNameDownload()$/;"	f
 listen	app/Providers/EventServiceProvider.php	/^    protected $listen = [$/;"	v
 loader	bootstrap/autoload.php	/^| Composer provides a convenient, automatically generated class loader$/;"	c
 loader	public/index.php	/^| Composer provides a convenient, automatically generated class loader for$/;"	c
+loop	storage/framework/views/12e544fcf3ad1bf7e5230fdc3f5f0cf2781907fe.php	/^            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>$/;"	v
+loop	storage/framework/views/21bcabccb9f3993d730d36f621316dee5280695e.php	/^            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>$/;"	v
 loop	storage/framework/views/2ce6a49a3101cc294c91e0e8a5da36d7bdb5fa19.php	/^        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>$/;"	v
 loop	storage/framework/views/5dfa7378b4a7a4719784f65ce130e760c9630cc0.php	/^<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>/;"	v
 loop	storage/framework/views/6539c80e55a8b1ffb211527dac3be0aafa6fa8ea.php	/^                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>$/;"	v
 loop	storage/framework/views/7e41ce10005359f64c090e022afa53f73396e885.php	/^                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>$/;"	v
+loop	storage/framework/views/8b444cf9ce84a4e8a56f72b4183de613ab8a4ed1.php	/^            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>$/;"	v
 loop	storage/framework/views/9c44794d0cee10edd0f92a3f2163acc44643fe13.php	/^                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>$/;"	v
 loop	storage/framework/views/9c44794d0cee10edd0f92a3f2163acc44643fe13.php	/^            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>$/;"	v
 loop	storage/framework/views/b26c428c9864f1be450f58d7dec36354a5ce85a2.php	/^<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>/;"	v
@@ -173,6 +180,7 @@ resident	app/Http/Controllers/ResidentController.php	/^        $resident = Resid
 resident	app/Note.php	/^    public function resident()$/;"	f
 resident	app/Transaction.php	/^    public function resident()$/;"	f
 residentInfo	app/Http/Controllers/TransactionController.php	/^        $residentInfo = $resident->with('transactions')->find($resident->id);$/;"	v
+residents	app/Http/Controllers/ReportsController.php	/^                $residents = Resident::all()->sortBy('last_name');$/;"	v
 residents	app/Http/Controllers/ReportsController.php	/^        $residents = Resident::all()->sortBy('date_of_admission');$/;"	v
 residents	app/Http/Controllers/ReportsController.php	/^        $residents = Resident::all()->sortBy('dob');$/;"	v
 residents	app/Http/Controllers/ReportsController.php	/^        $residents = Resident::all()->sortBy('last_name');$/;"	v
@@ -188,6 +196,7 @@ schedule	app/Console/Kernel.php	/^    protected function schedule(Schedule $sche
 show	app/Http/Controllers/NoteController.php	/^    public function show(Note $note)$/;"	f
 show	app/Http/Controllers/ResidentController.php	/^    public function show(Resident $resident)$/;"	f
 show	app/Http/Controllers/TransactionController.php	/^    public function show(Transaction $transaction)$/;"	f
+sortType	app/Http/Controllers/ReportsController.php	/^                $sortType = 'last name';$/;"	v
 sortType	app/Http/Controllers/ReportsController.php	/^        $sortType = 'date of admission';$/;"	v
 sortType	app/Http/Controllers/ReportsController.php	/^        $sortType = 'date of birth';$/;"	v
 sortType	app/Http/Controllers/ReportsController.php	/^        $sortType = 'last name';$/;"	v
@@ -198,6 +207,8 @@ store	app/Http/Controllers/TransactionController.php	/^    public function store
 testBasicTest	tests/Feature/ExampleTest.php	/^    public function testBasicTest()$/;"	f
 testBasicTest	tests/Unit/ExampleTest.php	/^    public function testBasicTest()$/;"	f
 transaction	app/Http/Controllers/TransactionController.php	/^        $transaction = Transaction::create([$/;"	v
+transactionIndex	app/Http/Controllers/ReportsController.php	/^    public function transactionIndex()$/;"	f
+transactions	app/Http/Controllers/ReportsController.php	/^        $transactions = Transaction::all()->sortBy('date');$/;"	v
 transactions	app/Resident.php	/^    public function transactions()$/;"	f
 unauthenticated	app/Exceptions/Handler.php	/^    protected function unauthenticated($request, AuthenticationException $exception)$/;"	f
 up	database/migrations/2014_10_12_000000_create_users_table.php	/^    public function up()$/;"	f

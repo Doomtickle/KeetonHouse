@@ -19,7 +19,7 @@
                 <div class="level-item has-text-centered">
                     <div class="column">
                         <p class="heading">Current Balance</p>
-                        <p class="title green">$1260</p>
+                        <p class="title green">${{ number_format(App\Transaction::all()->sum('credit') - App\Transaction::all()->sum('debit'), 2, '.', ',') }}</p>
                     </div>
                 </div>
                 <div class="level-item has-text-centered">
