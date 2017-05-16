@@ -1,4 +1,5 @@
-#Steps to install on local machine
+# Steps to install on local machine
+
 1. `cd ~/Code`
 2. `git clone https://github.com/Doomtickle/KeetonHouse.git`
 3. `cd KeetonHouse`
