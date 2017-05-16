@@ -46,7 +46,7 @@
    ```
    10. Back to the `~/Code/KeetonHouse` directory in your terminal and `php artisan key:generate`
    11. `php artisan migrate`
-   12. The site should work at[http://KeetonHouse.dev](http://KeetonHouse.dev) now. Go to the hidden url [/register](http://KeetonHouse.dev) and make an account.
+   12. The site should work at [http://KeetonHouse.dev](http://KeetonHouse.dev) now. Go to the hidden url [/register](http://KeetonHouse.dev) and make an account.
    13. If you want to seed the database with dummy data, open `php artisan tinker` and run the following commands: (hit enter after each line)
    ```
    factory('App\Resident', 50)->create();
