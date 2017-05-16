@@ -35,6 +35,12 @@
                         <li><a href="/report/discharge-date" target="_blank">Date of Release</a></li>
                     </ul>
                 </div>
+                <div class="has-text-centered">
+                    <form action="/logout" method="post">
+                        {{ csrf_field() }}
+                        <button type="submit" class="button is-primary">Logout</button>
+                    </form>
+                </div>
             </div>
         </aside>
         <div class="column is-10 admin-panel">

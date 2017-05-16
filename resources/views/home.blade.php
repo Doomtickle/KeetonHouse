@@ -29,7 +29,9 @@
                     </div>
                 </div>
             </div>
-            <img src="/img/chart_line.png" alt="" style="padding: 40px;">
+            <h1 class="title has-text-centered">
+                More content will go here soon
+            </h1>
         </div>
     </section>
 @endsection
