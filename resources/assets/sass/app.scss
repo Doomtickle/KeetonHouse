@@ -155,4 +155,11 @@ table{
 .blackish{
   color:#252525;
 }
-
+.sub-menu{
+  padding-left: 30px;
+  font-size: .8em;
+  list-style: inherit;
+}
+.sub-menu>li{
+  padding: 5px 0;
+}

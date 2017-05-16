@@ -59,3 +59,13 @@ $factory->define(App\Transaction::class, function (Faker\Generator $faker) {
         'credit' => $faker->numberBetween(0, 10000),
     ];
 });
+
+$factory->define(App\Note::class, function (Faker\Generator $faker) {
+
+    return [
+//        'resident_id' => factory('App\Resident')->create()->id,
+        'date' => $faker->date('Y-m-d'),
+        'note' => $faker->words(15, true),
+        'updated_by' => 1
+    ];
+});
