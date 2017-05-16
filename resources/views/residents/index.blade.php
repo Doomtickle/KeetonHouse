@@ -32,7 +32,7 @@
                                     <footer class="card-footer">
                                         <a class="card-footer-item blackish" href="{{ route('transaction.create',  $resident->id ) }}">Account</a>
                                         <a class="card-footer-item blackish" href="{{ route('resident.edit', $resident->id) }}">Edit</a>
-                                        <a class="card-footer-item danger">Delete</a>
+                                        <a class="card-footer-item primary" href="{{ route('resident.show', $resident->id) }}">Profile</a>
                                     </footer>
                                 </div>
                             </div>
