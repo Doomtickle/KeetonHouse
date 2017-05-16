@@ -4,6 +4,10 @@
     Report sorted by {{ $sortType }}
 @endsection
 
+@section('downloadButton')
+    <a href="{{ $downloadLink }}" class="button is-primary">Download to Excel</a>
+@endsection
+
 @section('content')
     <div class="column wide-table">
         <table class="table">

@@ -80,7 +80,7 @@ html,body {
   margin-right: -10px;
 }
 .aside .main {
-  padding: 40px;
+  padding: 30px;
   // color: #6F7B7E;
 }
 .aside .main .item {
@@ -93,10 +93,14 @@ html,body {
 }
 .aside .main .icon {
   font-size: 19px;
-  padding-right: 30px;
+  padding-right: 10px;
 }
-.aside .main .name {
+.name {
   font-size: 1.2em;
+  font-weight: lighter;
+}
+.small-name{
+  font-size: 1em;
   font-weight: lighter;
 }
 .admin-panel {

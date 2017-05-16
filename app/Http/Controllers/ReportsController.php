@@ -13,19 +13,20 @@ class ReportsController extends Controller
     public function lastName()
     {
         $sortType = 'last name';
+        $downloadLink = '/report/download/last_name';
         $residents = Resident::all()->sortBy('last_name');
-        return view('reports.residentIndex', compact('residents', 'sortType'));
+        return view('reports.residentIndex', compact('residents', 'sortType', 'downloadLink'));
     }
 
-    public function lastNameDownload()
+    public function download($sortBy)
     {
-        Excel::create('Keeton Residents' . Carbon::now()->toDateString(), function($excel) {
+        Excel::create('Keeton Residents' . Carbon::now()->toDateString(), function($excel) use ($sortBy) {
 
-            $excel->sheet('Resident Report', function($sheet) {
-                $sortType = 'last name';
-                $residents = Resident::all()->sortBy('last_name');
+            $excel->sheet('Resident Report', function($sheet) use ($sortBy) {
 
-                $sheet->loadView('reports.residentIndexXLS', compact('residents', 'sortType'));
+                $residents = Resident::all()->sortBy($sortBy);
+
+                $sheet->loadView('reports.residentIndexXLS', compact('residents'));
 
             });
 
@@ -35,22 +36,25 @@ class ReportsController extends Controller
     public function dob()
     {
         $sortType = 'date of birth';
+        $downloadLink = '/report/download/dob';
         $residents = Resident::all()->sortBy('dob');
-        return view('reports.residentIndex', compact('residents', 'sortType'));
+        return view('reports.residentIndex', compact('residents', 'sortType', 'downloadLink'));
     }
 
     public function admitDate()
     {
         $sortType = 'date of admission';
+        $downloadLink = '/report/download/date_of_admission';
         $residents = Resident::all()->sortBy('date_of_admission');
-        return view('reports.residentIndex', compact('residents', 'sortType'));
+        return view('reports.residentIndex', compact('residents', 'sortType', 'downloadLink'));
     }
 
     public function releaseDate()
     {
         $sortType = 'projected date of discharge';
+        $downloadLink = '/report/download/projected_date_of_discharge';
         $residents = Resident::all()->sortBy('projected_date_of_discharge');
-        return view('reports.residentIndex', compact('residents', 'sortType'));
+        return view('reports.residentIndex', compact('residents', 'sortType', 'downloadLink'));
     }
 
     public function transactionIndex()

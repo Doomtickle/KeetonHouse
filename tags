@@ -107,6 +107,11 @@ down	database/migrations/2014_10_12_100000_create_password_resets_table.php	/^  
 down	database/migrations/2017_04_23_181645_create_residents_table.php	/^    public function down()$/;"	f
 down	database/migrations/2017_04_30_052843_create_transactions_table.php	/^    public function down()$/;"	f
 down	database/migrations/2017_05_03_160448_create_notes_table.php	/^    public function down()$/;"	f
+download	app/Http/Controllers/ReportsController.php	/^    public function download($sortBy)$/;"	f
+downloadLink	app/Http/Controllers/ReportsController.php	/^        $downloadLink = '\/report\/download\/date_of_admission';$/;"	v
+downloadLink	app/Http/Controllers/ReportsController.php	/^        $downloadLink = '\/report\/download\/dob';$/;"	v
+downloadLink	app/Http/Controllers/ReportsController.php	/^        $downloadLink = '\/report\/download\/last_name';$/;"	v
+downloadLink	app/Http/Controllers/ReportsController.php	/^        $downloadLink = '\/report\/download\/projected_date_of_discharge';$/;"	v
 edit	app/Http/Controllers/NoteController.php	/^    public function edit(Note $note)$/;"	f
 edit	app/Http/Controllers/ResidentController.php	/^    public function edit(Resident $resident)$/;"	f
 edit	app/Http/Controllers/TransactionController.php	/^    public function edit(Transaction $transaction)$/;"	f
@@ -132,7 +137,6 @@ index	app/Http/Controllers/ResidentController.php	/^    public function index()$
 index	app/Http/Controllers/TransactionController.php	/^    public function index()$/;"	f
 kernel	public/index.php	/^$kernel = $app->make(Illuminate\\Contracts\\Http\\Kernel::class);$/;"	v
 lastName	app/Http/Controllers/ReportsController.php	/^    public function lastName()$/;"	f
-lastNameDownload	app/Http/Controllers/ReportsController.php	/^    public function lastNameDownload()$/;"	f
 listen	app/Providers/EventServiceProvider.php	/^    protected $listen = [$/;"	v
 loader	bootstrap/autoload.php	/^| Composer provides a convenient, automatically generated class loader$/;"	c
 loader	public/index.php	/^| Composer provides a convenient, automatically generated class loader for$/;"	c
@@ -177,7 +181,7 @@ resident	app/Http/Controllers/ResidentController.php	/^        $resident = Resid
 resident	app/Note.php	/^    public function resident()$/;"	f
 resident	app/Transaction.php	/^    public function resident()$/;"	f
 residentInfo	app/Http/Controllers/TransactionController.php	/^        $residentInfo = $resident->with('transactions')->find($resident->id);$/;"	v
-residents	app/Http/Controllers/ReportsController.php	/^                $residents = Resident::all()->sortBy('last_name');$/;"	v
+residents	app/Http/Controllers/ReportsController.php	/^                $residents = Resident::all()->sortBy($sortBy);$/;"	v
 residents	app/Http/Controllers/ReportsController.php	/^        $residents = Resident::all()->sortBy('date_of_admission');$/;"	v
 residents	app/Http/Controllers/ReportsController.php	/^        $residents = Resident::all()->sortBy('dob');$/;"	v
 residents	app/Http/Controllers/ReportsController.php	/^        $residents = Resident::all()->sortBy('last_name');$/;"	v
@@ -193,7 +197,6 @@ schedule	app/Console/Kernel.php	/^    protected function schedule(Schedule $sche
 show	app/Http/Controllers/NoteController.php	/^    public function show(Note $note)$/;"	f
 show	app/Http/Controllers/ResidentController.php	/^    public function show(Resident $resident)$/;"	f
 show	app/Http/Controllers/TransactionController.php	/^    public function show(Transaction $transaction)$/;"	f
-sortType	app/Http/Controllers/ReportsController.php	/^                $sortType = 'last name';$/;"	v
 sortType	app/Http/Controllers/ReportsController.php	/^        $sortType = 'date of admission';$/;"	v
 sortType	app/Http/Controllers/ReportsController.php	/^        $sortType = 'date of birth';$/;"	v
 sortType	app/Http/Controllers/ReportsController.php	/^        $sortType = 'last name';$/;"	v

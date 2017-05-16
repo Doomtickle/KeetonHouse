@@ -26,6 +26,9 @@
                     <h1 class="title" style="padding: 10px 40px;">
                         @yield('title')
                     </h1>
+                    <div style="padding: 10px 40px;">
+                        @yield('downloadButton')
+                    </div>
                 </div>
             </section>
             @yield('content')

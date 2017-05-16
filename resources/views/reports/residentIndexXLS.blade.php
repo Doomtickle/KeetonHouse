@@ -30,8 +30,8 @@
             </thead>
             <tbody>
             @foreach($residents as $resident)
-                <tr class="has-text-centered">
-                    <td><a href="/resident/{{ $resident->id }}" class="blackish">{{ $resident->last_name }}</a></td>
+                <tr>
+                    <td>{{ $resident->last_name }}</td>
                     <td>{{ $resident->first_name }}</td>
                     <td>{{ $resident->middle_initial }}</td>
                     <td>{{ $resident->sex }}</td>
