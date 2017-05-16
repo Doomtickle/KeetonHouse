@@ -54,6 +54,7 @@
    $residents = App\Resident::all();
    
    foreach($residents as $resident){ factory('App\Transaction', 25)->create(['resident_id' => $resident->id]); }
+   
    foreach($residents as $resident){ factory('App\Note', 5)->create(['resident_id' => $resident->id]); }
    
    ```
