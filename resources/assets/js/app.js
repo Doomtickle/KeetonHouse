@@ -3,8 +3,17 @@ require('./bootstrap');
 window.Vue = require('vue');
 require('select2');
 require('sweetalert');
+import { Collapse, Item as CollapseItem } from 'vue-bulma-collapse';
 var moment = require('moment');
 var flatpickr = require("flatpickr");
+
+export default {
+    components: {
+        Collapse,
+        CollapseItem
+    }
+}
+
 
 new Vue({
    el: '#root',

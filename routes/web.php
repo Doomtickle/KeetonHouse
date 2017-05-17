@@ -24,6 +24,8 @@ Route::get('/report/download/{sortBy}', 'ReportsController@download');
 Route::get('/report/dob', 'ReportsController@dob');
 Route::get('/report/admit-date', 'ReportsController@admitDate');
 Route::get('/report/discharge-date', 'ReportsController@releaseDate');
+Route::get('/transaction_reports', 'TransactionReportsController@select');
 Route::get('/report/transactions', 'ReportsController@transactionIndex');
+Route::post('/transaction_report/run', 'TransactionReportsController@runReport');
 
 Route::post('/notes', 'NoteController@store')->name('note.store');
