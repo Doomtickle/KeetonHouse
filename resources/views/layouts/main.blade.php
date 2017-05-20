@@ -34,6 +34,8 @@
                         <li><a href="/report/admit-date" target="_blank">Date of Admission</a></li>
                         <li><a href="/report/discharge-date" target="_blank">Date of Release</a></li>
                     </ul>
+                    <a href="/transaction_reports" class="item"><span class="icon"><i class="fa fa-file-text"></i></span><span
+                                class="small-name">Transaction&nbsp;Reports</span></a>
                 </div>
                 <div class="has-text-centered">
                     <form action="/logout" method="post">

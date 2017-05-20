@@ -8,12 +8,15 @@ AppServiceProvider	app/Providers/AppServiceProvider.php	/^class AppServiceProvid
 AuthServiceProvider	app/Providers/AuthServiceProvider.php	/^class AuthServiceProvider extends ServiceProvider$/;"	c
 BroadcastServiceProvider	app/Providers/BroadcastServiceProvider.php	/^class BroadcastServiceProvider extends ServiceProvider$/;"	c
 Controller	app/Http/Controllers/Controller.php	/^class Controller extends BaseController$/;"	c
+CreateEmployersTable	database/migrations/2017_05_20_182140_create_employers_table.php	/^class CreateEmployersTable extends Migration$/;"	c
 CreateNotesTable	database/migrations/2017_05_03_160448_create_notes_table.php	/^class CreateNotesTable extends Migration$/;"	c
 CreatePasswordResetsTable	database/migrations/2014_10_12_100000_create_password_resets_table.php	/^class CreatePasswordResetsTable extends Migration$/;"	c
 CreateResidentsTable	database/migrations/2017_04_23_181645_create_residents_table.php	/^class CreateResidentsTable extends Migration$/;"	c
 CreateTransactionsTable	database/migrations/2017_04_30_052843_create_transactions_table.php	/^class CreateTransactionsTable extends Migration$/;"	c
 CreateUsersTable	database/migrations/2014_10_12_000000_create_users_table.php	/^class CreateUsersTable extends Migration$/;"	c
 DatabaseSeeder	database/seeds/DatabaseSeeder.php	/^class DatabaseSeeder extends Seeder$/;"	c
+Employer	app/Employer.php	/^class Employer extends Model$/;"	c
+EmployerController	app/Http/Controllers/EmployerController.php	/^class EmployerController extends Controller$/;"	c
 EncryptCookies	app/Http/Middleware/EncryptCookies.php	/^class EncryptCookies extends BaseEncrypter$/;"	c
 EventServiceProvider	app/Providers/EventServiceProvider.php	/^class EventServiceProvider extends ServiceProvider$/;"	c
 ExampleTest	tests/Feature/ExampleTest.php	/^class ExampleTest extends TestCase$/;"	c
@@ -53,6 +56,7 @@ __currentLoopData	storage/framework/views/5dfa7378b4a7a4719784f65ce130e760c9630c
 __currentLoopData	storage/framework/views/6539c80e55a8b1ffb211527dac3be0aafa6fa8ea.php	/^                        <?php $__currentLoopData = $residents; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $resident): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>$/;"	v
 __currentLoopData	storage/framework/views/7e41ce10005359f64c090e022afa53f73396e885.php	/^                <?php $__currentLoopData = $residentInfo->transactions; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $transaction): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>$/;"	v
 __currentLoopData	storage/framework/views/8b444cf9ce84a4e8a56f72b4183de613ab8a4ed1.php	/^            <?php $__currentLoopData = $residents; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $resident): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>$/;"	v
+__currentLoopData	storage/framework/views/97d0901927519b712ab09231224f17e9c01e4f9b.php	/^            <?php $__currentLoopData = $transactions; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $transaction): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>$/;"	v
 __currentLoopData	storage/framework/views/9c44794d0cee10edd0f92a3f2163acc44643fe13.php	/^                <?php $__currentLoopData = $resident->transactions; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $transaction): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>$/;"	v
 __currentLoopData	storage/framework/views/9c44794d0cee10edd0f92a3f2163acc44643fe13.php	/^            <?php $__currentLoopData = $resident->notes; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $note): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>$/;"	v
 __currentLoopData	storage/framework/views/b26c428c9864f1be450f58d7dec36354a5ce85a2.php	/^<?php $__currentLoopData = $resident->transactions; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $transaction): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>$/;"	v
@@ -85,6 +89,7 @@ boot	app/Providers/RouteServiceProvider.php	/^    public function boot()$/;"	f
 commands	app/Console/Kernel.php	/^    protected $commands = [$/;"	v
 commands	app/Console/Kernel.php	/^    protected function commands()$/;"	f
 create	app/Http/Controllers/Auth/RegisterController.php	/^    protected function create(array $data)$/;"	f
+create	app/Http/Controllers/EmployerController.php	/^    public function create()$/;"	f
 create	app/Http/Controllers/NoteController.php	/^    public function create()$/;"	f
 create	app/Http/Controllers/ResidentController.php	/^    public function create()$/;"	f
 create	app/Http/Controllers/TransactionController.php	/^    public function create(Resident $resident)$/;"	f
@@ -104,6 +109,7 @@ debounced	resources/views/residents/index.blade.php	/^            return functio
 debounced	storage/framework/views/6539c80e55a8b1ffb211527dac3be0aafa6fa8ea.php	/^            return function debounced() {$/;"	f
 delayed	resources/views/residents/index.blade.php	/^                function delayed() {$/;"	f
 delayed	storage/framework/views/6539c80e55a8b1ffb211527dac3be0aafa6fa8ea.php	/^                function delayed() {$/;"	f
+destroy	app/Http/Controllers/EmployerController.php	/^    public function destroy(Employer $employer)$/;"	f
 destroy	app/Http/Controllers/NoteController.php	/^    public function destroy(Note $note)$/;"	f
 destroy	app/Http/Controllers/ResidentController.php	/^    public function destroy(Resident $resident)$/;"	f
 destroy	app/Http/Controllers/TransactionController.php	/^    public function destroy(Transaction $transaction)$/;"	f
@@ -114,11 +120,13 @@ down	database/migrations/2014_10_12_100000_create_password_resets_table.php	/^  
 down	database/migrations/2017_04_23_181645_create_residents_table.php	/^    public function down()$/;"	f
 down	database/migrations/2017_04_30_052843_create_transactions_table.php	/^    public function down()$/;"	f
 down	database/migrations/2017_05_03_160448_create_notes_table.php	/^    public function down()$/;"	f
+down	database/migrations/2017_05_20_182140_create_employers_table.php	/^    public function down()$/;"	f
 download	app/Http/Controllers/ReportsController.php	/^    public function download($sortBy)$/;"	f
 downloadLink	app/Http/Controllers/ReportsController.php	/^        $downloadLink = '\/report\/download\/date_of_admission';$/;"	v
 downloadLink	app/Http/Controllers/ReportsController.php	/^        $downloadLink = '\/report\/download\/dob';$/;"	v
 downloadLink	app/Http/Controllers/ReportsController.php	/^        $downloadLink = '\/report\/download\/last_name';$/;"	v
 downloadLink	app/Http/Controllers/ReportsController.php	/^        $downloadLink = '\/report\/download\/projected_date_of_discharge';$/;"	v
+edit	app/Http/Controllers/EmployerController.php	/^    public function edit(Employer $employer)$/;"	f
 edit	app/Http/Controllers/NoteController.php	/^    public function edit(Note $note)$/;"	f
 edit	app/Http/Controllers/ResidentController.php	/^    public function edit(Resident $resident)$/;"	f
 edit	app/Http/Controllers/TransactionController.php	/^    public function edit(Transaction $transaction)$/;"	f
@@ -138,6 +146,7 @@ guarded	app/Note.php	/^    protected $guarded = [];$/;"	v
 guarded	app/Resident.php	/^    protected $guarded = [];$/;"	v
 handle	app/Http/Middleware/RedirectIfAuthenticated.php	/^    public function handle($request, Closure $next, $guard = null)$/;"	f
 hidden	app/User.php	/^    protected $hidden = [$/;"	v
+index	app/Http/Controllers/EmployerController.php	/^    public function index()$/;"	f
 index	app/Http/Controllers/HomeController.php	/^    public function index()$/;"	f
 index	app/Http/Controllers/NoteController.php	/^    public function index()$/;"	f
 index	app/Http/Controllers/ResidentController.php	/^    public function index()$/;"	f
@@ -154,6 +163,7 @@ loop	storage/framework/views/5dfa7378b4a7a4719784f65ce130e760c9630cc0.php	/^<?ph
 loop	storage/framework/views/6539c80e55a8b1ffb211527dac3be0aafa6fa8ea.php	/^                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>$/;"	v
 loop	storage/framework/views/7e41ce10005359f64c090e022afa53f73396e885.php	/^                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>$/;"	v
 loop	storage/framework/views/8b444cf9ce84a4e8a56f72b4183de613ab8a4ed1.php	/^            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>$/;"	v
+loop	storage/framework/views/97d0901927519b712ab09231224f17e9c01e4f9b.php	/^            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>$/;"	v
 loop	storage/framework/views/9c44794d0cee10edd0f92a3f2163acc44643fe13.php	/^                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>$/;"	v
 loop	storage/framework/views/9c44794d0cee10edd0f92a3f2163acc44643fe13.php	/^            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>$/;"	v
 loop	storage/framework/views/b26c428c9864f1be450f58d7dec36354a5ce85a2.php	/^<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>/;"	v
@@ -206,6 +216,7 @@ run	database/seeds/DatabaseSeeder.php	/^    public function run()$/;"	f
 runReport	app/Http/Controllers/TransactionReportsController.php	/^    public function runReport(Request $request)$/;"	f
 schedule	app/Console/Kernel.php	/^    protected function schedule(Schedule $schedule)$/;"	f
 select	app/Http/Controllers/TransactionReportsController.php	/^    public function select()$/;"	f
+show	app/Http/Controllers/EmployerController.php	/^    public function show(Employer $employer)$/;"	f
 show	app/Http/Controllers/NoteController.php	/^    public function show(Note $note)$/;"	f
 show	app/Http/Controllers/ResidentController.php	/^    public function show(Resident $resident)$/;"	f
 show	app/Http/Controllers/TransactionController.php	/^    public function show(Transaction $transaction)$/;"	f
@@ -213,6 +224,7 @@ sortType	app/Http/Controllers/ReportsController.php	/^        $sortType = 'date 
 sortType	app/Http/Controllers/ReportsController.php	/^        $sortType = 'date of birth';$/;"	v
 sortType	app/Http/Controllers/ReportsController.php	/^        $sortType = 'last name';$/;"	v
 sortType	app/Http/Controllers/ReportsController.php	/^        $sortType = 'projected date of discharge';$/;"	v
+store	app/Http/Controllers/EmployerController.php	/^    public function store(Request $request)$/;"	f
 store	app/Http/Controllers/NoteController.php	/^    public function store(Request $request)$/;"	f
 store	app/Http/Controllers/ResidentController.php	/^    public function store(Request $request)$/;"	f
 store	app/Http/Controllers/TransactionController.php	/^    public function store(Request $request)$/;"	f
@@ -229,6 +241,8 @@ up	database/migrations/2014_10_12_100000_create_password_resets_table.php	/^    
 up	database/migrations/2017_04_23_181645_create_residents_table.php	/^    public function up()$/;"	f
 up	database/migrations/2017_04_30_052843_create_transactions_table.php	/^    public function up()$/;"	f
 up	database/migrations/2017_05_03_160448_create_notes_table.php	/^    public function up()$/;"	f
+up	database/migrations/2017_05_20_182140_create_employers_table.php	/^    public function up()$/;"	f
+update	app/Http/Controllers/EmployerController.php	/^    public function update(Request $request, Employer $employer)$/;"	f
 update	app/Http/Controllers/NoteController.php	/^    public function update(Request $request, Note $note)$/;"	f
 update	app/Http/Controllers/ResidentController.php	/^    public function update(Request $request, Resident $resident)$/;"	f
 update	app/Http/Controllers/TransactionController.php	/^    public function update(Request $request, Transaction $transaction)$/;"	f

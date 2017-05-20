@@ -26,7 +26,7 @@ class TransactionReportsController extends Controller
                             ->whereMonth('date', $month)
                             ->get();
 
-        return view('reports.transactionIndex', compact('transactions'));
+        return view('reports.transactions.transactionIndex', compact('transactions'));
 
     }
 }
