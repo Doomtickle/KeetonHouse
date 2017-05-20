@@ -279,12 +279,21 @@
                     </p>
                 </div>
             </div>
-            <div class="column is-half">
-                <label class="label">Employment Date</label>
-                <p class="control">
-                    <input class="input" type="text" name="employment_date" id="employment_date"
-                           value="{{ $resident->employment_date }}">
-                </p>
+            <div class="columns">
+                <div class="column is-half">
+                    <label class="label">Employer</label>
+                    <p class="control">
+                        <input class="input" type="text" name="employer" id="employer"
+                               value="{{ $resident->employer }}">
+                    </p>
+                </div>
+                <div class="column is-half">
+                    <label class="label">Employment Date</label>
+                    <p class="control">
+                        <input class="input" type="text" name="employment_date" id="employment_date"
+                               value="{{ $resident->employment_date }}">
+                    </p>
+                </div>
             </div>
             <hr>
             <div class="columns">

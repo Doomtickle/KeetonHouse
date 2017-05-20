@@ -4,6 +4,7 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.8	//
+AddEmployerToResidentsTable	database/migrations/2017_05_20_183636_add_employer_to_residents_table.php	/^class AddEmployerToResidentsTable extends Migration$/;"	c
 AppServiceProvider	app/Providers/AppServiceProvider.php	/^class AppServiceProvider extends ServiceProvider$/;"	c
 AuthServiceProvider	app/Providers/AuthServiceProvider.php	/^class AuthServiceProvider extends ServiceProvider$/;"	c
 BroadcastServiceProvider	app/Providers/BroadcastServiceProvider.php	/^class BroadcastServiceProvider extends ServiceProvider$/;"	c
@@ -62,6 +63,7 @@ __currentLoopData	storage/framework/views/9c44794d0cee10edd0f92a3f2163acc44643fe
 __currentLoopData	storage/framework/views/b26c428c9864f1be450f58d7dec36354a5ce85a2.php	/^<?php $__currentLoopData = $resident->transactions; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $transaction): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>$/;"	v
 __currentLoopData	storage/framework/views/c92a323516a3bf0d5c5dc66bf7b0ed4d50251dfe.php	/^            <?php $__currentLoopData = $residents; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $resident): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>$/;"	v
 __currentLoopData	storage/framework/views/dfefa8121458367f15ce99c506da2b487ebd8f47.php	/^            <?php $__currentLoopData = $residents; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $resident): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>$/;"	v
+__currentLoopData	storage/framework/views/dfefa8121458367f15ce99c506da2b487ebd8f47.php	/^            <?php $__currentLoopData = $types; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $type): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>$/;"	v
 __webpack_require__	public/js/app.js	/^\/******\/ 	function __webpack_require__(moduleId) {$/;"	f
 __webpack_require__.d	public/js/app.js	/^\/******\/ 	__webpack_require__.d = function(exports, name, getter) {$/;"	f
 __webpack_require__.i	public/js/app.js	/^\/******\/ 	__webpack_require__.i = function(value) { return value; };$/;"	f
@@ -101,7 +103,7 @@ currentBalance	resources/views/residents/show.blade.php	/^                    $c
 currentBalance	resources/views/transactions/create.blade.php	/^                    $currentBalance = $residentInfo->transactions()->sum('credit') \/ 100 - $residentInfo->transactions()->sum('debit') \/ 100;$/;"	v
 currentBalance	storage/framework/views/7e41ce10005359f64c090e022afa53f73396e885.php	/^                    $currentBalance = $residentInfo->transactions()->sum('credit') \/ 100 - $residentInfo->transactions()->sum('debit') \/ 100;$/;"	v
 currentBalance	storage/framework/views/9c44794d0cee10edd0f92a3f2163acc44643fe13.php	/^                    $currentBalance = $resident->transactions()->sum('credit') \/ 100 - $resident->transactions()->sum('debit') \/ 100;$/;"	v
-date	app/Http/Controllers/TransactionReportsController.php	/^        $date = Carbon::parse($request->date);$/;"	v
+date	app/Http/Controllers/TransactionReportsController.php	/^        $date        = Carbon::parse($request->date);$/;"	v
 debit	app/Http/Controllers/TransactionController.php	/^        $debit = Transaction::parseCurrency($request->debit);$/;"	v
 debounce	resources/views/residents/index.blade.php	/^        function debounce(fn, threshold) {$/;"	f
 debounce	storage/framework/views/6539c80e55a8b1ffb211527dac3be0aafa6fa8ea.php	/^        function debounce(fn, threshold) {$/;"	f
@@ -121,6 +123,7 @@ down	database/migrations/2017_04_23_181645_create_residents_table.php	/^    publ
 down	database/migrations/2017_04_30_052843_create_transactions_table.php	/^    public function down()$/;"	f
 down	database/migrations/2017_05_03_160448_create_notes_table.php	/^    public function down()$/;"	f
 down	database/migrations/2017_05_20_182140_create_employers_table.php	/^    public function down()$/;"	f
+down	database/migrations/2017_05_20_183636_add_employer_to_residents_table.php	/^    public function down()$/;"	f
 download	app/Http/Controllers/ReportsController.php	/^    public function download($sortBy)$/;"	f
 downloadLink	app/Http/Controllers/ReportsController.php	/^        $downloadLink = '\/report\/download\/date_of_admission';$/;"	v
 downloadLink	app/Http/Controllers/ReportsController.php	/^        $downloadLink = '\/report\/download\/dob';$/;"	v
@@ -175,7 +178,7 @@ mapWebRoutes	app/Providers/RouteServiceProvider.php	/^    protected function map
 middleware	app/Http/Kernel.php	/^    protected $middleware = [$/;"	v
 middlewareGroups	app/Http/Kernel.php	/^    protected $middlewareGroups = [$/;"	v
 moment	resources/assets/js/app.js	/^var moment = require('moment');$/;"	v
-month	app/Http/Controllers/TransactionReportsController.php	/^        $month = $date->month;$/;"	v
+month	app/Http/Controllers/TransactionReportsController.php	/^        $month       = $date->month;$/;"	v
 namespace	app/Providers/RouteServiceProvider.php	/^    protected $namespace = 'App\\Http\\Controllers';$/;"	v
 note	app/Http/Controllers/NoteController.php	/^        $note = Note::create($request->all());$/;"	v
 notes	app/Resident.php	/^    public function notes()$/;"	f
@@ -200,6 +203,7 @@ resident	app/Http/Controllers/ResidentController.php	/^        $resident = Resid
 resident	app/Note.php	/^    public function resident()$/;"	f
 resident	app/Transaction.php	/^    public function resident()$/;"	f
 residentInfo	app/Http/Controllers/TransactionController.php	/^        $residentInfo = $resident->with('transactions')->find($resident->id);$/;"	v
+resident_id	app/Http/Controllers/TransactionReportsController.php	/^        $resident_id = $request->resident_id;$/;"	v
 residents	app/Http/Controllers/ReportsController.php	/^                $residents = Resident::all()->sortBy($sortBy);$/;"	v
 residents	app/Http/Controllers/ReportsController.php	/^        $residents = Resident::all()->sortBy('date_of_admission');$/;"	v
 residents	app/Http/Controllers/ReportsController.php	/^        $residents = Resident::all()->sortBy('dob');$/;"	v
@@ -235,6 +239,8 @@ transactionIndex	app/Http/Controllers/ReportsController.php	/^    public functio
 transactions	app/Http/Controllers/ReportsController.php	/^        $transactions = Transaction::all()->sortBy('date');$/;"	v
 transactions	app/Http/Controllers/TransactionReportsController.php	/^        $transactions = DB::table('transactions')$/;"	v
 transactions	app/Resident.php	/^    public function transactions()$/;"	f
+type	app/Http/Controllers/TransactionReportsController.php	/^        $type        = $request->type;$/;"	v
+types	app/Http/Controllers/TransactionReportsController.php	/^        $types     = DB::table('transactions')$/;"	v
 unauthenticated	app/Exceptions/Handler.php	/^    protected function unauthenticated($request, AuthenticationException $exception)$/;"	f
 up	database/migrations/2014_10_12_000000_create_users_table.php	/^    public function up()$/;"	f
 up	database/migrations/2014_10_12_100000_create_password_resets_table.php	/^    public function up()$/;"	f
@@ -242,6 +248,7 @@ up	database/migrations/2017_04_23_181645_create_residents_table.php	/^    public
 up	database/migrations/2017_04_30_052843_create_transactions_table.php	/^    public function up()$/;"	f
 up	database/migrations/2017_05_03_160448_create_notes_table.php	/^    public function up()$/;"	f
 up	database/migrations/2017_05_20_182140_create_employers_table.php	/^    public function up()$/;"	f
+up	database/migrations/2017_05_20_183636_add_employer_to_residents_table.php	/^    public function up()$/;"	f
 update	app/Http/Controllers/EmployerController.php	/^    public function update(Request $request, Employer $employer)$/;"	f
 update	app/Http/Controllers/NoteController.php	/^    public function update(Request $request, Note $note)$/;"	f
 update	app/Http/Controllers/ResidentController.php	/^    public function update(Request $request, Resident $resident)$/;"	f

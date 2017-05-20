@@ -13,9 +13,15 @@
                 <option value="{{ $resident->id }}">{{ $resident->last_name }}, {{ $resident->first_name }}</option>
             @endforeach
         </select>
+        <select name="type" id="type">
+            <option value="">All</option>
+            @foreach($types as $type)
+                <option value="{{ $type->name }}">{{ $type->name }}</option>
+            @endforeach
+        </select>
         <select id="month" name="date">
             <option value="">All</option>
-            @for($i = 1; $i < 14; $i++)
+            @for($i = 0; $i < 14; $i++)
                 <option value="{{ Carbon\Carbon::now()->subMonths($i)->toDateString() }}">
                     {{ Carbon\Carbon::now()->subMonths($i)->format('F, Y') }}
                 </option>

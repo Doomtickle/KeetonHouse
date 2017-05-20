@@ -25,6 +25,7 @@
                 <p><strong>Treatment level placement: </strong>{{ $resident->treatment_level_placement }}</p>
                 <p><strong>Counselor: </strong>{{ $resident->counselor }}</p>
                 <p><strong>Program level: </strong>{{ $resident->program_level }}</p>
+                <p><strong>Employer: </strong>{{ $resident->employer }}</p>
                 <p><strong>Employment date: </strong>{{ $resident->employment_date }}</p>
                 <p><strong>Payment method: </strong>{{ $resident->payment_method }}</p>
                 <p><strong>Referral source: </strong>{{ $resident->referral_source }}</p>
@@ -32,7 +33,7 @@
             </div>
         </div>
         <hr>
-        <h2 class="title">Add Accountability Note</h2>
+        <h2 class="title">Payment Arrangements</h2>
         <div class="columns">
             <div class="column is-full">
                 <form action="{{ route('note.store') }}" method="POST" id="new-note">
