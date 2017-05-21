@@ -62,8 +62,7 @@ __currentLoopData	storage/framework/views/9c44794d0cee10edd0f92a3f2163acc44643fe
 __currentLoopData	storage/framework/views/9c44794d0cee10edd0f92a3f2163acc44643fe13.php	/^            <?php $__currentLoopData = $resident->notes; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $note): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>$/;"	v
 __currentLoopData	storage/framework/views/b26c428c9864f1be450f58d7dec36354a5ce85a2.php	/^<?php $__currentLoopData = $resident->transactions; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $transaction): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>$/;"	v
 __currentLoopData	storage/framework/views/c92a323516a3bf0d5c5dc66bf7b0ed4d50251dfe.php	/^            <?php $__currentLoopData = $residents; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $resident): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>$/;"	v
-__currentLoopData	storage/framework/views/dfefa8121458367f15ce99c506da2b487ebd8f47.php	/^            <?php $__currentLoopData = $residents; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $resident): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>$/;"	v
-__currentLoopData	storage/framework/views/dfefa8121458367f15ce99c506da2b487ebd8f47.php	/^            <?php $__currentLoopData = $types; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $type): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>$/;"	v
+__currentLoopData	storage/framework/views/dfefa8121458367f15ce99c506da2b487ebd8f47.php	/^                            <?php $__currentLoopData = $residents; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $resident): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>$/;"	v
 __webpack_require__	public/js/app.js	/^\/******\/ 	function __webpack_require__(moduleId) {$/;"	f
 __webpack_require__.d	public/js/app.js	/^\/******\/ 	__webpack_require__.d = function(exports, name, getter) {$/;"	f
 __webpack_require__.i	public/js/app.js	/^\/******\/ 	__webpack_require__.i = function(value) { return value; };$/;"	f
@@ -171,7 +170,7 @@ loop	storage/framework/views/9c44794d0cee10edd0f92a3f2163acc44643fe13.php	/^    
 loop	storage/framework/views/9c44794d0cee10edd0f92a3f2163acc44643fe13.php	/^            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>$/;"	v
 loop	storage/framework/views/b26c428c9864f1be450f58d7dec36354a5ce85a2.php	/^<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>/;"	v
 loop	storage/framework/views/c92a323516a3bf0d5c5dc66bf7b0ed4d50251dfe.php	/^            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>$/;"	v
-loop	storage/framework/views/dfefa8121458367f15ce99c506da2b487ebd8f47.php	/^            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>$/;"	v
+loop	storage/framework/views/dfefa8121458367f15ce99c506da2b487ebd8f47.php	/^                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>$/;"	v
 map	app/Providers/RouteServiceProvider.php	/^    public function map()$/;"	f
 mapApiRoutes	app/Providers/RouteServiceProvider.php	/^    protected function mapApiRoutes()$/;"	f
 mapWebRoutes	app/Providers/RouteServiceProvider.php	/^    protected function mapWebRoutes()$/;"	f
@@ -240,7 +239,6 @@ transactions	app/Http/Controllers/ReportsController.php	/^        $transactions 
 transactions	app/Http/Controllers/TransactionReportsController.php	/^        $transactions = DB::table('transactions')$/;"	v
 transactions	app/Resident.php	/^    public function transactions()$/;"	f
 type	app/Http/Controllers/TransactionReportsController.php	/^        $type        = $request->type;$/;"	v
-types	app/Http/Controllers/TransactionReportsController.php	/^        $types     = DB::table('transactions')$/;"	v
 unauthenticated	app/Exceptions/Handler.php	/^    protected function unauthenticated($request, AuthenticationException $exception)$/;"	f
 up	database/migrations/2014_10_12_000000_create_users_table.php	/^    public function up()$/;"	f
 up	database/migrations/2014_10_12_100000_create_password_resets_table.php	/^    public function up()$/;"	f
@@ -256,3 +254,4 @@ update	app/Http/Controllers/TransactionController.php	/^    public function upda
 uri	server.php	/^$uri = urldecode($/;"	v
 user	app/Note.php	/^    public function user()$/;"	f
 validator	app/Http/Controllers/Auth/RegisterController.php	/^    protected function validator(array $data)$/;"	f
+year	app/Http/Controllers/TransactionReportsController.php	/^        $year        = $date->year;$/;"	v

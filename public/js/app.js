@@ -27481,6 +27481,9 @@ $(document).ready(function () {
     $("#referral-source").select2();
     $("#drug").select2();
     $("#reason").select2();
+    $("#transaction_resident").select2();
+    $("#transaction_date").select2();
+    $("#transaction_type").select2();
 
     $("#note-date").flatpickr();
     $("#date_of_admission").flatpickr({
