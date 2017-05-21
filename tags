@@ -50,6 +50,11 @@ __construct	app/Http/Controllers/Auth/LoginController.php	/^    public function 
 __construct	app/Http/Controllers/Auth/RegisterController.php	/^    public function __construct()$/;"	f
 __construct	app/Http/Controllers/Auth/ResetPasswordController.php	/^    public function __construct()$/;"	f
 __construct	app/Http/Controllers/HomeController.php	/^    public function __construct()$/;"	f
+__construct	app/Http/Controllers/NoteController.php	/^    function __construct()$/;"	f
+__construct	app/Http/Controllers/ReportsController.php	/^    function __construct()$/;"	f
+__construct	app/Http/Controllers/ResidentController.php	/^    function __construct()$/;"	f
+__construct	app/Http/Controllers/TransactionController.php	/^    function __construct()$/;"	f
+__construct	app/Http/Controllers/TransactionReportsController.php	/^   function __construct()$/;"	f
 __currentLoopData	storage/framework/views/12e544fcf3ad1bf7e5230fdc3f5f0cf2781907fe.php	/^            <?php $__currentLoopData = $transactions; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $transaction): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>$/;"	v
 __currentLoopData	storage/framework/views/21bcabccb9f3993d730d36f621316dee5280695e.php	/^            <?php $__currentLoopData = $residents; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $resident): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>$/;"	v
 __currentLoopData	storage/framework/views/2ce6a49a3101cc294c91e0e8a5da36d7bdb5fa19.php	/^        <?php $__currentLoopData = $residents; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $resident): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>$/;"	v

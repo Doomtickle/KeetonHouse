@@ -9,6 +9,11 @@ use Illuminate\Support\Facades\DB;
 
 class TransactionReportsController extends Controller
 {
+   function __construct()
+   {
+       $this->middleware('auth');
+   }
+
     public function select()
     {
         $residents = Resident::all()->sortBy('last_name');

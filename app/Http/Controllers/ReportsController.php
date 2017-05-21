@@ -10,6 +10,11 @@ use Maatwebsite\Excel\Facades\Excel;
 
 class ReportsController extends Controller
 {
+    function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function lastName()
     {
         $sortType = 'last name';
