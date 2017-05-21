@@ -24,10 +24,14 @@ class TransactionReportsController extends Controller
     public function runReport(Request $request)
     {
         $resident_id = $request->resident_id;
-        $date        = Carbon::parse($request->date);
-        $month       = $date->month;
-        $year        = $date->year;
-        $type        = $request->type;
+        $date        = isset($request->date) ? Carbon::parse($request->date) : null;
+        $month = null;
+        $year = null;
+        if($date != null){
+            $month       = $date->month;
+            $year        = $date->year;
+        }
+        $type        = isset($request->type) ? $request->type : null;
 
 //        $report = Transaction::where(['date', 'BETWEEN', $startOfMonth], ['resident_id', '=', $resident->id])->get();
         $transactions = DB::table('transactions')
