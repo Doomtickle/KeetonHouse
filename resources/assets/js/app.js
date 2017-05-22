@@ -51,6 +51,7 @@ $(document).ready(function() {
     $("#transaction_resident").select2();
     $("#transaction_date").select2();
     $("#transaction_type").select2();
+    $("#sort_by").select2();
 
 
 

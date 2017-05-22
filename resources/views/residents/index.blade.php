@@ -6,10 +6,18 @@
 
 @section('content')
     <div class="container">
-        <a href="/resident/create" class="button is-primary" style="margin-top: 30px;">Add a new resident</a>
         <div class="columns">
             <div class="column">
-                <p><input type="text" class="quicksearch input column is-3" placeholder="Search"/></p>
+                <div class="notification is-default intro">
+                    This is a view of all of your residents.
+                    Click on a resident's name to view any information about that resident. Also, you can start
+                    typing in the search box below to find any resident quickly.
+                </div>
+
+                <a href="/resident/create" class="button is-primary" style="margin-top: 30px; margin-left:20px;">Add a
+                    new resident</a>
+                <p style="margin-left:10px;"><input type="text" class="quicksearch input column is-3 is-large"
+                                                    placeholder="Search" autofocus="autofocus"/></p>
                 <div class="grid">
                     <div class="row">
                         @foreach($residents as $resident)
@@ -17,22 +25,29 @@
                                 <div class="card">
                                     <header class="card-header">
                                         <p class="card-header-title">
-                                            <a href="{{ route('resident.show', ['id' => $resident->id]) }}" class="blackish">{{ ucfirst($resident->last_name) }}, {{ ucfirst($resident->first_name) }} {{ strtoupper($resident->middle_initial) }}</a><span class="column has-text-right doc-number">{{ $resident->document_number }}</span>
+                                            <a href="{{ route('resident.show', ['id' => $resident->id]) }}"
+                                               class="blackish">{{ ucfirst($resident->last_name) }}
+                                                , {{ ucfirst($resident->first_name) }} {{ strtoupper($resident->middle_initial) }}</a><span
+                                                    class="column has-text-right doc-number">{{ $resident->document_number }}</span>
                                         </p>
                                     </header>
                                     <div class="card-content">
                                         <div class="content">
                                             <p><strong>Sex: </strong>{{ $resident->sex }}</p>
                                             <p><strong>Race: </strong>{{ $resident->race }}</p>
-                                            <p><strong>Service Center #: </strong>{{ $resident->service_center_number }}</p>
+                                            <p><strong>Service Center #: </strong>{{ $resident->service_center_number }}
+                                            </p>
                                             <p><strong>DOB: </strong>{{ $resident->dob }}</p>
                                             <p><strong>Age: </strong>{{ $resident->age }}</p>
                                         </div>
                                     </div>
                                     <footer class="card-footer">
-                                        <a class="card-footer-item blackish" href="{{ route('transaction.create',  $resident->id ) }}">Account</a>
-                                        <a class="card-footer-item blackish" href="{{ route('resident.edit', $resident->id) }}">Edit</a>
-                                        <a class="card-footer-item primary" href="{{ route('resident.show', $resident->id) }}">Profile</a>
+                                        <a class="card-footer-item blackish"
+                                           href="{{ route('transaction.create',  $resident->id ) }}">Account</a>
+                                        <a class="card-footer-item blackish"
+                                           href="{{ route('resident.edit', $resident->id) }}">Edit</a>
+                                        <a class="card-footer-item primary"
+                                           href="{{ route('resident.show', $resident->id) }}">Profile</a>
                                     </footer>
                                 </div>
                             </div>

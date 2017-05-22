@@ -153,6 +153,16 @@ table{
 .padding-40{
   padding:40px;
 }
+.padding-10-lr{
+  padding-left: 10px;
+  padding-right:10px;
+}
+.first{
+  margin-left: -10px;
+}
+.last{
+  margin-right: -10px;
+}
 .align-center{
   align-items: center;
 }
@@ -174,3 +184,8 @@ table{
   height: 100%;
   padding-top:70px;
 }
+.intro{
+  margin:30px;
+  font-size: 1.1em;
+}
+

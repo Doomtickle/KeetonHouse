@@ -9,10 +9,10 @@ use Illuminate\Support\Facades\DB;
 
 class TransactionReportsController extends Controller
 {
-   function __construct()
-   {
-       $this->middleware('auth');
-   }
+    function __construct()
+    {
+        $this->middleware('auth');
+    }
 
     public function select()
     {
@@ -25,13 +25,13 @@ class TransactionReportsController extends Controller
     {
         $resident_id = $request->resident_id;
         $date        = isset($request->date) ? Carbon::parse($request->date) : null;
-        $month = null;
-        $year = null;
-        if($date != null){
-            $month       = $date->month;
-            $year        = $date->year;
+        $month       = null;
+        $year        = null;
+        if ($date != null) {
+            $month = $date->month;
+            $year  = $date->year;
         }
-        $type        = isset($request->type) ? $request->type : null;
+        $type = isset($request->type) ? $request->type : null;
 
 //        $report = Transaction::where(['date', 'BETWEEN', $startOfMonth], ['resident_id', '=', $resident->id])->get();
         $transactions = DB::table('transactions')

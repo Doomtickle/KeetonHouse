@@ -23,6 +23,8 @@ class ReportsController extends Controller
         return view('reports.residentIndex', compact('residents', 'sortType', 'downloadLink'));
     }
 
+
+
     public function download($sortBy)
     {
         Excel::create('Keeton Residents' . Carbon::now()->toDateString(), function($excel) use ($sortBy) {

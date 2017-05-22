@@ -26,14 +26,8 @@
                                     class="fa fa-tachometer"></i></span><span class="name">Dashboard</span></a>
                     <a href="{{ route('resident.index') }}" class="item"><span class="icon"><i class="fa fa-user"></i></span><span
                                 class="name">Residents</span></a>
-                    <a href="#" class="item"><span class="icon"><i class="fa fa-file-text"></i></span><span
+                    <a href="/resident_reports" class="item"><span class="icon"><i class="fa fa-file-text"></i></span><span
                                 class="small-name">Resident&nbsp;Reports</span></a>
-                    <ul class="sub-menu">
-                        <li><a href="/report/last-name" target="_blank">Last Name</a></li>
-                        <li><a href="/report/dob" target="_blank">Date of Birth</a></li>
-                        <li><a href="/report/admit-date" target="_blank">Date of Admission</a></li>
-                        <li><a href="/report/discharge-date" target="_blank">Date of Release</a></li>
-                    </ul>
                     <a href="/transaction_reports" class="item"><span class="icon"><i class="fa fa-file-text"></i></span><span
                                 class="small-name">Transaction&nbsp;Reports</span></a>
                 </div>

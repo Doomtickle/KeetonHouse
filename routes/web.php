@@ -25,6 +25,7 @@ Route::get('/report/dob', 'ReportsController@dob');
 Route::get('/report/admit-date', 'ReportsController@admitDate');
 Route::get('/report/discharge-date', 'ReportsController@releaseDate');
 Route::get('/transaction_reports', 'TransactionReportsController@select');
+Route::get('/resident_reports', 'ResidentReportsController@select');
 Route::get('/report/transactions', 'ReportsController@transactionIndex');
 Route::post('/transaction_report/run', 'TransactionReportsController@runReport');
 
