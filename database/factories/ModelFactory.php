@@ -20,12 +20,14 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
         'email' => $faker->unique()->safeEmail,
         'password' => $password ?: $password = bcrypt('secret'),
         'remember_token' => str_random(10),
+        'facility' => $faker->randomElement(['Panama City', 'Orlando', 'Tallahassee'])
     ];
 });
 
 $factory->define(App\Resident::class, function (Faker\Generator $faker) {
 
     return [
+        'facility' => $faker->randomElement(['Panama City', 'Tallahassee', 'Orlando']),
         'first_name' => $faker->firstName(),
         'last_name' => $faker->lastName,
         'middle_initial' => $faker->randomLetter,
@@ -57,6 +59,7 @@ $factory->define(App\Transaction::class, function (Faker\Generator $faker) {
         'reason' => $faker->randomElement($array = array('Urinalysis', 'Rides', 'Anger Management', 'Physical', 'Payment', 'Sustenance')),
         'debit' => $faker->numberBetween(0, 10000),
         'credit' => $faker->numberBetween(0, 10000),
+        'facility' => $faker->randomElement(['Panama City', 'Orlando', 'Tallahassee'])
     ];
 });
 
