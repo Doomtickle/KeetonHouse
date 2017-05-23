@@ -19,7 +19,8 @@
                 <div class="level-item has-text-centered">
                     <div class="column">
                         <p class="heading">Current Balance</p>
-                        <p class="title green">${{ number_format(App\Transaction::all()->sum('credit') - App\Transaction::all()->sum('debit'), 2, '.', ',') }}</p>
+                        <p class="title green">
+                            ${{ number_format(App\Transaction::all()->sum('credit') - App\Transaction::all()->sum('debit'), 2, '.', ',') }}</p>
                     </div>
                 </div>
                 <div class="level-item has-text-centered">
@@ -29,9 +30,12 @@
                     </div>
                 </div>
             </div>
-            <h1 class="title has-text-centered">
-                More content will go here soon
-            </h1>
+            <hr>
+            <section class="section">
+                <h1 class="title has-text-centered">
+                    More content will go here soon
+                </h1>
+            </section>
         </div>
     </section>
 @endsection
