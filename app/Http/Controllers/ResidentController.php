@@ -20,7 +20,7 @@ class ResidentController extends Controller
      */
     public function index()
     {
-        $residents = DB::table('residents')->orderBy('last_name')->get();
+        $residents = DB::table('residents')->where('facility', \Auth::user()->facility)->orderBy('last_name')->get();
 
         return view('residents.index', compact('residents'));
     }

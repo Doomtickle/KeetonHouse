@@ -1,5 +1,6 @@
 <div class="columns">
     <form action="{{ route('transaction.store') }}" method="POST" id="transactionCreate">
+        <input type="hidden" name="facility" value="{{ \Auth::user()->facility }}">
         <div class="column">
             <div class="columns">
                 {{ csrf_field() }}

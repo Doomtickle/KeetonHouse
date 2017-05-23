@@ -19,7 +19,7 @@ class ReportsController extends Controller
     {
         $sortType = 'last name';
         $downloadLink = '/report/download/last_name';
-        $residents = Resident::all()->sortBy('last_name');
+        $residents = Resident::where('facility', \Auth::user()->facility)->get()->sortBy('last_name');
         return view('reports.residentIndex', compact('residents', 'sortType', 'downloadLink'));
     }
 
@@ -31,7 +31,7 @@ class ReportsController extends Controller
 
             $excel->sheet('Resident Report', function($sheet) use ($sortBy) {
 
-                $residents = Resident::all()->sortBy($sortBy);
+                $residents = Resident::where('facility', \Auth::user()->facility)->get()->sortBy($sortBy);
 
                 $sheet->loadView('reports.residentIndexXLS', compact('residents'));
 
@@ -44,7 +44,7 @@ class ReportsController extends Controller
     {
         $sortType = 'date of birth';
         $downloadLink = '/report/download/dob';
-        $residents = Resident::all()->sortBy('dob');
+        $residents = Resident::where('facility', \Auth::user()->facility)->get()->sortBy('dob');
         return view('reports.residentIndex', compact('residents', 'sortType', 'downloadLink'));
     }
 
@@ -52,7 +52,7 @@ class ReportsController extends Controller
     {
         $sortType = 'date of admission';
         $downloadLink = '/report/download/date_of_admission';
-        $residents = Resident::all()->sortBy('date_of_admission');
+        $residents = Resident::where('facility', \Auth::user()->facility)->get()->sortBy('date_of_admission');
         return view('reports.residentIndex', compact('residents', 'sortType', 'downloadLink'));
     }
 
@@ -60,13 +60,13 @@ class ReportsController extends Controller
     {
         $sortType = 'projected date of discharge';
         $downloadLink = '/report/download/projected_date_of_discharge';
-        $residents = Resident::all()->sortBy('projected_date_of_discharge');
+        $residents = Resident::where('facility', \Auth::user()->facility)->get()->sortBy('date_of_discharge');
         return view('reports.residentIndex', compact('residents', 'sortType', 'downloadLink'));
     }
 
     public function transactionIndex()
     {
-        $transactions = Transaction::all()->sortBy('date');
+        $transactions = Transaction::where('facility', \Auth::user()->facility)->get()->sortBy('date');
 
         return view('reports.transactionIndex', compact('transactions'));
     }

@@ -23,6 +23,7 @@
         <aside class="column is-2 aside hero is-fullheight is-dark is-hidden-mobile">
             <div>
                 <div class="main">
+                    <p class="subtitle notification is-info">{{ \Auth::user()->facility }}</p>
                     <a href="/home" :class="{'active': onPage('/home')}" class="item"><span class="icon"><i
                                     class="fa fa-tachometer"></i></span><span class="name">Dashboard</span></a>
                     <a href="{{ route('resident.index') }}" class="item"><span class="icon"><i class="fa fa-user"></i></span><span

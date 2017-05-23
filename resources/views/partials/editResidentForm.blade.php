@@ -1,6 +1,7 @@
 <form action="{{ route('resident.update', $resident->id) }}" method="POST" id="residentEdit">
     {{csrf_field()}}
     {{ method_field("PATCH") }}
+    <input type="hidden" name="facility" value="{{ \Auth::user()->facility }}">
     <div class="columns">
         <div class="column is-offset-1 is-half">
             <div class="columns">

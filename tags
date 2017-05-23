@@ -214,12 +214,12 @@ resident	app/Note.php	/^    public function resident()$/;"	f
 resident	app/Transaction.php	/^    public function resident()$/;"	f
 residentInfo	app/Http/Controllers/TransactionController.php	/^        $residentInfo = $resident->with('transactions')->find($resident->id);$/;"	v
 resident_id	app/Http/Controllers/TransactionReportsController.php	/^        $resident_id = $request->resident_id;$/;"	v
-residents	app/Http/Controllers/ReportsController.php	/^                $residents = Resident::all()->sortBy($sortBy);$/;"	v
-residents	app/Http/Controllers/ReportsController.php	/^        $residents = Resident::all()->sortBy('date_of_admission');$/;"	v
-residents	app/Http/Controllers/ReportsController.php	/^        $residents = Resident::all()->sortBy('dob');$/;"	v
-residents	app/Http/Controllers/ReportsController.php	/^        $residents = Resident::all()->sortBy('last_name');$/;"	v
-residents	app/Http/Controllers/ReportsController.php	/^        $residents = Resident::all()->sortBy('projected_date_of_discharge');$/;"	v
-residents	app/Http/Controllers/ResidentController.php	/^        $residents = DB::table('residents')->orderBy('last_name')->get();$/;"	v
+residents	app/Http/Controllers/ReportsController.php	/^                $residents = Resident::where('facility', \\Auth::user()->facility)->get()->sortBy($sortBy);$/;"	v
+residents	app/Http/Controllers/ReportsController.php	/^        $residents = Resident::where('facility', \\Auth::user()->facility)->get()->sortBy('date_of_admission');$/;"	v
+residents	app/Http/Controllers/ReportsController.php	/^        $residents = Resident::where('facility', \\Auth::user()->facility)->get()->sortBy('date_of_discharge');$/;"	v
+residents	app/Http/Controllers/ReportsController.php	/^        $residents = Resident::where('facility', \\Auth::user()->facility)->get()->sortBy('dob');$/;"	v
+residents	app/Http/Controllers/ReportsController.php	/^        $residents = Resident::where('facility', \\Auth::user()->facility)->get()->sortBy('last_name');$/;"	v
+residents	app/Http/Controllers/ResidentController.php	/^        $residents = DB::table('residents')->where('facility', \\Auth::user()->facility)->orderBy('last_name')->get();$/;"	v
 residents	app/Http/Controllers/TransactionReportsController.php	/^        $residents = Resident::all()->sortBy('last_name');$/;"	v
 residents	database/seeds/ResidentsTableSeeder.php	/^        $residents = Resident::all();$/;"	v
 response	public/index.php	/^$response = $kernel->handle($/;"	v
@@ -250,7 +250,7 @@ testBasicTest	tests/Feature/ExampleTest.php	/^    public function testBasicTest(
 testBasicTest	tests/Unit/ExampleTest.php	/^    public function testBasicTest()$/;"	f
 transaction	app/Http/Controllers/TransactionController.php	/^        $transaction = Transaction::create([$/;"	v
 transactionIndex	app/Http/Controllers/ReportsController.php	/^    public function transactionIndex()$/;"	f
-transactions	app/Http/Controllers/ReportsController.php	/^        $transactions = Transaction::all()->sortBy('date');$/;"	v
+transactions	app/Http/Controllers/ReportsController.php	/^        $transactions = Transaction::where('facility', \\Auth::user()->facility)->get()->sortBy('date');$/;"	v
 transactions	app/Http/Controllers/TransactionReportsController.php	/^        $transactions = DB::table('transactions')$/;"	v
 transactions	app/Resident.php	/^    public function transactions()$/;"	f
 type	app/Http/Controllers/TransactionReportsController.php	/^        $type = isset($request->type) ? $request->type : null;$/;"	v
