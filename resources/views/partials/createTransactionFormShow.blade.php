@@ -8,7 +8,7 @@
                 <div class="column">
                     <label class="label">Date of transaction</label>
                     <p class="control">
-                        <input class="input" type="text" name="date" id="transaction_date">
+                        <input class="input" type="text" name="date" id="transaction_date_calendar">
                     </p>
                 </div>
                 <div class="column">

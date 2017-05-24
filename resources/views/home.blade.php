@@ -23,12 +23,6 @@
                             ${{ number_format(App\Transaction::all()->sum('credit') - App\Transaction::all()->sum('debit'), 2, '.', ',') }}</p>
                     </div>
                 </div>
-                <div class="level-item has-text-centered">
-                    <div class="column">
-                        <p class="heading">Due this week</p>
-                        <p class="title">$2560</p>
-                    </div>
-                </div>
             </div>
             <hr>
             <section class="section">

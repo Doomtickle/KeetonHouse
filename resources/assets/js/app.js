@@ -1,18 +1,10 @@
 
 require('./bootstrap');
 window.Vue = require('vue');
-require('select2');
+require('select2/dist/js/select2.full.js');
 require('sweetalert');
-import { Collapse, Item as CollapseItem } from 'vue-bulma-collapse';
 var moment = require('moment');
 var flatpickr = require("flatpickr");
-
-export default {
-    components: {
-        Collapse,
-        CollapseItem
-    }
-}
 
 
 new Vue({
@@ -72,7 +64,7 @@ $(document).ready(function() {
 
     $("#employment_date").flatpickr({});
 
-    $("#transaction_date").flatpickr({});
+    $("#transaction_date_calendar").flatpickr({});
 
     $("#residentCreate").submit(function(e){
             e.preventDefault();
