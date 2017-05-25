@@ -12,7 +12,7 @@ class ResidentsTableSeeder extends Seeder
      */
     public function run()
     {
-        factory('App\Resident', 50)->create();
+        factory('App\Resident', 50)->create(['facility' => 'Demo']);
 
         $residents = Resident::all();
 

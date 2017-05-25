@@ -20,7 +20,17 @@
                     <div class="column">
                         <p class="heading">Current Balance</p>
                         <p class="title green">
-                            ${{ number_format(App\Transaction::all()->sum('credit') - App\Transaction::all()->sum('debit'), 2, '.', ',') }}</p>
+                            ${{
+                            number_format(
+                            App\Resident::
+                            where('residents.facility', \Auth::user()->facility)
+                            ->join('transactions', 'residents.id', '=', 'transactions.resident_id')
+                            ->sum('transactions.credit')
+                            - //minus
+                            App\Resident::where('residents.facility', \Auth::user()->facility)
+                            ->join('transactions', 'residents.id', '=', 'transactions.resident_id')
+                            ->sum('transactions.debit'), 2, '.', ',') }}
+                        </p>
                     </div>
                 </div>
             </div>
