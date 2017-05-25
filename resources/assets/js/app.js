@@ -89,12 +89,14 @@ $(document).ready(function () {
                 });
                 $("#residentCreate").trigger("reset");
                 $("#form-error-box").css("display", "none");
+                $("#residentCreate").unbind("submit").submit();
             },
             error: function (thrownError) {
                 $("#form-error-box").css("display", "block");
                 $.each(JSON.parse(thrownError.responseText), function (index, value) {
                     $("#form-error-list").append("<li> - " + value + "</li>" );
                 });
+
                 swal({
                     title: "Whoops!",
                     html: true,
