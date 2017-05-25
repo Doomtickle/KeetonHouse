@@ -1,3 +1,7 @@
+<div id="form-error-box" class="column is-offset-3 is-6 notification is-danger" style="display:none">
+    <ul id="form-error-list">
+    </ul>
+</div>
 <form action="{{ route('resident.store') }}" method="POST" id="residentCreate">
     <input type="hidden" name="facility" value="{{ \Auth::user()->facility }}">
     <div class="columns">
@@ -6,19 +10,19 @@
                 {{ csrf_field() }}
                 <div class="field is-horizontal">
                     <div class="column">
-                        <label class="label">First Name</label>
+                        <label class="label">First Name <sup>*</sup></label>
                         <p class="control">
                             <input class="input" type="text" name="first_name" required autofocus>
                         </p>
                     </div>
                     <div class="column">
-                        <label class="label">Last Name</label>
+                        <label class="label">Last Name <sup>*</sup></label>
                         <p class="control">
                             <input class="input" type="text" name="last_name">
                         </p>
                     </div>
                     <div class="column is-1">
-                        <label class="label has-text-centered">MI</label>
+                        <label class="label has-text-centered">MI <sup>*</sup></label>
                         <p class="control">
                             <input class="input" type="text" name="middle_initial">
                         </p>
@@ -27,19 +31,19 @@
             </div>
             <div class="columns">
                 <div class="column is-3">
-                    <label class="label">Date of birth</label>
+                    <label class="label">Date of birth <sup>*</sup></label>
                     <p class="control">
                         <input class="input" type="text" name="dob" id="dob">
                     </p>
                 </div>
                 <div class="column is-3">
-                    <label class="label">Age</label>
+                    <label class="label">Age <sup>*</sup></label>
                     <p class="control">
                         <input class="input" type="number" name="age" id="age">
                     </p>
                 </div>
                 <div class="column is-6">
-                    <label class="label">Drug of Choice</label>
+                    <label class="label">Drug of Choice <sup>*</sup></label>
                     <p class="control">
                         <span class="select">
                             <select name="drug" id="drug">
@@ -62,7 +66,7 @@
             <div class="column is-offset-1">
                 <div class="columns">
                     <div class="column is-half">
-                        <label class="label">Sex</label>
+                        <label class="label">Sex <sup>*</sup></label>
                         <label class="radio">
                             <input type="radio" name="sex" value="M">Male
                         </label>
@@ -71,7 +75,7 @@
                         </label>
                     </div>
                     <div class="column is-half">
-                        <label class="label">Race</label>
+                        <label class="label">Race <sup>*</sup></label>
                         <p class="control">
                             <span class="select">
                                 <select class="race" name="race">
@@ -86,13 +90,13 @@
             <hr>
             <div class="columns">
                 <div class="column">
-                    <label class="label">DOC Number</label>
+                    <label class="label">DOC Number <sup>*</sup></label>
                     <p class="control">
                         <input class="input" type="text" name="document_number">
                     </p>
                 </div>
                 <div class="column">
-                    <label class="label">Service Center Number</label>
+                    <label class="label">Service Center Number <sup>*</sup></label>
                     <p class="control">
                         <input class="input" type="text" name="service_center_number">
                     </p>
@@ -101,13 +105,13 @@
             <hr>
             <div class="columns">
                 <div class="column">
-                    <label class="label">Date of admission</label>
+                    <label class="label">Date of admission <sup>*</sup></label>
                     <p class="control">
                         <input class="input" type="text" name="date_of_admission" id="date_of_admission">
                     </p>
                 </div>
                 <div class="column">
-                    <label class="label">Projected Discharge</label>
+                    <label class="label">Projected Discharge <sup>*</sup></label>
                     <p class="control">
                         <input class="input" type="text" name="projected_date_of_discharge"
                                id="projected_date_of_discharge">
@@ -123,7 +127,7 @@
             <hr>
             <div class="columns">
                 <div class="column">
-                    <label class="label">Status</label>
+                    <label class="label">Status <sup>*</sup></label>
                     <p class="control">
                         <span class="select">
                             <select name="status" id="status">
@@ -160,7 +164,7 @@
             <hr>
             <div class="columns">
                 <div class="column">
-                    <label class="label">Treatment Level</label>
+                    <label class="label">Treatment Level <sup>*</sup></label>
                     <p class="control">
                         <span class="select">
                             <select name="treatment_level_placement" id="treatment-level-placement">
@@ -176,13 +180,13 @@
                     </p>
                 </div>
                 <div class="column">
-                    <label class="label">Counselor</label>
+                    <label class="label">Counselor <sup>*</sup></label>
                     <p class="control">
                         <input class="input" type="text" name="counselor">
                     </p>
                 </div>
                 <div class="column">
-                    <label class="label">Program Level</label>
+                    <label class="label">Program Level <sup>*</sup></label>
                     <p class="control">
                         <span class="select">
                             <select name="program_level" id="program-level">
@@ -211,7 +215,7 @@
             <hr>
             <div class="columns">
                 <div class="column">
-                    <label class="label">Payment Method</label>
+                    <label class="label">Payment Method <sup>*</sup></label>
                     <p class="control">
                         <span class="select">
                             <select id="payment-method" name="payment_method">
@@ -228,7 +232,7 @@
                     </p>
                 </div>
                 <div class="column">
-                    <label class="label">Referral Source</label>
+                    <label class="label">Referral Source <sup>*</sup></label>
                     <p class="control">
                         <span class="select">
                             <select id="referral-source" name="referral_source">

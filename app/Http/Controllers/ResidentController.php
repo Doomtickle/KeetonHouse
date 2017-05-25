@@ -38,32 +38,54 @@ class ResidentController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
+        $this->validate($request, [
+
+            'last_name' => 'required',
+            'first_name' => 'required',
+            'middle_initial' => 'required',
+            'sex' => 'required',
+            'race' => 'required',
+            'document_number' => 'required',
+            'service_center_number' => 'required',
+            'dob' => 'required',
+            'age' => 'required',
+            'drug' => 'required',
+            'date_of_admission' => 'required',
+            'projected_date_of_discharge' => 'required',
+            'status' => 'required',
+            'treatment_level_placement' => 'required',
+            'counselor' => 'required',
+            'program_level' => 'required',
+            'payment_method' => 'required',
+            'referral_source' => 'required',
+        ]);
         $resident = Resident::create($request->all());
 
-        return "Success"; 
+        return "Success";
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Resident  $resident
+     * @param  \App\Resident $resident
      * @return \Illuminate\Http\Response
      */
     public function show(Resident $resident)
     {
         $resident = Resident::with('notes', 'transactions')->find($resident->id);
+
         return view('residents.show', compact('resident'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Resident  $resident
+     * @param  \App\Resident $resident
      * @return \Illuminate\Http\Response
      */
     public function edit(Resident $resident)
@@ -74,8 +96,8 @@ class ResidentController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Resident  $resident
+     * @param  \Illuminate\Http\Request $request
+     * @param  \App\Resident $resident
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Resident $resident)
@@ -88,7 +110,7 @@ class ResidentController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Resident  $resident
+     * @param  \App\Resident $resident
      * @return \Illuminate\Http\Response
      */
     public function destroy(Resident $resident)

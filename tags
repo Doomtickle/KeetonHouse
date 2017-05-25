@@ -150,7 +150,7 @@ fillable	app/User.php	/^    protected $fillable = [$/;"	v
 filter	resources/views/residents/index.blade.php	/^            filter: function () {$/;"	j
 filter	storage/framework/views/6539c80e55a8b1ffb211527dac3be0aafa6fa8ea.php	/^            filter: function () {$/;"	j
 flatpickr	resources/assets/js/app.js	/^var flatpickr = require("flatpickr");$/;"	v
-getAge	resources/assets/js/app.js	/^function getAge(dateStr){$/;"	f
+getAge	resources/assets/js/app.js	/^function getAge(dateStr) {$/;"	f
 grid	resources/views/residents/index.blade.php	/^        var $grid = $('.grid').isotope({$/;"	v
 grid	storage/framework/views/6539c80e55a8b1ffb211527dac3be0aafa6fa8ea.php	/^        var $grid = $('.grid').isotope({$/;"	v
 guard	app/Http/Middleware/RedirectIfAuthenticated.php	/^    public function handle($request, Closure $next, $guard = null)$/;"	v
