@@ -21,7 +21,7 @@
                             <input class="input" type="text" name="last_name">
                         </p>
                     </div>
-                    <div class="column is-1">
+                    <div class="column is-2">
                         <label class="label has-text-centered">MI <sup>*</sup></label>
                         <p class="control">
                             <input class="input" type="text" name="middle_initial">

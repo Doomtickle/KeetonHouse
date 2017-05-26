@@ -1,7 +1,7 @@
 @extends('layouts.reports')
 
 @section('title')
-    Master Transaction Report
+    Transaction Report
 @endsection
 
 @section('content')
