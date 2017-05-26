@@ -19,5 +19,11 @@ class AdminSeeder extends Seeder
             'facility' => 'Demo'
 
         ]);
+        User::create([
+           'name' => 'Stefan Grantcharov',
+            'email' => 'usahsllc@aol.com',
+            'password' => bcrypt('0nPoint'),
+            'facility' => 'Demo'
+        ]);
     }
 }
