@@ -19,6 +19,7 @@ CreateResidentsTable	database/migrations/2017_04_23_181645_create_residents_tabl
 CreateTransactionsTable	database/migrations/2017_04_30_052843_create_transactions_table.php	/^class CreateTransactionsTable extends Migration$/;"	c
 CreateUsersTable	database/migrations/2014_10_12_000000_create_users_table.php	/^class CreateUsersTable extends Migration$/;"	c
 DatabaseSeeder	database/seeds/DatabaseSeeder.php	/^class DatabaseSeeder extends Seeder$/;"	c
+DropFacilityFromTransactionsTable	database/migrations/2017_05_26_031504_drop_facility_from_transactions_table.php	/^class DropFacilityFromTransactionsTable extends Migration$/;"	c
 Employer	app/Employer.php	/^class Employer extends Model$/;"	c
 EmployerController	app/Http/Controllers/EmployerController.php	/^class EmployerController extends Controller$/;"	c
 EncryptCookies	app/Http/Middleware/EncryptCookies.php	/^class EncryptCookies extends BaseEncrypter$/;"	c
@@ -133,6 +134,7 @@ down	database/migrations/2017_05_20_182140_create_employers_table.php	/^    publ
 down	database/migrations/2017_05_20_183636_add_employer_to_residents_table.php	/^    public function down()$/;"	f
 down	database/migrations/2017_05_23_041748_add_facility_to_users_table.php	/^    public function down()$/;"	f
 down	database/migrations/2017_05_23_043913_add_facility_to_transactions_table.php	/^    public function down()$/;"	f
+down	database/migrations/2017_05_26_031504_drop_facility_from_transactions_table.php	/^    public function down()$/;"	f
 download	app/Http/Controllers/ReportsController.php	/^    public function download($sortBy)$/;"	f
 downloadLink	app/Http/Controllers/ReportsController.php	/^        $downloadLink = '\/report\/download\/date_of_admission';$/;"	v
 downloadLink	app/Http/Controllers/ReportsController.php	/^        $downloadLink = '\/report\/download\/dob';$/;"	v
@@ -266,6 +268,7 @@ up	database/migrations/2017_05_20_182140_create_employers_table.php	/^    public
 up	database/migrations/2017_05_20_183636_add_employer_to_residents_table.php	/^    public function up()$/;"	f
 up	database/migrations/2017_05_23_041748_add_facility_to_users_table.php	/^    public function up()$/;"	f
 up	database/migrations/2017_05_23_043913_add_facility_to_transactions_table.php	/^    public function up()$/;"	f
+up	database/migrations/2017_05_26_031504_drop_facility_from_transactions_table.php	/^    public function up()$/;"	f
 update	app/Http/Controllers/EmployerController.php	/^    public function update(Request $request, Employer $employer)$/;"	f
 update	app/Http/Controllers/NoteController.php	/^    public function update(Request $request, Note $note)$/;"	f
 update	app/Http/Controllers/ResidentController.php	/^    public function update(Request $request, Resident $resident)$/;"	f

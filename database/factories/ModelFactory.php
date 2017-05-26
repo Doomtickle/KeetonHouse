@@ -59,7 +59,6 @@ $factory->define(App\Transaction::class, function (Faker\Generator $faker) {
         'reason' => $faker->randomElement($array = array('Urinalysis', 'Rides', 'Anger Management', 'Physical', 'Payment', 'Sustenance')),
         'debit' => $faker->numberBetween(0, 10000),
         'credit' => $faker->numberBetween(0, 10000),
-        'facility' => $faker->randomElement(['Panama City', 'Orlando', 'Tallahassee'])
     ];
 });
 

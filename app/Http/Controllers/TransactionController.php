@@ -59,7 +59,6 @@ class TransactionController extends Controller
             'reason'      => $request->reason,
             'debit'       => $debit,
             'credit'      => $credit,
-            'facility'    => \Auth::user()->facility
         ]);
 
         return back();
