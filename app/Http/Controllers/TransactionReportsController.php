@@ -50,7 +50,14 @@ class TransactionReportsController extends Controller
             })
             ->get();
 
-        return view('reports.transactions.transactionIndex', compact('transactions'));
+        $credits = $transactions->pluck('credit')->sum();
+        $debits  = $transactions->pluck('debit')->sum();
+        setlocale(LC_MONETARY, 'en_US.UTF-8');
+        $balance = money_format('%.2n', ($credits - $debits) / 100);
+
+        $class = ($balance > 0) ? 'credit' : 'debit';
+
+        return view('reports.transactions.transactionIndex', compact('transactions', 'balance', 'class'));
 
     }
 }

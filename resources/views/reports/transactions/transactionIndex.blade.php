@@ -6,6 +6,7 @@
 
 @section('content')
     <div class="column wide-table">
+        <p class="title">Balance: <span class="{{ $class }}">{{ $balance }}</span></p>
         <table class="table">
             <thead>
             <tr>
@@ -32,6 +33,7 @@
             @endforeach
             </tbody>
         </table>
+        <p class="title is-pulled-right">Balance: <span class="{{ $class }}">{{ $balance }}</span></p>
     </div>
 @endsection
 
