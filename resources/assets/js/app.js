@@ -108,6 +108,49 @@ $(document).ready(function () {
     });
 });
 
+$("#transactionCreate").submit(function (e) {
+    e.preventDefault();
+    $.ajaxPrefilter(function (options, originalOptions, xhr) { // this will run before each request
+        var token = $('meta[name="csrf-token"]').attr('content'); // or _token, whichever you are using
+
+        if (token) {
+            return xhr.setRequestHeader('X-CSRF-TOKEN', token); // adds directly to the XmlHttpRequest Object
+        }
+    });
+
+    var myurl = "/transaction";
+    $.ajax({
+        type: "POST",
+        url: myurl,
+        data: $(this).serialize(),
+        success: function (data) {
+            swal({
+                title: "Success!",
+                text: "Transaction Added!",
+                type: "success",
+                timer: 1400,
+                showConfirmButton: false
+            });
+            console.log(data);
+            $("#transactionCreate").trigger("reset");
+            $("#form-error-box").css("display", "none");
+        },
+        error: function (thrownError) {
+            $("#form-error-box").css("display", "block");
+            $.each(JSON.parse(thrownError.responseText), function (index, value) {
+                $("#form-error-list").append("<li> - " + value + "</li>" );
+            });
+
+            swal({
+                title: "Whoops!",
+                html: true,
+                type: "error",
+                text: "Unable to add transaction. Check your input and try again."
+            });
+        }
+    })
+});
+
 function getAge(dateStr) {
     var today = new Date();
     var birthDate = new Date(dateStr);

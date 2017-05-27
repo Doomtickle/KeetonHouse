@@ -61,7 +61,8 @@ class TransactionController extends Controller
             'credit'      => $credit,
         ]);
 
-        return back();
+        return response()->json($transaction);
+
     }
 
     /**
