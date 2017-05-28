@@ -22,50 +22,46 @@ new Vue({
 
 $(document).ready(function () {
     $(".race").select2();
+    $("#payment-method").select2();
+    $("#referral-source").select2();
+    $("#status").select2();
+    $("#status-at-discharge").select2();
+    $("#program-level").select2();
+    $("#payment-method").select2();
+    $("#referral-source").select2();
+    $("#drug").select2();
+
+    $("#reason").select2();
+    $("#transaction_resident").select2();
+    $("#transaction_date").select2();
+    $("#transaction_type").select2();
+
+    $("#sort_by").select2();
+
     $("#dob").flatpickr({
         altInput: true,
         onChange: function (selectedDates, dateStr, instance) {
             $("#age").val(getAge(dateStr));
         }
     });
-    $("#payment-method").select2();
-    $("#referral-source").select2();
-    $("#status").select2();
-    $("#status").select2();
-    $("#status-at-discharge").select2();
-    $("#treatment-level-placement").select2();
-    $("#program-level").select2();
-    $("#payment-method").select2();
-    $("#referral-source").select2();
-    $("#drug").select2();
-    $("#reason").select2();
-    $("#transaction_resident").select2();
-    $("#transaction_date").select2();
-    $("#transaction_type").select2();
-    $("#sort_by").select2();
-
-
     $("#note-date").flatpickr();
     $("#date_of_admission").flatpickr({
         onChange: function (selectedDates, dateStr, instance) {
             var date = new moment(dateStr);
             date.add(6, "M");
-            console.log(date);
 
             $("#projected_date_of_discharge").val(date.format("Y-M-D"));
         }
     });
 
     $("#projected_date_of_discharge").flatpickr({});
-
     $("#actual_date_of_discharge").flatpickr({});
-
     $("#employment_date").flatpickr({});
-
     $("#transaction_date_calendar").flatpickr({});
+    $("#residentCreate").on("submit", function (e) {
 
-    $("#residentCreate").submit(function (e) {
         e.preventDefault();
+
         $.ajaxPrefilter(function (options, originalOptions, xhr) { // this will run before each request
             var token = $('meta[name="csrf-token"]').attr('content'); // or _token, whichever you are using
 
@@ -73,7 +69,6 @@ $(document).ready(function () {
                 return xhr.setRequestHeader('X-CSRF-TOKEN', token); // adds directly to the XmlHttpRequest Object
             }
         });
-
         var myurl = "/resident";
         $.ajax({
             type: "POST",
@@ -89,14 +84,14 @@ $(document).ready(function () {
                 });
                 $("#residentCreate").trigger("reset");
                 $("#form-error-box").css("display", "none");
-                $("#residentCreate").unbind("submit").submit();
+                $("select").trigger("change");
             },
             error: function (thrownError) {
+                $("#form-error-list").empty();
                 $("#form-error-box").css("display", "block");
                 $.each(JSON.parse(thrownError.responseText), function (index, value) {
-                    $("#form-error-list").append("<li> - " + value + "</li>" );
+                    $("#form-error-list").append("<li> - " + value + "</li>");
                 });
-
                 swal({
                     title: "Whoops!",
                     html: true,
@@ -108,7 +103,7 @@ $(document).ready(function () {
     });
 });
 
-$("#transactionCreate").submit(function (e) {
+$("#transactionCreate").on("submit", function (e) {
     e.preventDefault();
     $.ajaxPrefilter(function (options, originalOptions, xhr) { // this will run before each request
         var token = $('meta[name="csrf-token"]').attr('content'); // or _token, whichever you are using
@@ -134,11 +129,21 @@ $("#transactionCreate").submit(function (e) {
             console.log(data);
             $("#transactionCreate").trigger("reset");
             $("#form-error-box").css("display", "none");
+            $("tbody").append(
+                '<tr class="has-text-centered">' +
+                '<td>' + data.id + '</td>' +
+                '<td>' + data.date + '</td>' +
+                '<td>' + data.reason + '</td>' +
+                '<td>' + (data.debit / 100) + '</td>' +
+                '<td>' + (data.credit) / 100 +'</td>' +
+                '</tr>'
+            );
         },
         error: function (thrownError) {
+            $("#form-error-list").empty();
             $("#form-error-box").css("display", "block");
             $.each(JSON.parse(thrownError.responseText), function (index, value) {
-                $("#form-error-list").append("<li> - " + value + "</li>" );
+                $("#form-error-list").append("<li> - " + value + "</li>");
             });
 
             swal({

@@ -1,8 +1,8 @@
+<div id="form-error-box" class="column is-full notification is-danger" style="display:none">
+    <ul id="form-error-list">
+    </ul>
+</div>
 <div class="columns">
-    <div id="form-error-box" class="column is-full notification is-danger" style="display:none">
-        <ul id="form-error-list">
-        </ul>
-    </div>
     <form action="{{ route('transaction.store') }}" method="POST" id="transactionCreate">
         <input type="hidden" name="facility" value="{{ \Auth::user()->facility }}">
         <div class="column">

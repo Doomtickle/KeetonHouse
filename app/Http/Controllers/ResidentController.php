@@ -58,7 +58,6 @@ class ResidentController extends Controller
             'date_of_admission' => 'required',
             'projected_date_of_discharge' => 'required',
             'status' => 'required',
-            'treatment_level_placement' => 'required',
             'counselor' => 'required',
             'program_level' => 'required',
             'payment_method' => 'required',
@@ -102,6 +101,27 @@ class ResidentController extends Controller
      */
     public function update(Request $request, Resident $resident)
     {
+        $this->validate($request, [
+
+            'last_name' => 'required',
+            'first_name' => 'required',
+            'middle_initial' => 'required',
+            'sex' => 'required',
+            'race' => 'required',
+            'document_number' => 'required',
+            'service_center_number' => 'required',
+            'dob' => 'required',
+            'age' => 'required',
+            'drug' => 'required',
+            'date_of_admission' => 'required',
+            'projected_date_of_discharge' => 'required',
+            'status' => 'required',
+            'counselor' => 'required',
+            'program_level' => 'required',
+            'payment_method' => 'required',
+            'referral_source' => 'required',
+        ]);
+
         $resident->update($request->all());
 
         return view('home');

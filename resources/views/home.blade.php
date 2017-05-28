@@ -13,23 +13,14 @@
                 <div class="level-item has-text-centered">
                     <div class="column">
                         <p class="heading">Residents</p>
-                        <p class="title">{{ App\Resident::all()->count() }}</p>
+                        <p class="title">{{ $residents->count() }}</p>
                     </div>
                 </div>
                 <div class="level-item has-text-centered">
                     <div class="column">
                         <p class="heading">Current Balance</p>
-                        <p class="title green">
-                            ${{
-                            number_format(
-                            App\Resident::
-                            where('residents.facility', \Auth::user()->facility)
-                            ->join('transactions', 'residents.id', '=', 'transactions.resident_id')
-                            ->sum('transactions.credit')
-                            - //minus
-                            App\Resident::where('residents.facility', \Auth::user()->facility)
-                            ->join('transactions', 'residents.id', '=', 'transactions.resident_id')
-                            ->sum('transactions.debit'), 2, '.', ',') }}
+                        <p class="title">
+                            ${{ $balance }}
                         </p>
                     </div>
                 </div>

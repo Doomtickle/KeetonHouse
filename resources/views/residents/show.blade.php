@@ -23,7 +23,6 @@
                     <p><strong>Acutal date of discharge: </strong>{{ $resident->actual_date_of_discharge }}</p>
                     <p><strong>Status: </strong>{{ $resident->status }}</p>
                     <p><strong>Status at discharge: </strong>{{ $resident->status_at_discharge }}</p>
-                    <p><strong>Treatment level placement: </strong>{{ $resident->treatment_level_placement }}</p>
                     <p><strong>Counselor: </strong>{{ $resident->counselor }}</p>
                     <p><strong>Program level: </strong>{{ $resident->program_level }}</p>
                     <p><strong>Employer: </strong>{{ $resident->employer }}</p>

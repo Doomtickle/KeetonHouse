@@ -14,7 +14,7 @@
                     typing in the search box below to find any resident quickly.
                 </div>
 
-                <a href="/resident/create" class="button is-primary" style="margin-top: 30px; margin-left:20px;">Add a
+                <a href="/resident/create" class="button is-primary is-large" style="margin-top: 30px; margin-left:20px;">Add a
                     new resident</a>
                 <p style="margin-left:10px;"><input type="text" class="quicksearch input column is-3 is-large"
                                                     placeholder="Search" autofocus="autofocus"/></p>
@@ -35,9 +35,9 @@
                                         <div class="content">
                                             <p><strong>Sex: </strong>{{ $resident->sex }}</p>
                                             <p><strong>Race: </strong>{{ $resident->race }}</p>
-                                            <p><strong>Service Center #: </strong>{{ $resident->service_center_number }}
+                                            <p><strong>SC #: </strong>{{ $resident->service_center_number }}
                                             </p>
-                                            <p><strong>DOB: </strong>{{ $resident->dob }}</p>
+                                            <p><strong>DOB: </strong>{{ Carbon\Carbon::parse($resident->dob)->format('F d, Y') }}</p>
                                             <p><strong>Age: </strong>{{ $resident->age }}</p>
                                         </div>
                                     </div>

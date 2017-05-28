@@ -20,7 +20,6 @@
                 <th>Actual Discharge</th>
                 <th>Status</th>
                 <th>Status at discharge</th>
-                <th>Treatment Level Placement</th>
                 <th>Counselor</th>
                 <th>Program Level</th>
                 <th>Employer</th>
@@ -47,7 +46,6 @@
                     <td>{{ $resident->actual_date_of_discharge }}</td>
                     <td>{{ $resident->status }}</td>
                     <td>{{ $resident->status_at_discharge }}</td>
-                    <td>{{ $resident->treatment_level_placement }}</td>
                     <td>{{ $resident->counselor }}</td>
                     <td>{{ $resident->program_level }}</td>
                     <td>{{ $resident->employer }}</td>

@@ -1,3 +1,12 @@
+@if(count($errors) > 0)
+    <div id="form-error-box" class="column is-offset-3 is-6 notification is-danger" style="margin-top: 30px;">
+        <ul id="form-error-list">
+            @foreach($errors->all() as $error)
+                <li> - {{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
 <form action="{{ route('resident.update', $resident->id) }}" method="POST" id="residentEdit">
     {{csrf_field()}}
     {{ method_field("PATCH") }}
@@ -97,6 +106,7 @@
                         <p class="control">
                             <span class="select">
                                 <select class="race" name="race">
+                                    <option value="{{ $resident->race }}">{{ $resident->race }}</option>
                                     @if($resident->race !== 'American Indian or Alaskan Native')
                                         <option value="American Indian or Alaskan Native">American Indian or Alaskan Native</option>
                                     @endif
@@ -201,26 +211,14 @@
                                 @if($resident->status_at_discharge !== 'Successful')
                                     <option value="Successful">Successful</option>
                                 @endif
-                                @if($resident->status_at_discharge !== 'Unsuccessful')
-                                    <option value="Unsuccessful">Unsuccessful</option>
-                                @endif
-                                @if($resident->status_at_discharge !== 'Abscond')
-                                    <option value="Abscond">Abscond</option>
-                                @endif
                                 @if($resident->status_at_discharge !== 'Administrative')
                                     <option value="Administrative">Administrative</option>
                                 @endif
-                                @if($resident->status_at_discharge !== 'Drug Use')
-                                    <option value="Drug Use">Drug Use</option>
+                                @if($resident->status_at_discharge !== 'Unsuccessful - Abscond')
+                                    <option value="Unsuccessful - Abscond">Unsuccessful - Abscond</option>
                                 @endif
-                                @if($resident->status_at_discharge !== 'Non-Payment')
-                                    <option value="Non-Payment">Non-Payment</option>
-                                @endif
-                                @if($resident->status_at_discharge !== 'Absenteeism')
-                                    <option value="Absenteeism">Absenteeism</option>
-                                @endif
-                                @if($resident->status_at_discharge !== 'ReArrest')
-                                    <option value="ReArrest">ReArrest</option>
+                                @if($resident->status_at_discharge !== 'Unsuccessful - Disciplinary')
+                                    <option value="Unsuccessful - Disciplinary">Unsuccessful - Disciplinary</option>
                                 @endif
                             </select>
                         </span>
@@ -229,34 +227,6 @@
             </div>
             <hr>
             <div class="columns">
-                <div class="column">
-                    <label class="label">Treatment Level</label>
-                    <p class="control">
-                        <span class="select">
-                            <select name="treatment_level_placement" id="treatment-level-placement">
-                                <option value="{{ $resident->treatment_level_placement }}">{{ $resident->treatment_level_placement }}</option>
-                                @if($resident->treatment_level_placement !== 'Residential II')
-                                    <option value="Residential II">Residential II</option>
-                                @endif
-                                @if($resident->treatment_level_placement !== 'OP Level I')
-                                    <option value="OP Level I">OP Level I</option>
-                                @endif
-                                @if($resident->treatment_level_placement !== 'OP Level II')
-                                    <option value="OP Level II">OP Level II</option>
-                                @endif
-                                @if($resident->treatment_level_placement !== 'OP Level III')
-                                    <option value="OP Level III">OP Level III</option>
-                                @endif
-                                @if($resident->treatment_level_placement !== 'OP Level IV')
-                                    <option value="OP Level IV">OP Level IV</option>
-                                @endif
-                                @if($resident->treatment_level_placement !== 'OP Day/Night')
-                                    <option value="OP Day/Night">OP Day/Night</option>
-                                @endif
-                            </select>
-                        </span>
-                    </p>
-                </div>
                 <div class="column">
                     <label class="label">Counselor</label>
                     <p class="control">

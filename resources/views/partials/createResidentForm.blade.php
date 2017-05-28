@@ -65,7 +65,7 @@
             <hr>
             <div class="column is-offset-1">
                 <div class="columns">
-                    <div class="column is-half">
+                    <div class="column is-one-third">
                         <label class="label">Sex <sup>*</sup></label>
                         <label class="radio">
                             <input type="radio" name="sex" value="M">Male
@@ -79,8 +79,13 @@
                         <p class="control">
                             <span class="select">
                                 <select class="race" name="race">
-                                    <option value="Caucasian">Caucasian</option>
-                                    <option value="African American">African American</option>
+                                    <option value="">Select Race</option>
+                                    <option value="American Indian or Alaskan Native">American Indian or Alaskan Native</option>
+                                    <option value="Asian">Asian</option>
+                                    <option value="Black or African American">Black or African American</option>
+                                    <option value="Native Hawaiian or Other Pacific Islander">Native Hawaiian or Other Pacific Islander</option>
+                                    <option value="White">White</option>
+                                    <option value="Hispanic or Latino">Hispanic or Latino</option>
                                 </select>
                             </span>
                         </p>
@@ -96,7 +101,7 @@
                     </p>
                 </div>
                 <div class="column">
-                    <label class="label">Service Center Number <sup>*</sup></label>
+                    <label class="label">SC#<sup>*</sup></label>
                     <p class="control">
                         <input class="input" type="text" name="service_center_number">
                     </p>
@@ -149,13 +154,9 @@
                             <select name="status_at_discharge" id="status-at-discharge">
                                 <option value="">Select Status at Discharge</option>
                                 <option value="Successful">Successful</option>
-                                <option value="Unsuccessful">Unsuccessful</option>
-                                <option value="Abscond">Abscond</option>
                                 <option value="Administrative">Administrative</option>
-                                <option value="Drug Use">Drug Use</option>
-                                <option value="Non-Payment">Non-Payment</option>
-                                <option value="Absenteeism">Absenteeism</option>
-                                <option value="ReArrest">ReArrest</option>
+                                <option value="Unsuccessful - Abscond">Unsuccessful - Abscond</option>
+                                <option value="Unsuccessful - Disciplinary">Unsuccessful - Disciplinary</option>
                             </select>
                         </span>
                     </p>
@@ -163,22 +164,6 @@
             </div>
             <hr>
             <div class="columns">
-                <div class="column">
-                    <label class="label">Treatment Level <sup>*</sup></label>
-                    <p class="control">
-                        <span class="select">
-                            <select name="treatment_level_placement" id="treatment-level-placement">
-                                <option value="">Select treatment level</option>
-                                <option value="Residential II">Residential II</option>
-                                <option value="OP Level I">OP Level I</option>
-                                <option value="OP Level II">OP Level II</option>
-                                <option value="OP Level III">OP Level III</option>
-                                <option value="OP Level IV">OP Level IV</option>
-                                <option value="OP Day/Night">OP Day/Night</option>
-                            </select>
-                        </span>
-                    </p>
-                </div>
                 <div class="column">
                     <label class="label">Counselor <sup>*</sup></label>
                     <p class="control">
@@ -239,8 +224,6 @@
                                 <option value="">Select referral source</option>
                                 <option value="DOC">DOC</option>
                                 <option value="WCFDI">WCFDI</option>
-                                <option value="County">County</option>
-                                <option value="Federal">Federal</option>
                             </select>
                         </span>
                     </p>

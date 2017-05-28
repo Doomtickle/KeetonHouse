@@ -55,7 +55,7 @@ class TransactionReportsController extends Controller
         setlocale(LC_MONETARY, 'en_US.UTF-8');
         $balance = money_format('%.2n', ($credits - $debits) / 100);
 
-        $class = ($balance > 0) ? 'credit' : 'debit';
+        $class = ($credits - $debits > 0) ? 'credit' : 'debit';
 
         return view('reports.transactions.transactionIndex', compact('transactions', 'balance', 'class'));
 

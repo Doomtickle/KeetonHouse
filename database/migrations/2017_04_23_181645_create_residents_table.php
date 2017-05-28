@@ -30,7 +30,6 @@ class CreateResidentsTable extends Migration
             $table->date('actual_date_of_discharge')->nullable();
             $table->string('status');
             $table->string('status_at_discharge')->nullable();
-            $table->string('treatment_level_placement');
             $table->string('counselor')->nullable();
             $table->string('program_level');
             $table->date('employment_date')->nullable();

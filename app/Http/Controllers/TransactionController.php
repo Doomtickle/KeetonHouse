@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\TransactionRequest;
 use App\Resident;
 use App\Transaction;
 use Illuminate\Http\Request;
@@ -40,18 +41,14 @@ class TransactionController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request $request
+     * @param TransactionRequest|Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(TransactionRequest $request)
     {
         $debit = Transaction::parseCurrency($request->debit);
         $credit = Transaction::parseCurrency($request->credit);
 
-        $this->validate($request, [
-            'date'   => 'required',
-            'reason' => 'required',
-        ]);
 
         $transaction = Transaction::create([
             'resident_id' => $request->resident_id,
