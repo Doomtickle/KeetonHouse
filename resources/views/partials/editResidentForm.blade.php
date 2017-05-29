@@ -29,7 +29,7 @@
                             <input class="input" type="text" name="last_name" value="{{ $resident->last_name }}">
                         </p>
                     </div>
-                    <div class="column is-1">
+                    <div class="column is-2">
                         <label class="label has-text-centered">MI</label>
                         <p class="control">
                             <input class="input" type="text" name="middle_initial"
@@ -41,7 +41,10 @@
             <div class="columns">
                 <div class="column is-3">
                     <label class="label">Date of birth</label>
-                    <p class="control">
+                    <p class="control has-icon">
+                        <span class="icon">
+                            <i class="fa fa-calendar"></i>
+                        </span>
                         <input class="input" type="text" name="dob" id="dob" value="{{ $resident->dob }}">
                     </p>
                 </div>
@@ -141,7 +144,7 @@
                     </p>
                 </div>
                 <div class="column">
-                    <label class="label">Service Center Number</label>
+                    <label class="label">SC #</label>
                     <p class="control">
                         <input class="input" type="text" name="service_center_number"
                                value="{{ $resident->service_center_number }}">
@@ -152,21 +155,30 @@
             <div class="columns">
                 <div class="column">
                     <label class="label">Date of admission</label>
-                    <p class="control">
+                    <p class="control has-icon">
+                        <span class="icon">
+                            <i class="fa fa-calendar"></i>
+                        </span>
                         <input class="input" type="text" name="date_of_admission" id="date_of_admission"
                                value="{{ $resident->date_of_admission }}">
                     </p>
                 </div>
                 <div class="column">
                     <label class="label">Projected Discharge</label>
-                    <p class="control">
+                    <p class="control has-icon">
+                        <span class="icon">
+                            <i class="fa fa-calendar"></i>
+                        </span>
                         <input class="input" type="text" name="projected_date_of_discharge"
                                id="projected_date_of_discharge" value="{{ $resident->projected_date_of_discharge }}">
                     </p>
                 </div>
                 <div class="column">
                     <label class="label">Actual Date of Discharge</label>
-                    <p class="control">
+                    <p class="control has-icon">
+                        <span class="icon">
+                            <i class="fa fa-calendar"></i>
+                        </span>
                         <input class="input" type="text" name="actual_date_of_discharge" id="actual_date_of_discharge"
                                value="{{ $resident->actual_date_of_discharge }}">
                     </p>
@@ -260,7 +272,10 @@
                 </div>
                 <div class="column is-half">
                     <label class="label">Employment Date</label>
-                    <p class="control">
+                    <p class="control has-icon">
+                        <span class="icon">
+                            <i class="fa fa-calendar"></i>
+                        </span>
                         <input class="input" type="text" name="employment_date" id="employment_date"
                                value="{{ $resident->employment_date }}">
                     </p>
@@ -310,12 +325,6 @@
                                 @endif
                                 @if($resident->referral_source !== 'WCFDI')
                                     <option value="WCFDI">WCFDI</option>
-                                @endif
-                                @if($resident->referral_source !== 'County')
-                                    <option value="County">County</option>
-                                @endif
-                                @if($resident->referral_source !== 'Federal')
-                                    <option value="Federal">Federal</option>
                                 @endif
                             </select>
                         </span>

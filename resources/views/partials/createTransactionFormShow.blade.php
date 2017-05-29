@@ -11,8 +11,11 @@
                 <input type="hidden" name="resident_id" value="{{ $resident->id }}">
                 <div class="column">
                     <label class="label">Date of transaction</label>
-                    <p class="control">
+                    <p class="control has-icon">
                         <input class="input" type="text" name="date" id="transaction_date_calendar">
+                        <span class="icon">
+                            <i class="fa fa-calendar"></i>
+                        </span>
                     </p>
                 </div>
                 <div class="column">

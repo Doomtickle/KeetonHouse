@@ -32,7 +32,10 @@
             <div class="columns">
                 <div class="column is-3">
                     <label class="label">Date of birth <sup>*</sup></label>
-                    <p class="control">
+                    <p class="control has-icon">
+                        <span class="icon">
+                            <i class="fa fa-calendar"></i>
+                        </span>
                         <input class="input" type="text" name="dob" id="dob">
                     </p>
                 </div>
@@ -111,20 +114,29 @@
             <div class="columns">
                 <div class="column">
                     <label class="label">Date of admission <sup>*</sup></label>
-                    <p class="control">
+                    <p class="control has-icon">
+                        <span class="icon">
+                            <i class="fa fa-calendar"></i>
+                        </span>
                         <input class="input" type="text" name="date_of_admission" id="date_of_admission">
                     </p>
                 </div>
                 <div class="column">
                     <label class="label">Projected Discharge <sup>*</sup></label>
-                    <p class="control">
+                    <p class="control has-icon">
+                        <span class="icon">
+                            <i class="fa fa-calendar"></i>
+                        </span>
                         <input class="input" type="text" name="projected_date_of_discharge"
                                id="projected_date_of_discharge">
                     </p>
                 </div>
                 <div class="column">
                     <label class="label">Actual Date of Discharge</label>
-                    <p class="control">
+                    <p class="control has-icon">
+                        <span class="icon">
+                            <i class="fa fa-calendar"></i>
+                        </span>
                         <input class="input" type="text" name="actual_date_of_discharge" id="actual_date_of_discharge">
                     </p>
                 </div>
@@ -192,7 +204,10 @@
                 </div>
                 <div class="column is-half">
                     <label class="label">Employment Date</label>
-                    <p class="control">
+                    <p class="control has-icon">
+                        <span class="icon">
+                            <i class="fa fa-calendar"></i>
+                        </span>
                         <input class="input" type="text" name="employment_date" id="employment_date">
                     </p>
                 </div>

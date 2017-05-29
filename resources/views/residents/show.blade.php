@@ -44,14 +44,17 @@
                         <input type="hidden" name="updated_by" value="{{ \Auth::user()->id }}">
                         <div class="column is-2">
                             <label class="label">Date</label>
-                            <p class="control">
+                            <p class="control has-icon">
+                                <span class="icon">
+                                    <i class="fa fa-calendar"></i>
+                                </span>
                                 <input class="input" type="text" name="date" id="note-date">
                             </p>
                         </div>
-                        <div class="column is-5">
+                        <div class="column is-7">
                             <label class="label">Note</label>
                             <p class="control">
-                                <textarea class="textarea" name="note" id="note"></textarea>
+                                <textarea class="textarea" name="note" id="note" rows="5"></textarea>
                             </p>
                         </div>
                     </div>
