@@ -72,7 +72,7 @@
                 <th style="text-align:right;">Updated By</th>
             </tr>
             </thead>
-            <tbody>
+            <tbody id="transaction-table-body">
             @foreach($resident->notes as $note)
                 <tr>
                     <td>{{ $note->date }}</td>
@@ -92,7 +92,7 @@
             <section class="section">
                 <p class="subtitle notification is-info">Below is a list of all transactions
                     for {{ $resident->first_name }} {{ $resident->last_name }}</p>
-                <table class="table">
+                <table id="transaction-table" class="table">
                     <thead>
                     <tr>
                         <th>Transaction #</th>

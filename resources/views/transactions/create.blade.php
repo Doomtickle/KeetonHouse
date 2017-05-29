@@ -58,7 +58,7 @@
 @section('scripts.footer')
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-maskmoney/3.0.2/jquery.maskMoney.min.js"></script>
     <script>
-        $(document).ready(function(){
+        $(document).ready(function () {
             $("#debit").maskMoney({
                 'prefix': '$',
                 'allowZero': true,

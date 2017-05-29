@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\TransactionRequest;
 use App\Resident;
 use App\Transaction;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 
@@ -46,6 +47,7 @@ class TransactionController extends Controller
      */
     public function store(TransactionRequest $request)
     {
+        setlocale(LC_MONETARY, 'en_US.UTF-8');
         $debit = Transaction::parseCurrency($request->debit);
         $credit = Transaction::parseCurrency($request->credit);
 
@@ -58,8 +60,17 @@ class TransactionController extends Controller
             'credit'      => $credit,
         ]);
 
-        return response()->json($transaction);
 
+        $data = array(
+            'id' => $transaction->id,
+            'date' => Carbon::parse($transaction->date)->format('F d, Y'),
+            'reason' => $transaction->reason,
+            'debit' => money_format('%.2n', ($debit/100)),
+            'credit' => money_format('%.2n', ($credit / 100))
+
+        );
+
+        return response()->json($data);
     }
 
     /**

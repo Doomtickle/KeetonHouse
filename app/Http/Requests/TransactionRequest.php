@@ -26,13 +26,15 @@ class TransactionRequest extends FormRequest
         return [
             'date'   => 'required',
             'reason' => 'required',
+            'debit'  => 'required_unless:credit,value',
         ];
     }
 
     public function messages()
     {
-       return[
-           'reason.required' => 'The transaction type field is required'
-       ];
+        return [
+            'reason.required'       => 'The transaction type field is required',
+            'debit.required_unless' => 'You must enter a value for either a debit or credit'
+        ];
     }
 }

@@ -129,15 +129,17 @@ $("#transactionCreate").on("submit", function (e) {
             console.log(data);
             $("#transactionCreate").trigger("reset");
             $("#form-error-box").css("display", "none");
-            $("tbody").append(
-                '<tr class="has-text-centered">' +
-                '<td>' + data.id + '</td>' +
-                '<td>' + data.date + '</td>' +
-                '<td>' + data.reason + '</td>' +
-                '<td>' + (data.debit / 100) + '</td>' +
-                '<td>' + (data.credit) / 100 +'</td>' +
-                '</tr>'
-            );
+            var table = $("#transaction-table").DataTable();
+
+            table.row.add([
+                "<strong>" + data.id + "</strong>",
+                data.date,
+                data.reason,
+                "<span class='debit'> - " + data.debit + "</span>",
+                "<span class='credit'>" + data.credit + "</span>"
+            ]).draw();
+            $("select").trigger("change");
+
         },
         error: function (thrownError) {
             $("#form-error-list").empty();

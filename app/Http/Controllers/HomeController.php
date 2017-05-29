@@ -24,12 +24,12 @@ class HomeController extends Controller
     public function index()
     {
         $residents = Resident::where('facility', \Auth::user()->facility);
-        $credits = Resident::where('residents.facility', \Auth::user()->facility)
-            ->join('transactions', 'residents.id', '=', 'transactions.resident_id')
-            ->pluck('transactions.credit')->sum();
-        $debits  = Resident::where('residents.facility', \Auth::user()->facility)
-            ->join('transactions', 'residents.id', '=', 'transactions.resident_id')
-            ->pluck('transactions.debit')->sum();
+        $credits   = Resident::where('residents.facility', \Auth::user()->facility)
+                        ->join('transactions', 'residents.id', '=', 'transactions.resident_id')
+                        ->pluck('transactions.credit')->sum();
+        $debits    = Resident::where('residents.facility', \Auth::user()->facility)
+                        ->join('transactions', 'residents.id', '=', 'transactions.resident_id')
+                        ->pluck('transactions.debit')->sum();
 
         $balance = ($credits - $debits) / 100;
 

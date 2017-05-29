@@ -16,13 +16,14 @@ class TransactionReportsController extends Controller
 
     public function select()
     {
-        $residents = Resident::all()->sortBy('last_name');
+        $residents = Resident::where('facility', \Auth::user()->facility)->get()->sortBy('last_name');
 
         return view('reports.transactions.select', compact('residents', 'types'));
     }
 
     public function runReport(Request $request)
     {
+        setlocale(LC_MONETARY, 'en_US.UTF-8');
         $resident_id = $request->resident_id;
         $date        = isset($request->date) ? Carbon::parse($request->date) : null;
         $month       = null;
@@ -52,7 +53,6 @@ class TransactionReportsController extends Controller
 
         $credits = $transactions->pluck('credit')->sum();
         $debits  = $transactions->pluck('debit')->sum();
-        setlocale(LC_MONETARY, 'en_US.UTF-8');
         $balance = money_format('%.2n', ($credits - $debits) / 100);
 
         $class = ($credits - $debits > 0) ? 'credit' : 'debit';
