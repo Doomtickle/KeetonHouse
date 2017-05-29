@@ -20,7 +20,7 @@
                     <div class="column">
                         <p class="heading">Current Balance</p>
                         <p class="title">
-                            ${{ $balance }}
+                            {{ $balance }}
                         </p>
                     </div>
                 </div>

@@ -85,7 +85,7 @@ app	public/index.php	/^$app = require_once __DIR__.'\/..\/bootstrap\/app.php';$/
 app	tests/CreatesApplication.php	/^        $app = require __DIR__.'\/..\/bootstrap\/app.php';$/;"	v
 as	config/mail.php	/^    | Laravel supports both SMTP and PHP's "mail" function as drivers for the$/;"	f
 authorize	app/Http/Requests/TransactionRequest.php	/^    public function authorize()$/;"	f
-balance	app/Http/Controllers/HomeController.php	/^        $balance = ($credits - $debits) \/ 100;$/;"	v
+balance	app/Http/Controllers/HomeController.php	/^        $balance = money_format('%.2n', ($credits - $debits) \/ 100);$/;"	v
 balance	app/Http/Controllers/TransactionReportsController.php	/^        $balance = money_format('%.2n', ($credits - $debits) \/ 100);$/;"	v
 balanceColor	resources/views/residents/show.blade.php	/^                        $balanceColor = 'credit';$/;"	v
 balanceColor	resources/views/residents/show.blade.php	/^                    $balanceColor = 'debit';$/;"	v

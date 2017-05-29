@@ -23,6 +23,7 @@ class HomeController extends Controller
      */
     public function index()
     {
+        setlocale(LC_MONETARY, 'en_US.UTF-8');
         $residents = Resident::where('facility', \Auth::user()->facility);
         $credits   = Resident::where('residents.facility', \Auth::user()->facility)
                         ->join('transactions', 'residents.id', '=', 'transactions.resident_id')
@@ -31,7 +32,7 @@ class HomeController extends Controller
                         ->join('transactions', 'residents.id', '=', 'transactions.resident_id')
                         ->pluck('transactions.debit')->sum();
 
-        $balance = ($credits - $debits) / 100;
+        $balance = money_format('%.2n', ($credits - $debits) / 100);
 
         return view('home', compact('balance', 'residents'));
     }
