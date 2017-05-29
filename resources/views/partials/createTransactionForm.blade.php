@@ -1,3 +1,7 @@
+<div id="form-error-box" class="column is-full notification is-danger" style="display:none">
+    <ul id="form-error-list">
+    </ul>
+</div>
 <div class="columns">
     <form action="{{ route('transaction.store') }}" method="POST" id="transactionCreate">
         <div class="column">
@@ -6,7 +10,10 @@
                 <input type="hidden" name="resident_id" value="{{ $residentInfo->id }}">
                 <div class="column">
                     <label class="label">Date of transaction</label>
-                    <p class="control">
+                    <p class="control has-icon">
+                        <span class="icon">
+                            <i class="fa fa-calendar"></i>
+                        </span>
                         <input class="input" type="text" name="date" id="transaction_date_calendar">
                     </p>
                 </div>

@@ -34,9 +34,9 @@ class TransactionController extends Controller
      */
     public function create(Resident $resident)
     {
-        $residentInfo = $resident->with('transactions')->find($resident->id);
+        $resident = $resident->with('transactions')->find($resident->id);
 
-        return view('transactions.create', compact('residentInfo'));
+        return view('transactions.create', compact('resident'));
     }
 
     /**
