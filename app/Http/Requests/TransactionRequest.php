@@ -26,7 +26,7 @@ class TransactionRequest extends FormRequest
         return [
             'date'   => 'required',
             'reason' => 'required',
-            'debit'  => 'required_unless:credit,value',
+            'debit'  => 'required_without:credit',
         ];
     }
 

@@ -6,6 +6,7 @@ var moment = require('moment');
 var flatpickr = require("flatpickr");
 
 
+
 new Vue({
     el: '#root',
     data(){
@@ -138,6 +139,9 @@ $("#transactionCreate").on("submit", function (e) {
                 "<span class='debit'> - " + data.debit + "</span>",
                 "<span class='credit'>" + data.credit + "</span>"
             ]).draw();
+            $("#current_balance").html(data.current_balance);
+            $("#current_balance").removeClass();
+            $("#current_balance").addClass(data.class);
             $("select").trigger("change");
 
         },

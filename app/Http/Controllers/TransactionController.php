@@ -48,7 +48,7 @@ class TransactionController extends Controller
     public function store(TransactionRequest $request)
     {
         setlocale(LC_MONETARY, 'en_US.UTF-8');
-        $debit = Transaction::parseCurrency($request->debit);
+        $debit  = Transaction::parseCurrency($request->debit);
         $credit = Transaction::parseCurrency($request->credit);
 
 
@@ -60,14 +60,27 @@ class TransactionController extends Controller
             'credit'      => $credit,
         ]);
 
+        $residentCredits = Transaction::where('resident_id', $transaction->resident_id)
+            ->pluck('credit')->sum();
+        $residentDebits  = Transaction::where('resident_id', $transaction->resident_id)
+            ->pluck('debit')->sum();
+
+        if ((($residentCredits / 100) - ($residentDebits / 100)) >= 0) {
+            $class = 'credit';
+        } else {
+            $class = 'debit';
+        }
+
+        $currentBalance = money_format('%.2n', (($residentCredits - $residentDebits) / 100));
 
         $data = array(
-            'id' => $transaction->id,
-            'date' => Carbon::parse($transaction->date)->format('F d, Y'),
-            'reason' => $transaction->reason,
-            'debit' => money_format('%.2n', ($debit/100)),
-            'credit' => money_format('%.2n', ($credit / 100))
-
+            'id'              => $transaction->id,
+            'date'            => Carbon::parse($transaction->date)->format('F d, Y'),
+            'reason'          => $transaction->reason,
+            'debit'           => money_format('%.2n', ($debit/100)),
+            'credit'          => money_format('%.2n', ($credit/100)),
+            'current_balance' => $currentBalance,
+            'class'           => $class
         );
 
         return response()->json($data);

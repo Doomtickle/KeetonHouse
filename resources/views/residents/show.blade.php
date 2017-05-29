@@ -75,7 +75,7 @@
             <tbody id="transaction-table-body">
             @foreach($resident->notes as $note)
                 <tr>
-                    <td>{{ $note->date }}</td>
+                    <td>{{ Carbon\Carbon::parse($note->date)->format('F d, Y') }}</td>
                     <td style="word-wrap: break-word;">{{ $note->note }}</td>
                     <td style="text-align:right;">{{ App\User::find($note->updated_by)->name }}</td>
                 </tr>
@@ -132,7 +132,7 @@
                         $balanceColor = 'credit';
                 @endphp
                 <strong>Current Balance:</strong>
-                <span class="{{ $balanceColor }}">${{ number_format($currentBalance, 2, '.', ',') }}</span>
+                <span class="{{ $balanceColor }}" id="current_balance">${{ number_format($currentBalance, 2, '.', ',') }}</span>
             </p>
         </div>
     </div>
@@ -140,8 +140,12 @@
 @section('scripts.footer')
     <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-maskmoney/3.0.2/jquery.maskMoney.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.4/moment.min.js"></script>
+    <script src="//cdn.datatables.net/plug-ins/1.10.15/sorting/datetime-moment.js"></script>
     <script>
         $(document).ready(function () {
+            $.fn.dataTable.moment( 'MMMM D, YYYY' );
+
             $("#debit").maskMoney({
                 'prefix': '$',
                 'allowZero': true,
