@@ -25,5 +25,19 @@ class AdminSeeder extends Seeder
             'password' => bcrypt('0nPoint'),
             'facility' => 'Demo'
         ]);
+
+        User::create([
+            'name' => 'Karen Hall',
+            'email' => 'vpo@keetoncorrections.com',
+            'password' => bcrypt('Demo123'),
+            'facility' => 'Demo'
+        ]);
+
+        User::create([
+            'name' => 'Dylan Johnston',
+            'email' => 'dylan@kerigan.com',
+            'password' => bcrypt('Demo123'),
+            'facility' => 'Demo'
+        ]);
     }
 }
