@@ -6,7 +6,7 @@
 
 @section('content')
     <div class="column wide-table">
-        <p class="title">Total releases for selected date range: {{ $count }}
+        <p class="subtitle">Total releases for selected date range: <span class="title">{{ $count }}</span>
         <table class="table">
             <thead>
             <tr>
