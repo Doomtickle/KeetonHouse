@@ -32,6 +32,8 @@
                                 class="small-name">Resident&nbsp;Reports</span></a>
                     <a href="/transaction_reports" class="item"><span class="icon"><i class="fa fa-file-text"></i></span><span
                                 class="small-name">Transaction&nbsp;Reports</span></a>
+                    <a href="/facility_report/select" class="item"><span class="icon"><i class="fa fa-file-text"></i></span><span
+                                class="small-name">Facility&nbsp;Reports</span></a>
                 </div>
                 <div class="has-text-centered">
                     <form action="/logout" method="post">

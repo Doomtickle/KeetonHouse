@@ -125,6 +125,7 @@ class ResidentController extends Controller
         $resident->update($request->all());
 
         return view('home');
+
     }
 
     /**
