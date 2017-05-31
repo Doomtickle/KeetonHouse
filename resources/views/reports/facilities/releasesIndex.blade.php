@@ -4,6 +4,10 @@
     Releases Report
 @endsection
 
+@section('downloadButton')
+    <button class="button is-warning" onClick="window.print()">Print (Legal size)</button>
+@endsection
+
 @section('content')
     <div class="column wide-table">
         <p class="subtitle">Total releases for selected date range: <span class="title">{{ $count }}</span>

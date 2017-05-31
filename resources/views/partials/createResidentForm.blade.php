@@ -65,6 +65,14 @@
                     </p>
                 </div>
             </div>
+            <div class="columns">
+                <div class="column is-offset-1 is-8">
+                    <label class="label has-text-centered">Email <sup>*</sup></label>
+                    <p class="control">
+                        <input class="input" type="text" name="email">
+                    </p>
+                </div>
+            </div>
             <hr>
             <div class="column is-offset-1">
                 <div class="columns">
@@ -222,11 +230,7 @@
                                 <option value="">Select payment method</option>
                                 <option value="Nonsecure">Nonsecure</option>
                                 <option value="DOC Funded">DOC Funded</option>
-                                <option value="DOC Self Pay">DOC Self Pay</option>
-                                <option value="WCFDI Self Pay">WCFDI Self Pay</option>
                                 <option value="DOC Co-pay">DOC Co-pay</option>
-                                <option value="County Self Pay">County Self Pay</option>
-                                <option value="Federal Self Pay">Federal Self Pay</option>
                             </select>
                         </span>
                     </p>

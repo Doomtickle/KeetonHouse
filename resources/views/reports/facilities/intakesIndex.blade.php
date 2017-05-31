@@ -4,6 +4,10 @@
     Intakes Report
 @endsection
 
+@section('downloadButton')
+    <button class="button is-warning" onClick="window.print()">Print (Legal size)</button>
+@endsection
+
 @section('content')
     <div class="column wide-table">
         <p class="box subtitle">Total intakes for selected date range:

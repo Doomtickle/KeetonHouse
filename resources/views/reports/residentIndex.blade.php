@@ -6,9 +6,16 @@
 
 @section('downloadButton')
     <a href="{{ $downloadLink }}" class="button is-primary">Download to Excel</a>
+    <button class="button is-warning" onClick="window.print()">Print (Legal size)</button>
 @endsection
 
 @section('content')
+    <style type="text/css">
+        table { page-break-inside:auto }
+        tr    { page-break-inside:avoid; page-break-after:auto }
+        thead { display:table-header-group }
+        tfoot { display:table-footer-group }
+    </style>
     <div class="column wide-table">
         <table class="table">
             <thead>
@@ -19,7 +26,7 @@
                 <th>Sex</th>
                 <th>Race</th>
                 <th>Document Number</th>
-                <th>Service Center Number</th>
+                <th>SC #</th>
                 <th>DOB</th>
                 <th>Age</th>
                 <th>Drug of Choice</th>

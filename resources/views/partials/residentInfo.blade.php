@@ -1,4 +1,5 @@
 <div class="box is-flex single-resident-attributes">
+    <p><strong>Email:</strong>{{ $resident->email }}</p>
     <p><strong>Sex: </strong>{{ $resident->sex }}</p>
     <p><strong>Race: </strong>{{ $resident->race }}</p>
     <p><strong>Service Center #: </strong>{{ $resident->service_center_number }}</p>

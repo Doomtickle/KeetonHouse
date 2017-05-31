@@ -8,10 +8,11 @@
                 <th>Last Name</th>
                 <th>First Name</th>
                 <th>Middle Initial</th>
+                <th>Email</th>
                 <th>Sex</th>
                 <th>Race</th>
                 <th>Document Number</th>
-                <th>Service Center Number</th>
+                <th>SC #</th>
                 <th>DOB</th>
                 <th>Age</th>
                 <th>Drug of Choice</th>
@@ -34,6 +35,7 @@
                     <td>{{ $resident->last_name }}</td>
                     <td>{{ $resident->first_name }}</td>
                     <td>{{ $resident->middle_initial }}</td>
+                    <td>{{ $resident->email }}</td>
                     <td>{{ $resident->sex }}</td>
                     <td>{{ $resident->race }}</td>
                     <td>{{ $resident->document_number }}</td>

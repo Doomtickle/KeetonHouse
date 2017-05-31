@@ -92,6 +92,14 @@
                     </p>
                 </div>
             </div>
+            <div class="columns">
+                <div class="column is-offset-1 is-8">
+                    <label class="label has-text-centered">Email <sup>*</sup></label>
+                    <p class="control">
+                        <input class="input" type="text" name="email" value="{{ $resident->email }}">
+                    </p>
+                </div>
+            </div>
             <hr>
             <div class="column is-offset-1">
                 <div class="columns">
@@ -295,20 +303,8 @@
                                 @if($resident->payment_method !== 'DOC Funded')
                                     <option value="DOC Funded">DOC Funded</option>
                                 @endif
-                                @if($resident->payment_method !== 'DOC Self Pay')
-                                    <option value="DOC Self Pay">DOC Self Pay</option>
-                                @endif
-                                @if($resident->payment_method !== 'WCFDI Self Pay')
-                                    <option value="WCFDI Self Pay">WCFDI Self Pay</option>
-                                @endif
                                 @if($resident->payment_method !== 'DOC Co-pay')
                                     <option value="DOC Co-pay">DOC Co-pay</option>
-                                @endif
-                                @if($resident->payment_method !== 'County Self Pay')
-                                    <option value="County Self Pay">County Self Pay</option>
-                                @endif
-                                @if($resident->payment_method !== 'Federal Self Pay')
-                                    <option value="Federal Self Pay">Federal Self Pay</option>
                                 @endif
                             </select>
                         </span>

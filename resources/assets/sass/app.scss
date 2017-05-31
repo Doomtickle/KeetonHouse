@@ -1,9 +1,7 @@
 @import 'node_modules/bulma/bulma';
 @import 'node_modules/sweetalert/dev/sweetalert';
 @import 'node_modules/font-awesome/scss/font-awesome';
-
 @import "variables";
-
 
 html, body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
@@ -16,9 +14,11 @@ html, body {
 body {
   display: flex;
   flex-direction: column;
+  height: 100%
 }
 
 #root {
+  height: 100%;
   flex: 1 0 auto;
 }
 
@@ -170,7 +170,7 @@ body {
 
 .quicksearch {
   margin-top: 40px;
-  margin-left:10px;
+  margin-left: 10px;
 }
 
 #residentCreate, #residentEdit {
@@ -194,7 +194,6 @@ table {
 }
 
 .wide-table {
-  overflow-x: auto;
   padding: 10px;
   font-size: 0.8rem;
 }
@@ -264,13 +263,30 @@ sup {
   list-style: square;
 }
 
-.company-name-box{
+.company-name-box {
   background: #00b9eb;
 }
+
 .company-name {
   font-family: 'Raleway', sans-serif;
   color: #fff !important;
   text-transform: uppercase;
   font-size: 2rem;
   font-weight: 300;
+}
+
+@media print {
+  @page {
+    size:landscape;
+    margin: 10px;
+  }
+  html, body {
+    height: 100%;
+    width: 100%;
+    overflow-x:visible;
+    overflow-y:visible;
+  }
+  table{
+    font-size: .6vw;
+  }
 }

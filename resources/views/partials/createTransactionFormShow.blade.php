@@ -25,7 +25,6 @@
                                 <option value="">Select type</option>
                                 <option value="Urinalysis">Urinalysis</option>
                                 <option value="Rides">Rides</option>
-                                <option value="Anger Management">Anger Management</option>
                                 <option value="Physical">Physical</option>
                                 <option value="Payment">Payment</option>
                                 <option value="Sustenance">Sustenance</option>

@@ -4,6 +4,7 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.8	//
+AddEmailToResidentsTable	database/migrations/2017_05_31_043937_add_email_to_residents_table.php	/^class AddEmailToResidentsTable extends Migration$/;"	c
 AddEmployerToResidentsTable	database/migrations/2017_05_20_183636_add_employer_to_residents_table.php	/^class AddEmployerToResidentsTable extends Migration$/;"	c
 AddFacilityToTransactionsTable	database/migrations/2017_05_23_043913_add_facility_to_transactions_table.php	/^class AddFacilityToTransactionsTable extends Migration$/;"	c
 AddFacilityToUsersTable	database/migrations/2017_05_23_041748_add_facility_to_users_table.php	/^class AddFacilityToUsersTable extends Migration$/;"	c
@@ -141,6 +142,8 @@ destroy	app/Http/Controllers/NoteController.php	/^    public function destroy(No
 destroy	app/Http/Controllers/ResidentController.php	/^    public function destroy(Resident $resident)$/;"	f
 destroy	app/Http/Controllers/TransactionController.php	/^    public function destroy(Transaction $transaction)$/;"	f
 dob	app/Http/Controllers/ReportsController.php	/^    public function dob()$/;"	f
+dompdf	config/dompdf.php	/^         * $dompdf = new DOMPDF();	$dompdf->load_html($htmldata); $dompdf->render(); $pdfdata = $dompdf->output();$/;"	v
+dompdf	config/dompdf.php	/^         * $dompdf = new DOMPDF(, $dompdf->load_html(...,$/;"	v
 dontReport	app/Exceptions/Handler.php	/^    protected $dontReport = [$/;"	v
 down	database/migrations/2014_10_12_000000_create_users_table.php	/^    public function down()$/;"	f
 down	database/migrations/2014_10_12_100000_create_password_resets_table.php	/^    public function down()$/;"	f
@@ -152,6 +155,7 @@ down	database/migrations/2017_05_20_183636_add_employer_to_residents_table.php	/
 down	database/migrations/2017_05_23_041748_add_facility_to_users_table.php	/^    public function down()$/;"	f
 down	database/migrations/2017_05_23_043913_add_facility_to_transactions_table.php	/^    public function down()$/;"	f
 down	database/migrations/2017_05_26_031504_drop_facility_from_transactions_table.php	/^    public function down()$/;"	f
+down	database/migrations/2017_05_31_043937_add_email_to_residents_table.php	/^    public function down()$/;"	f
 download	app/Http/Controllers/ReportsController.php	/^    public function download($sortBy)$/;"	f
 downloadLink	app/Http/Controllers/ReportsController.php	/^        $downloadLink = '\/report\/download\/date_of_admission';$/;"	v
 downloadLink	app/Http/Controllers/ReportsController.php	/^        $downloadLink = '\/report\/download\/dob';$/;"	v
@@ -225,6 +229,8 @@ notes	app/User.php	/^    public function notes()$/;"	f
 parseCurrency	app/Transaction.php	/^    public static function parseCurrency($currencyString)$/;"	f
 password	database/factories/ModelFactory.php	/^        'password'       => $password ?: $password = bcrypt('secret'),$/;"	v
 password	database/factories/ModelFactory.php	/^    static $password;$/;"	v
+pdf	app/Http/Controllers/ReportsController.php	/^        $pdf = PDF::loadView('reports.residentIndex', [$downloadLink, $residents, $pdfLink, $sortType]);$/;"	v
+pdfLink	app/Http/Controllers/ReportsController.php	/^        $pdfLink      = '\/report\/stream\/dob';$/;"	v
 policies	app/Providers/AuthServiceProvider.php	/^    protected $policies = [$/;"	v
 quicksearch	resources/views/residents/index.blade.php	/^        var $quicksearch = $('.quicksearch').keyup(debounce(function () {$/;"	v
 quicksearch	storage/framework/views/6539c80e55a8b1ffb211527dac3be0aafa6fa8ea.php	/^        var $quicksearch = $('.quicksearch').keyup(debounce(function () {$/;"	v
@@ -251,10 +257,10 @@ residentCredits	app/Http/Controllers/TransactionController.php	/^        $reside
 residentDebits	app/Http/Controllers/TransactionController.php	/^        $residentDebits  = Transaction::where('resident_id', $transaction->resident_id)$/;"	v
 resident_id	app/Http/Controllers/TransactionReportsController.php	/^        $resident_id = $request->resident_id;$/;"	v
 residents	app/Http/Controllers/ReportsController.php	/^                $residents = Resident::where('facility', \\Auth::user()->facility)->get()->sortBy($sortBy);$/;"	v
-residents	app/Http/Controllers/ReportsController.php	/^        $residents = Resident::where('facility', \\Auth::user()->facility)->get()->sortBy('date_of_admission');$/;"	v
-residents	app/Http/Controllers/ReportsController.php	/^        $residents = Resident::where('facility', \\Auth::user()->facility)->get()->sortBy('date_of_discharge');$/;"	v
-residents	app/Http/Controllers/ReportsController.php	/^        $residents = Resident::where('facility', \\Auth::user()->facility)->get()->sortBy('dob');$/;"	v
-residents	app/Http/Controllers/ReportsController.php	/^        $residents = Resident::where('facility', \\Auth::user()->facility)->get()->sortBy('last_name');$/;"	v
+residents	app/Http/Controllers/ReportsController.php	/^        $residents    = Resident::where('facility', \\Auth::user()->facility)->get()->sortBy('date_of_admission');$/;"	v
+residents	app/Http/Controllers/ReportsController.php	/^        $residents    = Resident::where('facility', \\Auth::user()->facility)->get()->sortBy('date_of_discharge');$/;"	v
+residents	app/Http/Controllers/ReportsController.php	/^        $residents    = Resident::where('facility', \\Auth::user()->facility)->get()->sortBy('dob');$/;"	v
+residents	app/Http/Controllers/ReportsController.php	/^        $residents    = Resident::where('facility', \\Auth::user()->facility)->get()->sortBy('last_name');$/;"	v
 residents	app/Http/Controllers/ResidentController.php	/^        $residents = DB::table('residents')->where('facility', \\Auth::user()->facility)->orderBy('last_name')->get();$/;"	v
 residents	app/Http/Controllers/TransactionReportsController.php	/^        $residents = Resident::where('facility', \\Auth::user()->facility)->get()->sortBy('last_name');$/;"	v
 residents	database/seeds/ResidentsTableSeeder.php	/^        $residents = Resident::all();$/;"	v
@@ -280,16 +286,19 @@ show	app/Http/Controllers/EmployerController.php	/^    public function show(Empl
 show	app/Http/Controllers/NoteController.php	/^    public function show(Note $note)$/;"	f
 show	app/Http/Controllers/ResidentController.php	/^    public function show(Resident $resident)$/;"	f
 show	app/Http/Controllers/TransactionController.php	/^    public function show(Transaction $transaction)$/;"	f
-sortType	app/Http/Controllers/ReportsController.php	/^        $sortType = 'date of admission';$/;"	v
-sortType	app/Http/Controllers/ReportsController.php	/^        $sortType = 'date of birth';$/;"	v
-sortType	app/Http/Controllers/ReportsController.php	/^        $sortType = 'last name';$/;"	v
-sortType	app/Http/Controllers/ReportsController.php	/^        $sortType = 'projected date of discharge';$/;"	v
+sortType	app/Http/Controllers/ReportsController.php	/^        $sortType     = 'date of admission';$/;"	v
+sortType	app/Http/Controllers/ReportsController.php	/^        $sortType     = 'date of birth';$/;"	v
+sortType	app/Http/Controllers/ReportsController.php	/^        $sortType     = 'last name';$/;"	v
+sortType	app/Http/Controllers/ReportsController.php	/^        $sortType     = 'projected date of discharge';$/;"	v
 store	app/Http/Controllers/EmployerController.php	/^    public function store(Request $request)$/;"	f
 store	app/Http/Controllers/NoteController.php	/^    public function store(Request $request)$/;"	f
 store	app/Http/Controllers/ResidentController.php	/^    public function store(Request $request)$/;"	f
 store	app/Http/Controllers/TransactionController.php	/^    public function store(TransactionRequest $request)$/;"	f
+stream	app/Http/Controllers/ReportsController.php	/^    public function stream($sortBy)$/;"	f
+streamDOB	app/Http/Controllers/ReportsController.php	/^    public function streamDOB()$/;"	f
 testBasicTest	tests/Feature/ExampleTest.php	/^    public function testBasicTest()$/;"	f
 testBasicTest	tests/Unit/ExampleTest.php	/^    public function testBasicTest()$/;"	f
+to	config/dompdf.php	/^         * Canvas_Factory} ultimately determines which rendering class to instantiate$/;"	c
 transaction	app/Http/Controllers/TransactionController.php	/^        $transaction = Transaction::create([$/;"	v
 transactionIndex	app/Http/Controllers/ReportsController.php	/^    public function transactionIndex()$/;"	f
 transactions	app/Http/Controllers/ReportsController.php	/^        $transactions = Transaction::where('facility', \\Auth::user()->facility)->get()->sortBy('date');$/;"	v
@@ -307,11 +316,13 @@ up	database/migrations/2017_05_20_183636_add_employer_to_residents_table.php	/^ 
 up	database/migrations/2017_05_23_041748_add_facility_to_users_table.php	/^    public function up()$/;"	f
 up	database/migrations/2017_05_23_043913_add_facility_to_transactions_table.php	/^    public function up()$/;"	f
 up	database/migrations/2017_05_26_031504_drop_facility_from_transactions_table.php	/^    public function up()$/;"	f
+up	database/migrations/2017_05_31_043937_add_email_to_residents_table.php	/^    public function up()$/;"	f
 update	app/Http/Controllers/EmployerController.php	/^    public function update(Request $request, Employer $employer)$/;"	f
 update	app/Http/Controllers/NoteController.php	/^    public function update(Request $request, Note $note)$/;"	f
 update	app/Http/Controllers/ResidentController.php	/^    public function update(Request $request, Resident $resident)$/;"	f
 update	app/Http/Controllers/TransactionController.php	/^    public function update(Request $request, Transaction $transaction)$/;"	f
 uri	server.php	/^$uri = urldecode($/;"	v
+use	config/dompdf.php	/^         * direct class use like:$/;"	c
 user	app/Note.php	/^    public function user()$/;"	f
 validator	app/Http/Controllers/Auth/RegisterController.php	/^    protected function validator(array $data)$/;"	f
 year	app/Http/Controllers/FacilityReportsController.php	/^        $year  = $date->year;$/;"	v

@@ -4,6 +4,10 @@
     Transaction Report
 @endsection
 
+@section('downloadButton')
+    <button class="button is-warning" onClick="window.print()">Print (Legal size)</button>
+@endsection
+
 @section('content')
     <div class="column wide-table">
         <p class="title">Balance: <span class="{{ $class }}">{{ $balance }}</span></p>

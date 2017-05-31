@@ -32,6 +32,7 @@ $factory->define(App\Resident::class, function (Faker\Generator $faker) {
         'sex'                         => $faker->randomElement($array = array('M', 'F')),
         'drug'                        => $faker->randomElement($array = array('Cocaine', 'Alcohol', 'Cannabis', 'Amphetamines', 'Barbiturates', 'Poly Substance', 'Opiates', 'Morphine', 'LSD')),
         'race'                        => $faker->randomElement($array = array('White', 'Native Hawaiian or Other Pacific Islander', 'Black or African American', 'Asian', 'American Indian or Alaskan Native', 'Hispanic or Latino')),
+        'email'                       => $faker->safeEmail,
         'status'                      => $faker->randomElement($array = array('DOP', 'Prob', 'PDO', 'CC', 'County', 'Federal')),
         'employer'                    => $faker->company,
         'facility'                    => $faker->randomElement(['Panama City', 'Tallahassee', 'Orlando']),
