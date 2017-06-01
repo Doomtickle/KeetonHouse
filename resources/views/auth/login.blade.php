@@ -19,18 +19,20 @@
                                 <form action="{{ route('login') }}" method="POST" role="form">
                                     {{ csrf_field() }}
                                     <div class="login-form">
-                                        <p class="control has-icon has-icon-right">
-                                            <input class="input email-input {{ $errors->has('email') ? 'is-danger' : '' }}"
-                                                   type="text" name="email" value="{{ old('email') }}"
-                                                   placeholder="jsmith@example.org">
+                                        @if ($errors->has('username'))
+                                            <p class="help is-danger" style="margin-top: -10px;">{{ $errors->first('username') }}</p>
+                                        @endif
+                                        <label class="label" for="username">Username</label>
+                                        <p class="control has-icon has-icon-right" style="margin-bottom:20px;">
+                                            <input class="input email-input {{ $errors->has('username') ? 'is-danger' : '' }}"
+                                                   type="text" name="username" value="{{ old('username') }}"
+                                                   placeholder="Username">
                                             <span class="icon user">
                                             <i class="fa fa-user"></i>
                                         </span>
                                         </p>
-                                        @if ($errors->has('email'))
-                                            <p class="help is-danger">{{ $errors->first('email') }}</p>
-                                        @endif
-                                        <p class="control has-icon has-icon-right">
+                                        <label for="password" class="label">Password</label>
+                                        <p class="control has-icon has-icon-right" style="">
                                             <input class="input password-input {{ $errors->has('password') ? 'is-danger' : '' }}"
                                                    type="password" name="password" placeholder="●●●●●●●">
                                             <span class="icon user">

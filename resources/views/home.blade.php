@@ -39,10 +39,132 @@
             </div>
             <hr>
             <section class="section">
-                <h1 class="title has-text-centered">
-                    More content will go here soon
-                </h1>
+                <div class="columns">
+                    <div class="column is-offset-1 is-4">
+                        <p class="subtitle has-text-centered">Intakes</p>
+                        <canvas id="intakes" width="100" height="100"></canvas>
+                    </div>
+                    <div class="column is-offset-2 is-4">
+                        <p class="subtitle has-text-centered">Releases</p>
+                        <canvas id="releases" width="100" height="100"></canvas>
+                    </div>
+                </div>
             </section>
         </div>
     </section>
+@endsection
+@section('scripts.footer')
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.bundle.min.js"></script>
+    <script>
+        var ctx = document.getElementById("intakes").getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: [
+                    '{{ $intakes[5]['month'] }}',
+                    '{{ $intakes[4]['month'] }}',
+                    '{{ $intakes[3]['month'] }}',
+                    '{{ $intakes[2]['month'] }}',
+                    '{{ $intakes[1]['month'] }}',
+                    '{{ $intakes[0]['month'] }}',
+                ],
+                datasets: [{
+                    label: '# of intakes',
+                    data: [
+                        {{ $intakes[5]['count'] }},
+                        {{ $intakes[4]['count'] }},
+                        {{ $intakes[3]['count'] }},
+                        {{ $intakes[2]['count'] }},
+                        {{ $intakes[1]['count'] }},
+                        {{ $intakes[0]['count'] }},
+                    ],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255,99,132,1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                },
+                legend: {
+                    display: false
+                }
+            }
+        });
+    </script>
+    <script>
+        var ctx = document.getElementById("releases").getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: [
+                    '{{ $releases[5]['month'] }}',
+                    '{{ $releases[4]['month'] }}',
+                    '{{ $releases[3]['month'] }}',
+                    '{{ $releases[2]['month'] }}',
+                    '{{ $releases[1]['month'] }}',
+                    '{{ $releases[0]['month'] }}',
+                ],
+                datasets: [{
+//                    label: '# of releases',
+                    data: [
+                        {{ $releases[5]['count'] }},
+                        {{ $releases[4]['count'] }},
+                        {{ $releases[3]['count'] }},
+                        {{ $releases[2]['count'] }},
+                        {{ $releases[1]['count'] }},
+                        {{ $releases[0]['count'] }},
+                    ],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255,99,132,1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                },
+                legend: {
+                    display: false
+                }
+            }
+        });
+    </script>
 @endsection

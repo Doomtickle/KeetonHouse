@@ -12,11 +12,14 @@
 */
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
+use Carbon\Carbon;
+
 $factory->define(App\User::class, function (Faker\Generator $faker) {
     static $password;
 
     return [
         'name'           => $faker->name,
+        'username'       => $faker->unique()->userName,
         'email'          => $faker->unique()->safeEmail,
         'password'       => $password ?: $password = bcrypt('secret'),
         'remember_token' => str_random(10),
@@ -26,6 +29,8 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
 
 $factory->define(App\Resident::class, function (Faker\Generator $faker) {
 
+    $startDate = Carbon::createFromTimeStamp($faker->dateTimeBetween('-6 months', 'now')->getTimestamp());
+    $endDate = Carbon::createFromFormat('Y-m-d H:i:s', $startDate)->addMonth();
     return [
         'age'                         => $faker->randomNumber(2),
         'dob'                         => $faker->date(),
@@ -45,10 +50,10 @@ $factory->define(App\Resident::class, function (Faker\Generator $faker) {
         'document_number'             => $faker->bothify('##########'),
         'referral_source'             => $faker->randomElement($array = array('DOC', 'WCFDI', 'County', 'Federal')),
         'employment_date'             => $faker->date(),
-        'date_of_admission'           => $faker->date(),
+        'date_of_admission'           => $faker->dateTimeBetween($startDate, $endDate),
         'status_at_discharge'         => $faker->randomElement($array = array('Successful', 'Unsuccessful - Abscond', 'Unsuccessful - Disciplinary', 'Administrative')),
         'service_center_number'       => $faker->bothify('########'),
-        'actual_date_of_discharge'    => $faker->date(),
+        'actual_date_of_discharge'    => $faker->dateTimeBetween('-1 year', 'now'),
         'projected_date_of_discharge' => $faker->date(),
     ];
 });

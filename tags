@@ -165,6 +165,7 @@ edit	app/Http/Controllers/EmployerController.php	/^    public function edit(Empl
 edit	app/Http/Controllers/NoteController.php	/^    public function edit(Note $note)$/;"	f
 edit	app/Http/Controllers/ResidentController.php	/^    public function edit(Resident $resident)$/;"	f
 edit	app/Http/Controllers/TransactionController.php	/^    public function edit(Transaction $transaction)$/;"	f
+endDate	database/factories/ModelFactory.php	/^    $endDate = Carbon::createFromFormat('Y-m-d H:i:s', $startDate)->addMonth();$/;"	v
 except	app/Http/Middleware/EncryptCookies.php	/^    protected $except = [$/;"	v
 except	app/Http/Middleware/TrimStrings.php	/^    protected $except = [$/;"	v
 except	app/Http/Middleware/VerifyCsrfToken.php	/^    protected $except = [$/;"	v
@@ -190,6 +191,7 @@ index	app/Http/Controllers/TransactionController.php	/^    public function index
 intakes	app/Http/Controllers/FacilityReportsController.php	/^                $intakes = $this->intakesReport($facility, $date);$/;"	v
 intakes	app/Http/Controllers/FacilityReportsController.php	/^            $intakes = DB::table('residents')$/;"	v
 intakes	app/Http/Controllers/FacilityReportsController.php	/^        $intakes = DB::table('residents')$/;"	v
+intakes	app/Http/Controllers/HomeController.php	/^        $intakes  = array();$/;"	v
 intakesReport	app/Http/Controllers/FacilityReportsController.php	/^    private function intakesReport($facility, $date)$/;"	f
 kernel	public/index.php	/^$kernel = $app->make(Illuminate\\Contracts\\Http\\Kernel::class);$/;"	v
 lastName	app/Http/Controllers/ReportsController.php	/^    public function lastName()$/;"	f
@@ -242,6 +244,7 @@ releaseDate	app/Http/Controllers/ReportsController.php	/^    public function rel
 releases	app/Http/Controllers/FacilityReportsController.php	/^                $releases = $this->releasesReport($facility, $date);$/;"	v
 releases	app/Http/Controllers/FacilityReportsController.php	/^            $releases = DB::table('residents')$/;"	v
 releases	app/Http/Controllers/FacilityReportsController.php	/^        $releases = DB::table('residents')$/;"	v
+releases	app/Http/Controllers/HomeController.php	/^        $releases = array();$/;"	v
 releasesReport	app/Http/Controllers/FacilityReportsController.php	/^    private function releasesReport($facility, $date)$/;"	f
 render	app/Exceptions/Handler.php	/^    public function render($request, Exception $exception)$/;"	f
 report	app/Exceptions/Handler.php	/^    public function report(Exception $exception)$/;"	f
@@ -290,6 +293,7 @@ sortType	app/Http/Controllers/ReportsController.php	/^        $sortType     = 'd
 sortType	app/Http/Controllers/ReportsController.php	/^        $sortType     = 'date of birth';$/;"	v
 sortType	app/Http/Controllers/ReportsController.php	/^        $sortType     = 'last name';$/;"	v
 sortType	app/Http/Controllers/ReportsController.php	/^        $sortType     = 'projected date of discharge';$/;"	v
+startDate	database/factories/ModelFactory.php	/^    $startDate = Carbon::createFromTimeStamp($faker->dateTimeBetween('-6 months', 'now')->getTimestamp());$/;"	v
 store	app/Http/Controllers/EmployerController.php	/^    public function store(Request $request)$/;"	f
 store	app/Http/Controllers/NoteController.php	/^    public function store(Request $request)$/;"	f
 store	app/Http/Controllers/ResidentController.php	/^    public function store(Request $request)$/;"	f
@@ -324,6 +328,7 @@ update	app/Http/Controllers/TransactionController.php	/^    public function upda
 uri	server.php	/^$uri = urldecode($/;"	v
 use	config/dompdf.php	/^         * direct class use like:$/;"	c
 user	app/Note.php	/^    public function user()$/;"	f
+username	app/Http/Controllers/Auth/LoginController.php	/^    public function username()$/;"	f
 validator	app/Http/Controllers/Auth/RegisterController.php	/^    protected function validator(array $data)$/;"	f
 year	app/Http/Controllers/FacilityReportsController.php	/^        $year  = $date->year;$/;"	v
 year	app/Http/Controllers/TransactionReportsController.php	/^            $year  = $date->year;$/;"	v
