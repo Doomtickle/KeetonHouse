@@ -30,13 +30,13 @@
                 </div>
             </div>
             <div class="columns">
-                <div class="column is-3">
+                <div class="column is-4">
                     <label class="label">Date of birth <sup>*</sup></label>
                     <p class="control has-icon">
                         <span class="icon">
                             <i class="fa fa-calendar"></i>
                         </span>
-                        <input class="input" type="text" name="dob" id="dob">
+                        <input class="input" type="text" name="dob" id="dob" placeholder="YYYY-MM-DD">
                     </p>
                 </div>
                 <div class="column is-3">

@@ -40,7 +40,7 @@ $(document).ready(function () {
     $("#sort_by").select2();
 
     $("#dob").flatpickr({
-        altInput: true,
+        allowInput: true,
         onChange: function (selectedDates, dateStr, instance) {
             $("#age").val(getAge(dateStr));
         }
