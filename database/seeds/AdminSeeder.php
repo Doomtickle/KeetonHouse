@@ -15,7 +15,7 @@ class AdminSeeder extends Seeder
         User::create([
             'username' => 'adminpc',
             'name'     => 'Panama City Administrator',
-            'email'    => 'daron.adkins@gmail.com',
+            'email'    => 'npipc@keetoncorrections.com',
             'password' => bcrypt(env('PC_ADMIN_PASSWORD')),
             'facility' => 'Panama City'
 
@@ -23,7 +23,7 @@ class AdminSeeder extends Seeder
         User::create([
             'username' => 'admintally',
             'name'     => 'Tallahassee Administrator',
-            'email'    => 'daron.adkins@gmail.com',
+            'email'    => 'npitall@keetoncorrections.com',
             'password' => bcrypt(env('TALLAHASSEE_ADMIN_PASSWORD')),
             'facility' => 'Tallahassee'
 
@@ -31,7 +31,7 @@ class AdminSeeder extends Seeder
         User::create([
             'username' => 'adminpcola',
             'name'     => 'Pensacola Admin',
-            'email'    => 'daron.adkins@gmail.com',
+            'email'    => 'npipcola@keetoncorrections.com',
             'password' => bcrypt(env('PENSACOLA_ADMIN_PASSWORD')),
             'facility' => 'Pensacola'
 
@@ -39,7 +39,7 @@ class AdminSeeder extends Seeder
         User::create([
             'username' => 'adminocala',
             'name'     => 'Ocala Admin',
-            'email'    => 'daron.adkins@gmail.com',
+            'email'    => 'npiocala@keetoncorrections.com',
             'password' => bcrypt(env('OCALA_ADMIN_PASSWORD')),
             'facility' => 'Ocala'
 
@@ -47,7 +47,7 @@ class AdminSeeder extends Seeder
         User::create([
             'username' => 'adminorlando',
             'name'     => 'Orlando Admin',
-            'email'    => 'daron.adkins@gmail.com',
+            'email'    => 'prcorlando@keetoncorrections.com',
             'password' => bcrypt(env('ORLANDO_ADMIN_PASSWORD')),
             'facility' => 'Orlando'
 
