@@ -62,14 +62,8 @@
         <div class="container">
             <div class="has-text-centered">
                 <p>
-                    <strong>Prototype</strong> by Daron Adkins. The source code is licensed according to
-                    <a href="http://opensource.org/licenses/mit-license.php">MIT</a> guidelines. The website content
+                    Tracking Solutions by <strong>On Point</strong>. The website content
                     is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC ANS 4.0</a>.
-                </p>
-                <p>
-                    <a class="icon" href="https://github.com/doomtickle" target="_blank">
-                        <i class="fa fa-github"></i>
-                    </a>
                 </p>
             </div>
         </div>
