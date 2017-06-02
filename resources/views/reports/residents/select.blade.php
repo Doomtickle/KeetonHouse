@@ -14,13 +14,15 @@
             </div>
         </div>
     </div>
-    <div class="container is-flex trans_select_form">
-        <form action="#" method="get" id="sortReportForm">
-            {{ csrf_field() }}
-            <div class="field is-horizontal">
-                <div class="field padding-10-lr first">
-                    <label class="label">Sort By</label>
-                    <p class="control">
+    <div class="container">
+        <div class="columns">
+            <form action="#" method="get" id="sortReportForm">
+                <div class="column is-half">
+                    {{ csrf_field() }}
+                    <div class="field is-horizontal">
+                        <div class="field padding-10-lr first sortForm">
+                            <label class="label">Sort By</label>
+                            <p class="control">
                     <span class="select is-large">
                         <select id="sort_by" name="sort_by">
                             <option value="/report/last-name">Last Name</option>
@@ -29,11 +31,13 @@
                             <option value="/report/discharge-date">Date of discharge</option>
                         </select>
                     </span>
-                    </p>
+                            </p>
+                        </div>
+                    </div>
+                    <button type="submit" class="button is-primary" id="sortReportSubmit">Run report</button>
                 </div>
-            </div>
-            <button type="submit" class="button is-primary" id="sortReportSubmit">Run report</button>
-        </form>
+            </form>
+        </div>
     </div>
 @endsection
 @section('scripts.footer')

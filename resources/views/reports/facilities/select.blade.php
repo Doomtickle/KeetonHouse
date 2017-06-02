@@ -15,13 +15,15 @@
         </div>
     </div>
     <div class="container is-flex trans_select_form">
-        <form action="{{ route('determine_facility_report') }}" method="get" id="intakeForm">
-            {{ csrf_field() }}
-            <input type="hidden" name="facility" value="{{ \Auth::user()->facility }}">
-            <div class="field is-horizontal">
-                <div class="field padding-10-lr first">
-                    <label class="label">Type of Report</label>
-                    <p class="control">
+        <div class="columns full-width-columns">
+            <form action="{{ route('determine_facility_report') }}" method="get" id="intakeForm">
+                {{ csrf_field() }}
+                <input type="hidden" name="facility" value="{{ \Auth::user()->facility }}">
+                <div class="field is-horizontal">
+                    <div class="column is-5">
+                        <div class="field padding-10-lr first">
+                            <label class="label">Type of Report</label>
+                            <p class="control">
                     <span class="select is-large">
                         <select id="sort_by" name="report">
                             <option value="">Select report</option>
@@ -30,11 +32,13 @@
                             {{--<option value="man days">Man Days</option>--}}
                         </select>
                     </span>
-                    </p>
-                </div>
-                <div class="field padding-10-lr first">
-                    <label class="label">Month</label>
-                    <p class="control">
+                            </p>
+                        </div>
+                    </div>
+                    <div class="column is-5">
+                        <div class="field padding-10-lr first">
+                            <label class="label">Month</label>
+                            <p class="control">
                         <span class="select is-large">
                         <select id="transaction_date" name="date">
                             <option value="year_to_date">Year to date</option>
@@ -45,10 +49,12 @@
                             @endfor
                         </select>
                     </span>
-                    </p>
+                            </p>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <button type="submit" class="button is-primary" id="sortReportSubmit">Run report</button>
-        </form>
+                <button type="submit" class="button is-primary" id="sortReportSubmit">Run report</button>
+            </form>
+        </div>
     </div>
 @endsection

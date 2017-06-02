@@ -35,7 +35,7 @@ $(document).ready(function () {
     $("#reason").select2();
     $("#transaction_resident").select2();
     $("#transaction_date").select2();
-    $("#transaction_type").select2();
+    $("#transaction_type").select2({ width: 'resolve' });
 
     $("#sort_by").select2();
 

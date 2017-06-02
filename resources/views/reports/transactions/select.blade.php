@@ -20,9 +20,10 @@
         <form action="/transaction_report/run" method="post" id="reportForm">
             {{ csrf_field() }}
             <div class="field is-horizontal">
-                <div class="field padding-10-lr first">
-                    <label class="label">Resident</label>
-                    <p class="control">
+                <div class="column">
+                    <div class="field padding-10-lr first">
+                        <label class="label">Resident</label>
+                        <p class="control">
                     <span class="select is-large">
                         <select id="transaction_resident" name="resident_id">
                             <option value="">All</option>
@@ -32,11 +33,13 @@
                             @endforeach
                         </select>
                     </span>
-                    </p>
+                        </p>
+                    </div>
                 </div>
-                <div class="field padding-10-lr">
-                    <label class="label">Type</label>
-                    <p class="control">
+                <div class="column">
+                    <div class="field padding-10-lr">
+                        <label class="label">Type</label>
+                        <p class="control">
                     <span class="select is-large">
                         <select name="type" id="transaction_type">
                             <option value="">All</option>
@@ -47,12 +50,14 @@
                             <option value="Sustenance">Sustenance</option>
                         </select>
                     </span>
-                    </p>
+                        </p>
+                    </div>
                 </div>
-                <div class="field padding-10-lr last">
-                    <p class="control">
-                        <label class="label">Month</label>
-                        <span class="select is-large">
+                <div class="column">
+                    <div class="field padding-10-lr last">
+                        <p class="control">
+                            <label class="label">Month</label>
+                            <span class="select is-large">
                         <select id="transaction_date" name="date">
                             <option value="">All</option>
                             @for($i = 0; $i < 14; $i++)
@@ -62,7 +67,8 @@
                             @endfor
                         </select>
                     </span>
-                    </p>
+                        </p>
+                    </div>
                 </div>
             </div>
             <button type="submit" class="button is-primary" id="reportSubmit">Run report</button>

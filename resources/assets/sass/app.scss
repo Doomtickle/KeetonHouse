@@ -274,19 +274,49 @@ sup {
   font-size: 2rem;
   font-weight: 300;
 }
+.full-width-columns{
+  width:100%;
+}
+
+#intakeForm{
+  width:100%;
+}
+
+span.select {
+  width: 100%;
+}
+
+#sortReportSubmit{
+  margin-left:15px;
+}
+
+span.select2 {
+  width: 100% !important;
+}
+
+#reportSubmit{
+  margin-left:15px;
+}
+
+#sortReportForm{
+  width:100%;
+}
+.sortForm {
+  width: 100%;
+}
 
 @media print {
   @page {
-    size:landscape;
+    size: landscape;
     margin: 10px;
   }
   html, body {
     height: 100%;
     width: 100%;
-    overflow-x:visible;
-    overflow-y:visible;
+    overflow-x: visible;
+    overflow-y: visible;
   }
-  table{
+  table {
     font-size: .6vw;
   }
 }

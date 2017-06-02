@@ -5,7 +5,7 @@
 <div class="columns">
     <form action="{{ route('transaction.store') }}" method="POST" id="transactionCreate">
         <div class="column">
-            <div class="columns">
+            <div class="columns is-desktop is-multiline">
                 {{ csrf_field() }}
                 <input type="hidden" name="resident_id" value="{{ $residentInfo->id }}">
                 <div class="column">
