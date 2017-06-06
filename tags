@@ -105,6 +105,7 @@ class	app/Http/Controllers/TransactionController.php	/^            $class = 'deb
 class	app/Http/Controllers/TransactionReportsController.php	/^        $class = ($credits - $debits > 0) ? 'credit' : 'debit';$/;"	v
 commands	app/Console/Kernel.php	/^    protected $commands = [$/;"	v
 commands	app/Console/Kernel.php	/^    protected function commands()$/;"	f
+config	public/index.php	/^$config = array($/;"	v
 count	app/Http/Controllers/FacilityReportsController.php	/^                $count    = $releases->count();$/;"	v
 count	app/Http/Controllers/FacilityReportsController.php	/^                $count   = $intakes->count();$/;"	v
 create	app/Http/Controllers/Auth/RegisterController.php	/^    protected function create(array $data)$/;"	f

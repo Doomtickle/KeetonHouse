@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "bf32866b578f81d9ba90cf2206d37365",
-    "content-hash": "1c0dc6b1e5af233870813bd057402c42",
+    "hash": "95a7e9c70e07524be21f8c9cd62928ad",
+    "content-hash": "fab096e55e9a86e7dbd862a434bb622d",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -1239,6 +1239,63 @@
                 "uuid"
             ],
             "time": "2017-03-26 20:37:53"
+        },
+        {
+            "name": "rollbar/rollbar",
+            "version": "v1.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/rollbar/rollbar-php.git",
+                "reference": "807f2df6fc6f1184cf2a50c1b24d7af8014867f3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/rollbar/rollbar-php/zipball/807f2df6fc6f1184cf2a50c1b24d7af8014867f3",
+                "reference": "807f2df6fc6f1184cf2a50c1b24d7af8014867f3",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "psr/log": "~1.0.2"
+            },
+            "require-dev": {
+                "codeclimate/php-test-reporter": "dev-master",
+                "mockery/mockery": "0.9.*",
+                "monolog/monolog": "*",
+                "packfire/php5.3-compat": "*",
+                "phpunit/phpunit": "4.8.*",
+                "squizlabs/php_codesniffer": "2.*"
+            },
+            "suggest": {
+                "packfire/php5.3-compat": "for backward compatibility with PHP 5.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Rollbar\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Rollbar, Inc.",
+                    "email": "support@rollbar.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Monitors errors and exceptions and reports them to Rollbar",
+            "homepage": "http://github.com/rollbar/rollbar-php",
+            "keywords": [
+                "debugging",
+                "errors",
+                "exceptions",
+                "logging",
+                "monitoring"
+            ],
+            "time": "2017-05-16 23:17:12"
         },
         {
             "name": "swiftmailer/swiftmailer",

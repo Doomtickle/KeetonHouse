@@ -35,6 +35,14 @@ require __DIR__.'/../bootstrap/autoload.php';
 
 $app = require_once __DIR__.'/../bootstrap/app.php';
 
+use Rollbar\Rollbar;
+
+$config = array(
+    'access_token' => '317093225abb439fa511dc3b11800c86',
+    'environment' => 'production',
+    'root' => '/public'
+);
+Rollbar::init($config);
 /*
 |--------------------------------------------------------------------------
 | Run The Application
