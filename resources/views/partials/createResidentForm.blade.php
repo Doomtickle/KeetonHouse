@@ -46,7 +46,7 @@
                     </p>
                 </div>
                 <div class="column is-6">
-                    <label class="label">Drug of Choice <sup>*</sup></label>
+                    <label class="label">Drug of Choice</label>
                     <p class="control">
                         <span class="select">
                             <select name="drug" id="drug">
@@ -67,7 +67,7 @@
             </div>
             <div class="columns">
                 <div class="column is-offset-1 is-8">
-                    <label class="label has-text-centered">Email <sup>*</sup></label>
+                    <label class="label has-text-centered">Email </label>
                     <p class="control">
                         <input class="input" type="text" name="email">
                     </p>
