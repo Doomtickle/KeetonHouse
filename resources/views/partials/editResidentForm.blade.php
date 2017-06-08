@@ -94,7 +94,7 @@
             </div>
             <div class="columns">
                 <div class="column is-offset-1 is-8">
-                    <label class="label has-text-centered">Email <sup>*</sup></label>
+                    <label class="label has-text-centered">Email</label>
                     <p class="control">
                         <input class="input" type="text" name="email" value="{{ $resident->email }}">
                     </p>
