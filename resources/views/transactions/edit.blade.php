@@ -1,28 +1,13 @@
 @extends('layouts.main')
 
 @section('title')
-    {{ $resident->last_name }}, {{ $resident->first_name }} {{ $resident->middle_initial }}
-    <p class="subtitle">
-        <small>DOC Number: {{ $resident->document_number }}</small>
-    </p>
+    Edit Transaction
 @endsection
 
 @section('content')
-    @if(session()->has('updated'))
-        <div class="notification is-success">
-            {{ session('updated') }}
-        </div>
-    @endif
     <div class="container">
-        <div class="columns">
-            <div class="column padding-40">
-                @include('partials.residentInfo')
-            </div>
-        </div>
-        <hr>
-        @include('partials.notes')
-        <hr>
-        @include('partials.transactions')
+        <h2 class="title">{{ $resident->last_name }}, {{ $resident->first_name }}</h2>
+        @include('partials.editTransactionForm')
     </div>
 @endsection
 @section('scripts.footer')
@@ -32,7 +17,8 @@
     <script src="//cdn.datatables.net/plug-ins/1.10.15/sorting/datetime-moment.js"></script>
     <script>
         $(document).ready(function () {
-            $.fn.dataTable.moment('MMMM D, YYYY');
+            var date = "{!! $transaction->date !!}";
+            $.fn.dataTable.moment( 'MMMM D, YYYY' );
 
             $("#debit").maskMoney({
                 'prefix': '$',
@@ -42,7 +28,12 @@
                 'prefix': '$',
                 'allowZero': true,
             });
+            $("#debit").maskMoney('mask');
+            $("#credit").maskMoney('mask');
             $('.table').DataTable();
+            $("#edit_transaction_date_calendar").flatpickr({
+                defaultDate: date
+            });
         });
     </script>
 @endsection

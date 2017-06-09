@@ -6,7 +6,7 @@
 
 @section('downloadButton')
     <a href="{{ $downloadLink }}" class="button is-primary">Download to Excel</a>
-    <button class="button is-warning" onClick="window.print()">Print (Legal size)</button>
+    <button class="button is-warning" onClick="window.print()">Print</button>
 @endsection
 
 @section('content')

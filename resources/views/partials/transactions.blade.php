@@ -15,24 +15,26 @@
                 <th>Reason</th>
                 <th>Debit</th>
                 <th>Credit</th>
+                <th>Edit</th>
             </tr>
             </thead>
             <tbody>
             @foreach($resident->transactions as $transaction)
                 <tr class="has-text-centered">
-                    <th>{{ $transaction->id}}</th>
-                    <td>{{ Carbon\Carbon::parse($transaction->date)->format('F d, Y') }}</td>
-                    <td>{{ $transaction->reason }}</td>
+                    <td class="transaction_id">{{ $transaction->id}}</td>
+                    <td class="transaction_date">{{ Carbon\Carbon::parse($transaction->date)->format('F d, Y') }}</td>
+                    <td class="transaction_reason">{{ $transaction->reason }}</td>
                     @if($transaction->debit > 0)
-                        <td class="debit"> - ${{ number_format($transaction->debit / 100, 2, '.', ',') }}</td>
+                        <td class="debit transaction_debit"> - ${{ number_format($transaction->debit / 100, 2, '.', ',') }}</td>
                     @else
                         <td>&nbsp;</td>
                     @endif
                     @if($transaction->credit > 0)
-                        <td class="credit">${{ number_format($transaction->credit / 100, 2, '.', ',') }}</td>
+                        <td class="credit transaction_credit">${{ number_format($transaction->credit / 100, 2, '.', ',') }}</td>
                     @else
                         <td>&nbsp;</td>
                     @endif
+                    <td><a href="{{ route('transaction.edit', $transaction->id) }}" class="edit-icon"><i class="fa fa-pencil fa-2x"></i></a></td>
                 </tr>
             @endforeach
             </tbody>

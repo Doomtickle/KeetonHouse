@@ -77,8 +77,8 @@ class TransactionController extends Controller
             'id'              => $transaction->id,
             'date'            => Carbon::parse($transaction->date)->format('F d, Y'),
             'reason'          => $transaction->reason,
-            'debit'           => money_format('%.2n', ($debit/100)),
-            'credit'          => money_format('%.2n', ($credit/100)),
+            'debit'           => money_format('%.2n', ($debit / 100)),
+            'credit'          => money_format('%.2n', ($credit / 100)),
             'current_balance' => $currentBalance,
             'class'           => $class
         );
@@ -105,19 +105,35 @@ class TransactionController extends Controller
      */
     public function edit(Transaction $transaction)
     {
-        //
+        $resident = Resident::find($transaction->resident_id);
+
+        return view('transactions.edit', compact('transaction', 'resident'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request $request
+     * @param TransactionRequest|Request $request
      * @param  \App\Transaction $transaction
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Transaction $transaction)
+    public function update(TransactionRequest $request, Transaction $transaction)
     {
-        //
+        $debit  = Transaction::parseCurrency($request->debit);
+        $credit = Transaction::parseCurrency($request->credit);
+        $updated = $transaction->update([
+            'resident_id' => $request->resident_id,
+            'date'        => $request->date,
+            'reason'      => $request->reason,
+            'debit'       => $debit,
+            'credit'      => $credit
+        ]);
+
+        if($updated){
+            $request->session()->flash('updated', 'Transaction ' . $transaction->id . ' was successfully updated!');
+        }
+
+        return redirect()->route('resident.show', $transaction->resident_id);
     }
 
     /**

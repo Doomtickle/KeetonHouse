@@ -1,5 +1,4 @@
 @foreach($resident->transactions as $transaction)
-    <div class="level">
         <div class="level-item has-text-centered">
             <div>
                 <p class="heading">Date</p>

@@ -257,6 +257,7 @@ request	public/index.php	/^    $request = Illuminate\\Http\\Request::capture()$/
 resident	app/Http/Controllers/ResidentController.php	/^        $resident = Resident::create($request->all());$/;"	v
 resident	app/Http/Controllers/ResidentController.php	/^        $resident = Resident::with('notes', 'transactions')->find($resident->id);$/;"	v
 resident	app/Http/Controllers/TransactionController.php	/^        $resident = $resident->with('transactions')->find($resident->id);$/;"	v
+resident	app/Http/Controllers/TransactionController.php	/^        $resident = Resident::find($transaction->resident_id);$/;"	v
 resident	app/Note.php	/^    public function resident()$/;"	f
 resident	app/Transaction.php	/^    public function resident()$/;"	f
 residentCredits	app/Http/Controllers/TransactionController.php	/^        $residentCredits = Transaction::where('resident_id', $transaction->resident_id)$/;"	v
@@ -328,7 +329,8 @@ up	database/migrations/2017_06_07_212111_change_drug_to_nullable.php	/^    publi
 update	app/Http/Controllers/EmployerController.php	/^    public function update(Request $request, Employer $employer)$/;"	f
 update	app/Http/Controllers/NoteController.php	/^    public function update(Request $request, Note $note)$/;"	f
 update	app/Http/Controllers/ResidentController.php	/^    public function update(Request $request, Resident $resident)$/;"	f
-update	app/Http/Controllers/TransactionController.php	/^    public function update(Request $request, Transaction $transaction)$/;"	f
+update	app/Http/Controllers/TransactionController.php	/^    public function update(TransactionRequest $request, Transaction $transaction)$/;"	f
+updated	app/Http/Controllers/TransactionController.php	/^        $updated = $transaction->update([$/;"	v
 uri	server.php	/^$uri = urldecode($/;"	v
 use	config/dompdf.php	/^         * direct class use like:$/;"	c
 user	app/Note.php	/^    public function user()$/;"	f

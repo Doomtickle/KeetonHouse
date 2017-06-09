@@ -5,7 +5,7 @@
 @endsection
 
 @section('downloadButton')
-    <button class="button is-warning" onClick="window.print()">Print (Legal size)</button>
+    <button class="button is-warning" onClick="window.print()">Print</button>
 @endsection
 
 @section('content')
