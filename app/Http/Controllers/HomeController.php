@@ -25,6 +25,7 @@ class HomeController extends Controller
      */
     public function index()
     {
+        $manDays = Resident::calculateManDaysForMonth(Carbon::now()->month);
         $intakes  = array();
         $releases = array();
         for ($i = 0; $i < 6; $i++) {
@@ -41,6 +42,6 @@ class HomeController extends Controller
         }
 
 
-        return view('home', compact('intakes', 'releases'));
+        return view('home', compact('intakes', 'releases', 'manDays'));
     }
 }

@@ -12,9 +12,13 @@
 */
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
+use App\Note;
+use App\Resident;
+use App\Transaction;
+use App\User;
 use Carbon\Carbon;
 
-$factory->define(App\User::class, function (Faker\Generator $faker) {
+$factory->define(User::class, function (Faker\Generator $faker) {
     static $password;
 
     return [
@@ -27,7 +31,7 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
     ];
 });
 
-$factory->define(App\Resident::class, function (Faker\Generator $faker) {
+$factory->define(Resident::class, function (Faker\Generator $faker) {
 
     $startDate = Carbon::createFromTimeStamp($faker->dateTimeBetween('-6 months', 'now')->getTimestamp());
     $endDate = Carbon::createFromFormat('Y-m-d H:i:s', $startDate)->addMonth();
@@ -57,7 +61,7 @@ $factory->define(App\Resident::class, function (Faker\Generator $faker) {
         'projected_date_of_discharge' => $faker->date(),
     ];
 });
-$factory->define(App\Transaction::class, function (Faker\Generator $faker) {
+$factory->define(Transaction::class, function (Faker\Generator $faker) {
 
     return [
 //        'resident_id' => factory('App\Resident')->create()->id,
@@ -68,7 +72,7 @@ $factory->define(App\Transaction::class, function (Faker\Generator $faker) {
     ];
 });
 
-$factory->define(App\Note::class, function (Faker\Generator $faker) {
+$factory->define(Note::class, function (Faker\Generator $faker) {
 
     return [
 //        'resident_id' => factory('App\Resident')->create()->id,

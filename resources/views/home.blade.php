@@ -36,20 +36,27 @@
                         </p>
                     </div>
                 </div>
-            </div>
-            <hr>
-            <section class="section">
-                <div class="columns">
-                    <div class="column is-offset-1 is-4">
-                        <p class="subtitle has-text-centered">Intakes</p>
-                        <canvas id="intakes" width="100" height="100"></canvas>
-                    </div>
-                    <div class="column is-offset-2 is-4">
-                        <p class="subtitle has-text-centered">Releases</p>
-                        <canvas id="releases" width="100" height="100"></canvas>
+                <div class="level-item has-text-centered">
+                    <div class="column">
+                        <p class="heading">Total Man Days For This Month</p>
+                        <p class="title">{{ $manDays }}</p>
                     </div>
                 </div>
-            </section>
+            </div>
+        </div>
+        <hr>
+        <section class="section">
+            <div class="columns">
+                <div class="column is-offset-1 is-4">
+                    <p class="subtitle has-text-centered">Intakes</p>
+                    <canvas id="intakes" width="100" height="100"></canvas>
+                </div>
+                <div class="column is-offset-2 is-4">
+                    <p class="subtitle has-text-centered">Releases</p>
+                    <canvas id="releases" width="100" height="100"></canvas>
+                </div>
+            </div>
+        </section>
         </div>
     </section>
 @endsection

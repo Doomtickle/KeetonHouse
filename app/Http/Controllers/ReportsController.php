@@ -90,7 +90,7 @@ class ReportsController extends Controller
     {
         $sortType     = 'projected date of discharge';
         $downloadLink = '/report/download/projected_date_of_discharge';
-        $residents    = Resident::where('facility', \Auth::user()->facility)->get()->sortBy('date_of_discharge');
+        $residents    = Resident::where('facility', \Auth::user()->facility)->get()->sortBy('actual_date_of_discharge');
 
         return view('reports.residentIndex', compact('residents', 'sortType', 'downloadLink'));
     }
