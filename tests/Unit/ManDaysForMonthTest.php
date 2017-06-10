@@ -44,7 +44,7 @@ class ManDaysForMonthTest extends TestCase
         ]);
 
 
-        $manDays = Resident::calculateManDaysForMonth($firstDate->month);
+        $manDays = Resident::calculateManDaysForMonth($firstDate->year, $firstDate->month);
 
 
         self::assertEquals(91, $manDays);
@@ -66,7 +66,7 @@ class ManDaysForMonthTest extends TestCase
             'facility'                 => $user->facility
         ]);
 
-        $manDays = Resident::calculateManDaysForMonth(Carbon::now()->month);
+        $manDays = Resident::calculateManDaysForMonth(Carbon::now()->year, Carbon::now()->month);
 
 
         self::assertEquals(1, $manDays);

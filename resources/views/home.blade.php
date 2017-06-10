@@ -39,24 +39,30 @@
                 <div class="level-item has-text-centered">
                     <div class="column">
                         <p class="heading">Total Man Days For This Month</p>
-                        <p class="title">{{ $manDays }}</p>
+                        <p class="title">{{ $currentManDays }}</p>
                     </div>
                 </div>
             </div>
         </div>
         <hr>
-        <section class="section">
-            <div class="columns">
-                <div class="column is-offset-1 is-4">
-                    <p class="subtitle has-text-centered">Intakes</p>
-                    <canvas id="intakes" width="100" height="100"></canvas>
-                </div>
-                <div class="column is-offset-2 is-4">
-                    <p class="subtitle has-text-centered">Releases</p>
-                    <canvas id="releases" width="100" height="100"></canvas>
-                </div>
+    </section>
+    <section class="section">
+        <div class="columns">
+            <div class="column is-offset-1 is-10">
+                <p class="subtitle has-text-centered">Man Days</p>
+                <canvas id="manDays" width="200" height="50"></canvas>
             </div>
-        </section>
+        </div>
+        <hr>
+        <div class="columns">
+            <div class="column is-offset-1 is-4">
+                <p class="subtitle has-text-centered">Intakes</p>
+                <canvas id="intakes" width="100" height="100"></canvas>
+            </div>
+            <div class="column is-offset-2 is-4">
+                <p class="subtitle has-text-centered">Releases</p>
+                <canvas id="releases" width="100" height="100"></canvas>
+            </div>
         </div>
     </section>
 @endsection
@@ -140,6 +146,62 @@
                         {{ $releases[2]['count'] }},
                         {{ $releases[1]['count'] }},
                         {{ $releases[0]['count'] }},
+                    ],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255,99,132,1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                },
+                legend: {
+                    display: false
+                }
+            }
+        });
+    </script>
+    <script>
+        var ctx = document.getElementById("manDays").getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: [
+                    '{{ $manDays[5]['month'] }}',
+                    '{{ $manDays[4]['month'] }}',
+                    '{{ $manDays[3]['month'] }}',
+                    '{{ $manDays[2]['month'] }}',
+                    '{{ $manDays[1]['month'] }}',
+                    '{{ $manDays[0]['month'] }}',
+                ],
+                datasets: [{
+//                    label: '# of releases',
+                    data: [
+                        {{ $manDays[5]['count'] }},
+                        {{ $manDays[4]['count'] }},
+                        {{ $manDays[3]['count'] }},
+                        {{ $manDays[2]['count'] }},
+                        {{ $manDays[1]['count'] }},
+                        {{ $manDays[0]['count'] }},
                     ],
                     backgroundColor: [
                         'rgba(255, 99, 132, 0.2)',

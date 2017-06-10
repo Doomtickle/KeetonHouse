@@ -36,25 +36,26 @@ class Resident extends Model
 
     }
 
-    public static function calculateManDaysForMonth($month)
+    public static function calculateManDaysForMonth($year, $month)
     {
 
         $residents = DB::table('residents')
             ->where('facility', \Auth::user()->facility)
             ->whereMonth('date_of_admission', '<=', $month)
+            ->whereYear('date_of_admission', '<=', $year)
             ->get();
 
 
         $sum = 0;
         foreach ($residents as $resident) {
-            $firstDayOfMonth = Carbon::now()->month($month)->firstOfMonth();
-            $lastDayOfMonth  = Carbon::now()->month($month)->lastOfMonth();
+            $firstDayOfMonth = Carbon::now()->year($year)->month($month)->firstOfMonth();
+            $lastDayOfMonth  = Carbon::now()->year($year)->month($month)->lastOfMonth();
             $admitDateTmp    = Carbon::parse($resident->date_of_admission);
             $admitDate       = $admitDateTmp->lt($firstDayOfMonth) ? $firstDayOfMonth : $admitDateTmp;
             $releaseDate     = $resident->actual_date_of_discharge == null ? $lastDayOfMonth->addDay() :
                 Carbon::parse($resident->actual_date_of_discharge);
 
-            if ($releaseDate->gte($firstDayOfMonth)) {
+            if ($releaseDate->greaterThanOrEqualTo($firstDayOfMonth)) {
                 $sum += $admitDate->diffInDays($releaseDate);
             }
         }
