@@ -23,23 +23,33 @@
         <aside class="column is-2 aside hero is-fullheight is-dark is-hidden-mobile">
             <div>
                 <div class="main">
-                    <p class="subtitle notification is-info">{{ \Auth::user()->facility }}</p>
+                    <div class="columns">
+                        <div class="column is-half">
+                            <p class="subtitle is-large">{{ \Auth::user()->facility }}</p>
+                        </div>
+                        <div class="column is-half" style="margin-top:-10px;">
+                            <div class="has-text-centered">
+                                <form action="/logout" method="post">
+                                    {{ csrf_field() }}
+                                    <button type="submit" class="button is-warning is-outlined">Logout</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
                     <a href="/home" :class="{'active': onPage('/home')}" class="item"><span class="icon"><i
                                     class="fa fa-tachometer"></i></span><span class="name">Dashboard</span></a>
-                    <a href="{{ route('resident.index') }}" class="item"><span class="icon"><i class="fa fa-user"></i></span><span
+                    <a href="{{ route('resident.index') }}" class="item"><span class="icon"><i
+                                    class="fa fa-user"></i></span><span
                                 class="name">Residents</span></a>
-                    <a href="/resident_reports" class="item"><span class="icon"><i class="fa fa-file-text"></i></span><span
+                    <a href="/resident_reports" class="item"><span class="icon"><i
+                                    class="fa fa-file-text"></i></span><span
                                 class="small-name">Resident&nbsp;Reports</span></a>
-                    <a href="/transaction_reports" class="item"><span class="icon"><i class="fa fa-file-text"></i></span><span
+                    <a href="/transaction_reports" class="item"><span class="icon"><i
+                                    class="fa fa-file-text"></i></span><span
                                 class="small-name">Transaction&nbsp;Reports</span></a>
-                    <a href="/facility_report/select" class="item"><span class="icon"><i class="fa fa-file-text"></i></span><span
+                    <a href="/facility_report/select" class="item"><span class="icon"><i
+                                    class="fa fa-file-text"></i></span><span
                                 class="small-name">Facility&nbsp;Reports</span></a>
-                </div>
-                <div class="has-text-centered">
-                    <form action="/logout" method="post">
-                        {{ csrf_field() }}
-                        <button type="submit" class="button is-primary">Logout</button>
-                    </form>
                 </div>
             </div>
         </aside>
@@ -73,10 +83,17 @@
 <script src="{{ asset('js/app.js') }}"></script>
 @yield('scripts.footer')
 <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
     ga('create', 'UA-100555024-1', 'auto');
     ga('send', 'pageview');

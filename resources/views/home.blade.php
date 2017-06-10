@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('title')
-    Dashboard
+    {{ \Auth::user()->facility }} Dashboard
 @endsection
 
 @section('content')
@@ -38,7 +38,7 @@
                 </div>
                 <div class="level-item has-text-centered">
                     <div class="column">
-                        <p class="heading">Total Man Days For This Month</p>
+                        <p class="heading">Current Man Days For {{ \Carbon\Carbon::now()->format('F, Y') }}</p>
                         <p class="title">{{ $currentManDays }}</p>
                     </div>
                 </div>
