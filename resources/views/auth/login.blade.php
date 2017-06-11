@@ -1,11 +1,11 @@
 @extends('layouts.app')
 @section('content')
     <div class="login-wrapper columns">
-        <div class="column is-8 is-hidden-mobile hero-banner">
+        <div class="column is-8 is-hidden-mobile hero-banner" style="padding-right:0;">
             <section class="hero is-fullheight is-dark">
             </section>
         </div>
-        <div class="column is-4 login-form">
+        <div class="column is-one-third-desktop is-full-tablet is-full-mobile login-form" style="padding-left:0;">
             <section class="hero is-fullheight">
                 <div class="hero-heading">
                     <div class="section has-text-centered company-name-box">
@@ -20,7 +20,8 @@
                                     {{ csrf_field() }}
                                     <div class="login-form">
                                         @if ($errors->has('username'))
-                                            <p class="help is-danger" style="margin-top: -10px;">{{ $errors->first('username') }}</p>
+                                            <p class="help is-danger"
+                                               style="margin-top: -10px;">{{ $errors->first('username') }}</p>
                                         @endif
                                         <label class="label" for="username">Username</label>
                                         <p class="control has-icon has-icon-right" style="margin-bottom:20px;">
@@ -44,7 +45,8 @@
                                         @endif
                                         <p class="control login">
                                             <button type="submit"
-                                                    class="button is-primary is-outlined is-large is-fullwidth">Login
+                                                    class="button is-primary is-outlined is-large is-fullwidth">
+                                                Login
                                             </button>
                                         </p>
                                     </div>

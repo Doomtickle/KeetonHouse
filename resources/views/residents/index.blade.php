@@ -20,42 +20,41 @@
                 <p style="margin-left:10px;"><input type="text" class="quicksearch input column is-3 is-large"
                                                     placeholder="Search" autofocus="autofocus"/></p>
                 <div class="grid">
-                    <div class="row">
-                        @foreach($residents as $resident)
-                            <div class="single-resident">
-                                <div class="card">
-                                    <header class="card-header">
-                                        <p class="card-header-title">
-                                            <a href="{{ route('resident.show', ['id' => $resident->id]) }}"
-                                               class="blackish">{{ ucfirst($resident->last_name) }}
-                                                , {{ ucfirst($resident->first_name) }} {{ strtoupper($resident->middle_initial) }}</a><span
-                                                    class="column has-text-right doc-number">{{ $resident->document_number }}</span>
+                    <div class="columns is-multiline"></div>
+                    @foreach($residents as $resident)
+                        <div class="single-resident column is-4 is-5-tablet is-full-mobile">
+                            <div class="card">
+                                <header class="card-header">
+                                    <p class="card-header-title">
+                                        <a href="{{ route('resident.show', ['id' => $resident->id]) }}"
+                                           class="blackish">{{ ucfirst($resident->last_name) }}
+                                            , {{ ucfirst($resident->first_name) }} {{ strtoupper($resident->middle_initial) }}</a><span
+                                                class="column has-text-right doc-number">{{ $resident->document_number }}</span>
+                                    </p>
+                                </header>
+                                <div class="card-content">
+                                    <div class="content">
+                                        <p><strong>Sex: </strong>{{ $resident->sex }}</p>
+                                        <p><strong>Race: </strong>{{ $resident->race }}</p>
+                                        <p><strong>SC #: </strong>{{ $resident->service_center_number }}
                                         </p>
-                                    </header>
-                                    <div class="card-content">
-                                        <div class="content">
-                                            <p><strong>Sex: </strong>{{ $resident->sex }}</p>
-                                            <p><strong>Race: </strong>{{ $resident->race }}</p>
-                                            <p><strong>SC #: </strong>{{ $resident->service_center_number }}
-                                            </p>
-                                            <p>
-                                                <strong>DOB: </strong>{{ Carbon\Carbon::parse($resident->dob)->format('F d, Y') }}
-                                            </p>
-                                            <p><strong>Age: </strong>{{ $resident->age }}</p>
-                                        </div>
+                                        <p>
+                                            <strong>DOB: </strong>{{ Carbon\Carbon::parse($resident->dob)->format('F d, Y') }}
+                                        </p>
+                                        <p><strong>Age: </strong>{{ $resident->age }}</p>
                                     </div>
-                                    <footer class="card-footer">
-                                        <a class="card-footer-item blackish"
-                                           href="{{ route('transaction.create',  $resident->id ) }}">Account</a>
-                                        <a class="card-footer-item blackish"
-                                           href="{{ route('resident.edit', $resident->id) }}">Edit</a>
-                                        <a class="card-footer-item primary"
-                                           href="{{ route('resident.show', $resident->id) }}">Profile</a>
-                                    </footer>
                                 </div>
+                                <footer class="card-footer">
+                                    <a class="card-footer-item blackish"
+                                       href="{{ route('transaction.create',  $resident->id ) }}">Account</a>
+                                    <a class="card-footer-item blackish"
+                                       href="{{ route('resident.edit', $resident->id) }}">Edit</a>
+                                    <a class="card-footer-item primary"
+                                       href="{{ route('resident.show', $resident->id) }}">Profile</a>
+                                </footer>
                             </div>
-                        @endforeach
-                    </div>
+                        </div>
+                    @endforeach
                 </div>
             </div>
         </div>

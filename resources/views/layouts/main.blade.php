@@ -20,7 +20,7 @@
 <body>
 <div id="root">
     <div class="columns">
-        <aside class="column is-2 aside hero is-fullheight is-dark is-hidden-mobile">
+        <section class="column is-hidden-mobile is-hidden-tablet-only aside hero is-fullheight is-dark">
             <div>
                 <div class="main">
                     <div class="columns">
@@ -52,8 +52,53 @@
                                 class="small-name">Facility&nbsp;Reports</span></a>
                 </div>
             </div>
-        </aside>
-        <div class="column is-10 admin-panel">
+        </section>
+        <div class="column">
+            <nav class="hamburger nav is-hidden-widescreen is-full-tablet">
+                <span class="nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </span>
+
+                <div class="nav-right nav-menu is-hidden-desktop">
+                    <a href="/home" :class="{'is-active': onPage('/home')}" class="nav-item"><span
+                                class="icon is-hidden-tablet-only"><i
+                                    class="fa fa-tachometer"></i></span><span
+                                class="name padding-10-lr">Dashboard</span></a>
+                    <a href="{{ route('resident.index') }}" :class="{'is-active': onPage('/resident')}"
+                       class="nav-item"><span
+                                class="icon is-hidden-tablet-only"><i
+                                    class="fa fa-user"></i></span><span
+                                class="name padding-10-lr">Residents</span></a>
+                    <a href="/resident_reports" :class="{'is-active': onPage('/resident_reports')}"
+                       class="nav-item"><span
+                                class="icon is-hidden-tablet-only"><i
+                                    class="fa fa-file-text"></i></span><span
+                                class="name padding-10-lr">Resident&nbsp;Reports</span></a>
+                    <a href="/transaction_reports" :class="{'is-active': onPage('/transaction_reports')}"
+                       class="nav-item"><span
+                                class="icon is-hidden-tablet-only"><i
+                                    class="fa fa-file-text"></i></span><span
+                                class="name padding-10-lr">Transaction&nbsp;Reports</span></a>
+                    <a href="/facility_report/select" :class="{'is-active': onPage('/facility_reports')}"
+                       class="nav-item"><span
+                                class="icon is-hidden-tablet-only"><i
+                                    class="fa fa-file-text"></i></span><span
+                                class="name padding-10-lr">Facility&nbsp;Reports</span></a>
+                    <div class="nav-item">
+                        <div class="field">
+                            <p class="control">
+                            <form action="/logout" method="post">
+                                {{ csrf_field() }}
+                                <button type="submit" class="button is-warning">Logout</button>
+                            </form>
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </nav>
             <section class="hero is-info is-bold is-small">
                 <!-- Hero content: will be in the middle -->
                 <div class="hero-body">
@@ -83,6 +128,9 @@
 <script src="{{ asset('js/app.js') }}"></script>
 @yield('scripts.footer')
 <script>
+    $('.nav-toggle').on('click', function () {
+        $('.nav-menu').toggleClass('is-active');
+    });
     (function (i, s, o, g, r, a, m) {
         i['GoogleAnalyticsObject'] = r;
         i[r] = i[r] || function () {
