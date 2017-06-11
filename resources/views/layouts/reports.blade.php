@@ -39,7 +39,7 @@
         <div class="container">
             <div class="has-text-centered">
                 <p>
-                    Tracking Solutions by <strong>On Point</strong>. The website content
+                    Tracking Solutions by <strong>OnPoint</strong>. The website content
                     is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC ANS 4.0</a>.
                 </p>
             </div>
