@@ -32,7 +32,7 @@
                         <div class="has-text-centered">
                             <form action="/logout" method="post">
                                 {{ csrf_field() }}
-                                <button type="submit" class="button is-warning is-outlined">Logout</button>
+                                <button type="submit" id="logout-button" class="button is-warning is-outlined" style="margin-bottom:30px;">Logout</button>
                             </form>
                         </div>
                     </div>
