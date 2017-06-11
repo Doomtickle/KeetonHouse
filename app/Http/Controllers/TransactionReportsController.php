@@ -36,7 +36,8 @@ class TransactionReportsController extends Controller
 
 //        $report = Transaction::where(['date', 'BETWEEN', $startOfMonth], ['resident_id', '=', $resident->id])->get();
         $transactions = DB::table('transactions')
-            ->select(DB::raw("*"))
+            ->join('residents', 'residents.id', '=', 'transactions.resident_id')
+            ->where('residents.facility', '=', \Auth::user()->facility)
             ->when($resident_id, function ($query) use ($resident_id) {
                 return $query->where('resident_id', $resident_id);
             })
