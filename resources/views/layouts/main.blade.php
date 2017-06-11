@@ -20,7 +20,7 @@
 <body>
 <div id="root">
     <div class="columns">
-        <section class="column is-hidden-mobile is-hidden-tablet-only aside hero is-fullheight is-dark">
+        <section class="column is-2 is-hidden-mobile is-hidden-tablet-only aside hero is-fullheight is-dark">
             <div class="main">
                 <div class="columns">
                     <div class="column is-half">
@@ -94,7 +94,7 @@
 
                 </div>
             </nav>
-            <section class="hero is-info is-bold is-small column is-10">
+            <section class="hero is-info is-bold is-small column">
                 <!-- Hero content: will be in the middle -->
                 <div class="hero-body">
                     <div class="container">
