@@ -46,6 +46,7 @@
         </div>
         <hr>
     </section>
+    <!-- Charts and Graphs -->
     <section class="column">
         <div class="columns">
             <div class="column is-offset-1 is-10">
