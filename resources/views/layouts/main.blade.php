@@ -21,40 +21,35 @@
 <div id="root">
     <div class="columns">
         <section class="column is-hidden-mobile is-hidden-tablet-only aside hero is-fullheight is-dark">
-            <div>
-                <div class="main">
-                    <div class="columns">
-                        <div class="column is-half">
-                            <p class="subtitle is-large">{{ \Auth::user()->facility }}</p>
-                        </div>
-                        <div class="column is-half" style="margin-top:-10px;">
-                            <div class="has-text-centered">
-                                <form action="/logout" method="post">
-                                    {{ csrf_field() }}
-                                    <button type="submit" class="button is-warning is-outlined">Logout</button>
-                                </form>
-                            </div>
+            <div class="main">
+                <div class="columns">
+                    <div class="column is-half">
+                        <p class="subtitle is-large facility-label">{{ \Auth::user()->facility }}</p>
+                    </div>
+                    <div class="column is-half" style="margin-top:-10px;">
+                        <div class="has-text-centered">
+                            <form action="/logout" method="post">
+                                {{ csrf_field() }}
+                                <button type="submit" class="button is-warning is-outlined">Logout</button>
+                            </form>
                         </div>
                     </div>
-                    <a href="/home" :class="{'active': onPage('/home')}" class="item"><span class="icon"><i
-                                    class="fa fa-tachometer"></i></span><span class="name">Dashboard</span></a>
-                    <a href="{{ route('resident.index') }}" class="item"><span class="icon"><i
-                                    class="fa fa-user"></i></span><span
-                                class="name">Residents</span></a>
-                    <a href="/resident_reports" class="item"><span class="icon"><i
-                                    class="fa fa-file-text"></i></span><span
-                                class="small-name">Resident&nbsp;Reports</span></a>
-                    <a href="/transaction_reports" class="item"><span class="icon"><i
-                                    class="fa fa-file-text"></i></span><span
-                                class="small-name">Transaction&nbsp;Reports</span></a>
-                    <a href="/facility_report/select" class="item"><span class="icon"><i
-                                    class="fa fa-file-text"></i></span><span
-                                class="small-name">Facility&nbsp;Reports</span></a>
                 </div>
+                <hr class="aside-divider">
+                <a href="/home" :class="{'active': onPage('/home')}" class="item side-nav"><span class="icon"><i
+                                class="fa fa-tachometer column"></i></span><span
+                            class="name">Dashboard</span></a>
+                <a href="{{ route('resident.index') }}" class="item side-nav"><span class="icon"><i
+                                class="fa fa-user"></i></span><span
+                            class="name">Residents</span></a>
+                <hr class="aside-divider">
+                <a href="/resident_reports" class="item side-nav"><span class="name">Resident&nbsp;Reports</span></a>
+                <a href="/transaction_reports" class="item side-nav"><span class="name">Transaction&nbsp;Reports</span></a>
+                <a href="/facility_report/select" class="item side-nav"><span class="name">Facility&nbsp;Reports</span></a>
             </div>
         </section>
         <div class="column">
-            <nav class="hamburger nav is-hidden-widescreen is-full-tablet">
+            <nav class="hamburger nav is-hidden-widescreen">
                 <span class="nav-toggle">
                     <span></span>
                     <span></span>
@@ -99,7 +94,7 @@
 
                 </div>
             </nav>
-            <section class="hero is-info is-bold is-small">
+            <section class="hero is-info is-bold is-small column is-10">
                 <!-- Hero content: will be in the middle -->
                 <div class="hero-body">
                     <div class="container">

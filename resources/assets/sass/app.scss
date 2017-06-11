@@ -3,7 +3,6 @@
 @import 'node_modules/font-awesome/scss/font-awesome';
 @import "variables";
 
-
 html, body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   height: 100%;
@@ -127,8 +126,28 @@ body {
 }
 
 .aside .main .icon {
-  font-size: 19px;
   padding-right: 10px;
+}
+
+a.side-nav {
+  &:hover {
+    color: $primary !important;
+    -webkit-transition: color 400ms ease-in;
+    -moz-transition: color 400ms ease-in;
+    -ms-transition: color 400ms ease-in;
+    -o-transition: color 400ms ease-in;
+    transition: color 400ms ease-in;
+  }
+}
+
+.aside-divider {
+  margin-left: -50px;
+  margin-right: -50px;
+}
+
+p.subtitle.is-large.facility-label {
+  font-weight: 700;
+  color: $primary;
 }
 
 .name {
@@ -137,7 +156,7 @@ body {
 }
 
 .small-name {
-  font-size: 1em;
+  font-size: .9em;
   font-weight: lighter;
 }
 
@@ -176,8 +195,9 @@ body {
 #residentCreate, #residentEdit {
   margin-top: 40px;
 }
-a.nav-item.is-active{
-  color:$danger;
+
+a.nav-item.is-active {
+  color: $danger;
 }
 
 .danger {
@@ -277,55 +297,58 @@ sup {
   font-size: 2rem;
   font-weight: 300;
 }
-.full-width-columns{
-  width:100%;
+
+.full-width-columns {
+  width: 100%;
 }
 
-#intakeForm{
-  width:100%;
+#intakeForm {
+  width: 100%;
 }
 
 span.select {
   width: 100%;
 }
 
-#sortReportSubmit{
-  margin-left:15px;
+#sortReportSubmit {
+  margin-left: 15px;
 }
 
 span.select2 {
   width: 100% !important;
 }
 
-#reportSubmit{
-  margin-left:15px;
+#reportSubmit {
+  margin-left: 15px;
 }
 
-#sortReportForm{
-  width:100%;
+#sortReportForm {
+  width: 100%;
 }
+
 .sortForm {
   width: 100%;
 }
-.edit-icon{
+
+.edit-icon {
   color: $info;
 }
-.grid{
-  width:100%;
+
+.grid {
+  width: 100%;
 }
 
-
-@media (max-width:992px){
+@media (max-width: 992px) {
   //.single-resident{
   //  width:80%;
   //  margin:0;
   //}
 
-  .padding-40{
-    padding:0;
+  .padding-40 {
+    padding: 0;
   }
 
-  .container{
+  .container {
     padding: 30px 25px;
   }
 }

@@ -17,7 +17,7 @@
 
         $balance = money_format('%.2n', ($credits - $debits) / 100);
     @endphp
-    <section class="hero is-small">
+    <section class="hero column is-10">
         <!-- Hero content: will be in the middle -->
         <!-- Hero footer: will stick at the bottom -->
         <div class="hero-foot">
@@ -46,7 +46,7 @@
         </div>
         <hr>
     </section>
-    <section class="section">
+    <section class="column is-10">
         <div class="columns">
             <div class="column is-offset-1 is-10">
                 <p class="subtitle has-text-centered">Man Days</p>
