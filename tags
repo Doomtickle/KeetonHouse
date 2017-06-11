@@ -91,6 +91,7 @@ assert	tests/Browser/Pages/HomePage.php	/^    public function assert(Browser $br
 authorize	app/Http/Requests/TransactionRequest.php	/^    public function authorize()$/;"	f
 balance	app/Http/Controllers/TransactionReportsController.php	/^        $balance = money_format('%.2n', ($credits - $debits) \/ 100);$/;"	v
 balance	resources/views/home.blade.php	/^        $balance = money_format('%.2n', ($credits - $debits) \/ 100);$/;"	v
+balance	storage/framework/views/ee2c6dd14b8919bb0881d3466d61c7ee04b13dd2.php	/^        $balance = money_format('%.2n', ($credits - $debits) \/ 100);$/;"	v
 balanceColor	resources/views/partials/transactions.blade.php	/^                $balanceColor = 'credit';$/;"	v
 balanceColor	resources/views/partials/transactions.blade.php	/^            $balanceColor = 'debit';$/;"	v
 boot	app/Providers/AppServiceProvider.php	/^    public function boot()$/;"	f
@@ -117,6 +118,7 @@ createApplication	tests/CreatesApplication.php	/^    public function createAppli
 credit	app/Http/Controllers/TransactionController.php	/^        $credit = Transaction::parseCurrency($request->credit);$/;"	v
 credits	app/Http/Controllers/TransactionReportsController.php	/^        $credits = $transactions->pluck('credit')->sum();$/;"	v
 credits	resources/views/home.blade.php	/^        $credits   = App\\Resident::where('residents.facility', \\Auth::user()->facility)$/;"	v
+credits	storage/framework/views/ee2c6dd14b8919bb0881d3466d61c7ee04b13dd2.php	/^        $credits   = App\\Resident::where('residents.facility', \\Auth::user()->facility)$/;"	v
 currency	app/Transaction.php	/^        $currency = ((float)$currency) * 100;$/;"	v
 currency	app/Transaction.php	/^        $currency = preg_replace('\/\\$\/', '', $currencyString);$/;"	v
 currentBalance	app/Http/Controllers/TransactionController.php	/^        $currentBalance = money_format('%.2n', (($residentCredits - $residentDebits) \/ 100));$/;"	v
@@ -132,6 +134,7 @@ date	tests/Unit/ManDaysTest.php	/^        $date = Carbon::now();$/;"	v
 debit	app/Http/Controllers/TransactionController.php	/^        $debit  = Transaction::parseCurrency($request->debit);$/;"	v
 debits	app/Http/Controllers/TransactionReportsController.php	/^        $debits  = $transactions->pluck('debit')->sum();$/;"	v
 debits	resources/views/home.blade.php	/^        $debits    = App\\Resident::where('residents.facility', \\Auth::user()->facility)$/;"	v
+debits	storage/framework/views/ee2c6dd14b8919bb0881d3466d61c7ee04b13dd2.php	/^        $debits    = App\\Resident::where('residents.facility', \\Auth::user()->facility)$/;"	v
 debounce	resources/views/residents/index.blade.php	/^        function debounce(fn, threshold) {$/;"	f
 debounce	storage/framework/views/6539c80e55a8b1ffb211527dac3be0aafa6fa8ea.php	/^        function debounce(fn, threshold) {$/;"	f
 debounced	resources/views/residents/index.blade.php	/^            return function debounced() {$/;"	f
@@ -282,6 +285,7 @@ residents	app/Http/Controllers/TransactionReportsController.php	/^        $resid
 residents	app/Resident.php	/^        $residents = DB::table('residents')$/;"	v
 residents	database/seeds/ResidentsTableSeeder.php	/^        $residents = Resident::all();$/;"	v
 residents	resources/views/home.blade.php	/^        $residents = App\\Resident::where('facility', \\Auth::user()->facility);$/;"	v
+residents	storage/framework/views/ee2c6dd14b8919bb0881d3466d61c7ee04b13dd2.php	/^        $residents = App\\Resident::where('facility', \\Auth::user()->facility);$/;"	v
 residents	tests/Unit/ManDaysTest.php	/^        $residents = factory(Resident::class, 2)->create([$/;"	v
 response	public/index.php	/^$response = $kernel->handle($/;"	v
 response	tests/Unit/LoginTest.php	/^        $response = $this->get('\/');$/;"	v

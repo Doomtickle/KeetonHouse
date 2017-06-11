@@ -23,10 +23,12 @@
         <section class="column is-2 is-hidden-mobile is-hidden-tablet-only aside hero is-fullheight is-dark">
             <div class="main">
                 <div class="columns">
-                    <div class="column is-half">
+                    <div class="column has-text-centered">
                         <p class="subtitle is-large facility-label">{{ \Auth::user()->facility }}</p>
                     </div>
-                    <div class="column is-half" style="margin-top:-10px;">
+                </div>
+                <div class="columns">
+                    <div class="column has-text-centered">
                         <div class="has-text-centered">
                             <form action="/logout" method="post">
                                 {{ csrf_field() }}
