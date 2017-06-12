@@ -21,10 +21,35 @@ class LoginTest extends DuskTestCase
     }
 
     /** @test */
+    public function a_username_is_required_to_login()
+    {
+        $this->browse(function (Browser $browser) {
+            $browser->visit('/login')
+                ->type('username', '')
+                ->type('password', 'secret')
+                ->press('Login')
+                ->assertSee('The username field is required');
+        });
+    }
+
+    /** @test */
+    public function a_password_is_required_to_login()
+    {
+        $this->browse(function (Browser $browser) {
+            $browser->visit('/login')
+                ->type('username', 'john')
+                ->type('password', '')
+                ->press('Login')
+                ->assertSee('The password field is required');
+        });
+    }
+
+    /** @test */
     public function a_user_can_login()
     {
         $user = factory(User::class)->create([
-            'username' => 'john'
+            'username' => 'john',
+            'facility' => 'Demo'
         ]);
 
 
@@ -33,7 +58,9 @@ class LoginTest extends DuskTestCase
                 ->type('username', $user->username)
                 ->type('password', 'secret')
                 ->press('Login')
-                ->assertPathIs('/');
+                ->assertPathIs('/')
+                ->assertSee('Demo Dashboard');
         });
     }
+
 }
