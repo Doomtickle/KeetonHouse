@@ -1,6 +1,6 @@
 require('./bootstrap');
 window.Vue = require('vue');
-require('select2/dist/js/select2.full.js');
+require('select2');
 require('sweetalert');
 var moment = require('moment');
 var flatpickr = require("flatpickr");

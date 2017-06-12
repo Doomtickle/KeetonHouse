@@ -79,10 +79,10 @@
                     <div class="column is-one-third">
                         <label class="label">Sex <sup>*</sup></label>
                         <label class="radio">
-                            <input type="radio" name="sex" value="M">Male
+                            <input type="radio" class="gender" name="sex" value="M">Male
                         </label>
                         <label class="radio">
-                            <input type="radio" name="sex" value="F">Female
+                            <input type="radio" class="gender" name="sex" value="F">Female
                         </label>
                     </div>
                     <div class="column is-half">
