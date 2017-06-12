@@ -76,6 +76,8 @@ __construct	app/Http/Controllers/ResidentReportsController.php	/^    function __
 __construct	app/Http/Controllers/TransactionController.php	/^    function __construct()$/;"	f
 __construct	app/Http/Controllers/TransactionReportsController.php	/^    function __construct()$/;"	f
 __currentLoopData	storage/framework/views/2d9c79f26e30b78dbad2cf85bbf37e19279b561c.php	/^            <?php $__currentLoopData = $intakes; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $intake): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>$/;"	v
+__currentLoopData	storage/framework/views/49c77be5cd40e46cdf716c5e8f585fafa8f0ada9.php	/^<?php $__currentLoopData = $introLines; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $line): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>$/;"	v
+__currentLoopData	storage/framework/views/49c77be5cd40e46cdf716c5e8f585fafa8f0ada9.php	/^<?php $__currentLoopData = $outroLines; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $line): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>$/;"	v
 __currentLoopData	storage/framework/views/6539c80e55a8b1ffb211527dac3be0aafa6fa8ea.php	/^                <?php $__currentLoopData = $residents; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $resident): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>$/;"	v
 __currentLoopData	storage/framework/views/97d0901927519b712ab09231224f17e9c01e4f9b.php	/^            <?php $__currentLoopData = $transactions; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $transaction): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>$/;"	v
 __currentLoopData	storage/framework/views/dfefa8121458367f15ce99c506da2b487ebd8f47.php	/^                            <?php $__currentLoopData = $residents; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $resident): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>$/;"	v
@@ -119,6 +121,9 @@ calculateManDaysForMonth	app/Resident.php	/^    public static function calculate
 class	app/Http/Controllers/TransactionController.php	/^            $class = 'credit';$/;"	v
 class	app/Http/Controllers/TransactionController.php	/^            $class = 'debit';$/;"	v
 class	app/Http/Controllers/TransactionReportsController.php	/^        $class = ($credits - $debits > 0) ? 'credit' : 'debit';$/;"	v
+color	storage/framework/views/49c77be5cd40e46cdf716c5e8f585fafa8f0ada9.php	/^            $color = 'blue';$/;"	v
+color	storage/framework/views/49c77be5cd40e46cdf716c5e8f585fafa8f0ada9.php	/^            $color = 'green';$/;"	v
+color	storage/framework/views/49c77be5cd40e46cdf716c5e8f585fafa8f0ada9.php	/^            $color = 'red';$/;"	v
 commands	app/Console/Kernel.php	/^    protected $commands = [$/;"	v
 commands	app/Console/Kernel.php	/^    protected function commands()$/;"	f
 config	public/index.php	/^$config = array($/;"	v
@@ -217,6 +222,7 @@ intakes	app/Http/Controllers/FacilityReportsController.php	/^            $intake
 intakes	app/Http/Controllers/FacilityReportsController.php	/^        $intakes = DB::table('residents')$/;"	v
 intakes	app/Http/Controllers/HomeController.php	/^        $intakes        = array();$/;"	v
 intakesReport	app/Http/Controllers/FacilityReportsController.php	/^    private function intakesReport($facility, $date)$/;"	f
+is	config/laravel-backup.php	/^     * You can also use your own notification classes, just make sure the class is named after one of$/;"	c
 it_has_a_login_page	tests/Browser/LoginTest.php	/^    public function it_has_a_login_page()$/;"	f
 it_should_calculate_all_man_days_for_specified_month	tests/Unit/ManDaysForMonthTest.php	/^    public function it_should_calculate_all_man_days_for_specified_month()$/;"	f
 it_should_calculate_man_days_for_current_month	tests/Unit/ManDaysForMonthTest.php	/^    public function it_should_calculate_man_days_for_current_month()$/;"	f
@@ -228,6 +234,7 @@ listen	app/Providers/EventServiceProvider.php	/^    protected $listen = [$/;"	v
 loader	bootstrap/autoload.php	/^| Composer provides a convenient, automatically generated class loader$/;"	c
 loader	public/index.php	/^| Composer provides a convenient, automatically generated class loader for$/;"	c
 loop	storage/framework/views/2d9c79f26e30b78dbad2cf85bbf37e19279b561c.php	/^            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>$/;"	v
+loop	storage/framework/views/49c77be5cd40e46cdf716c5e8f585fafa8f0ada9.php	/^<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>$/;"	v
 loop	storage/framework/views/6539c80e55a8b1ffb211527dac3be0aafa6fa8ea.php	/^                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>$/;"	v
 loop	storage/framework/views/97d0901927519b712ab09231224f17e9c01e4f9b.php	/^            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>$/;"	v
 loop	storage/framework/views/dfefa8121458367f15ce99c506da2b487ebd8f47.php	/^                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>$/;"	v
