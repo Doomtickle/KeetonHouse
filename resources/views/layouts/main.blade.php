@@ -24,7 +24,7 @@
             <div class="main">
                 <div class="columns">
                     <div class="column has-text-centered">
-                        <p class="subtitle is-large facility-label">{{ \Auth::user()->facility }}</p>
+                        <p class="subtitle is-4 facility-label">{{ \Auth::user()->facility }}</p>
                     </div>
                 </div>
                 <div class="columns">
@@ -100,7 +100,7 @@
                 <!-- Hero content: will be in the middle -->
                 <div class="hero-body">
                     <div class="container">
-                        <h1 class="title">
+                        <h1 class="title is-2">
                             @yield('title')
                         </h1>
                     </div>
