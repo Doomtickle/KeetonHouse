@@ -50,6 +50,7 @@ class ManDaysForMonthTest extends TestCase
         self::assertEquals(91, $manDays);
     }
 
+    /** @test */
     public function it_should_calculate_man_days_for_current_month()
     {
         $user = factory(User::class)->create([
@@ -58,18 +59,23 @@ class ManDaysForMonthTest extends TestCase
 
         $this->actingAs($user);
 
-        $admitDate   = Carbon::now()->subMonth()->firstOfMonth()->toDateString();
-        $releaseDate = Carbon::now()->addDay()->toDateString();
+        $admitDate     = Carbon::now()->firstOfMonth()->toDateString();
+        $dayOfTheMonth = Carbon::now()->day;
         factory(Resident::class)->create([
             'date_of_admission'        => $admitDate,
-            'actual_date_of_discharge' => $releaseDate,
+            'actual_date_of_discharge' => null,
+            'facility'                 => $user->facility
+        ]);
+        factory(Resident::class)->create([
+            'date_of_admission'        => $admitDate,
+            'actual_date_of_discharge' => null,
             'facility'                 => $user->facility
         ]);
 
-        $manDays = Resident::calculateManDaysForMonth(Carbon::now()->year, Carbon::now()->month);
+        $manDays = Resident::calculateManDaysForCurrentMonth();
 
 
-        self::assertEquals(1, $manDays);
+        self::assertEquals($dayOfTheMonth * 2, $manDays);
 
     }
 

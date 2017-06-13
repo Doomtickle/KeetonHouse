@@ -28,7 +28,7 @@ class HomeController extends Controller
         $intakes        = array();
         $releases       = array();
         $manDays        = array();
-        $currentManDays = Resident::calculateManDaysForMonth(Carbon::now()->year, Carbon::now()->month);
+        $currentManDays = Resident::calculateManDaysForCurrentMonth();
 
         for ($i = 0; $i < 6; $i++) {
 
