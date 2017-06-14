@@ -41,6 +41,7 @@ LoginController	app/Http/Controllers/Auth/LoginController.php	/^class LoginContr
 LoginTest	tests/Browser/LoginTest.php	/^class LoginTest extends DuskTestCase$/;"	c
 LoginTest	tests/Unit/LoginTest.php	/^class LoginTest extends TestCase$/;"	c
 ManDaysForMonthTest	tests/Unit/ManDaysForMonthTest.php	/^class ManDaysForMonthTest extends TestCase$/;"	c
+ManDaysForResident	tests/Unit/ManDaysForResidentTest.php	/^class ManDaysForResident extends TestCase$/;"	c
 ManDaysTest	tests/Unit/ManDaysTest.php	/^class ManDaysTest extends TestCase$/;"	c
 Note	app/Note.php	/^class Note extends Model$/;"	c
 NoteController	app/Http/Controllers/NoteController.php	/^class NoteController extends Controller$/;"	c
@@ -75,11 +76,13 @@ __construct	app/Http/Controllers/ResidentController.php	/^    function __constru
 __construct	app/Http/Controllers/ResidentReportsController.php	/^    function __construct()$/;"	f
 __construct	app/Http/Controllers/TransactionController.php	/^    function __construct()$/;"	f
 __construct	app/Http/Controllers/TransactionReportsController.php	/^    function __construct()$/;"	f
+__currentLoopData	storage/framework/views/06d22fd6009303ba9f76358fc1b4b0fd08e7d1ee.php	/^            <?php $__currentLoopData = $resident->transactions; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $transaction): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>$/;"	v
 __currentLoopData	storage/framework/views/2d9c79f26e30b78dbad2cf85bbf37e19279b561c.php	/^            <?php $__currentLoopData = $intakes; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $intake): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>$/;"	v
 __currentLoopData	storage/framework/views/49c77be5cd40e46cdf716c5e8f585fafa8f0ada9.php	/^<?php $__currentLoopData = $introLines; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $line): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>$/;"	v
 __currentLoopData	storage/framework/views/49c77be5cd40e46cdf716c5e8f585fafa8f0ada9.php	/^<?php $__currentLoopData = $outroLines; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $line): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>$/;"	v
 __currentLoopData	storage/framework/views/6539c80e55a8b1ffb211527dac3be0aafa6fa8ea.php	/^                <?php $__currentLoopData = $residents; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $resident): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>$/;"	v
 __currentLoopData	storage/framework/views/97d0901927519b712ab09231224f17e9c01e4f9b.php	/^            <?php $__currentLoopData = $transactions; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $transaction): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>$/;"	v
+__currentLoopData	storage/framework/views/afc672dfb9ffdeeb28af851d838feb1e368dd47a.php	/^    <?php $__currentLoopData = $resident->notes; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $note): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>$/;"	v
 __currentLoopData	storage/framework/views/dfefa8121458367f15ce99c506da2b487ebd8f47.php	/^                            <?php $__currentLoopData = $residents; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $resident): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>$/;"	v
 __webpack_require__	public/js/app.js	/^\/******\/ 	function __webpack_require__(moduleId) {$/;"	f
 __webpack_require__.d	public/js/app.js	/^\/******\/ 	__webpack_require__.d = function(exports, name, getter) {$/;"	f
@@ -94,6 +97,7 @@ a_signed_in_user_can_see_the_residents_page	tests/Browser/ResidentsTest.php	/^  
 a_signed_in_user_can_see_the_single_resident_page	tests/Browser/ResidentsTest.php	/^    public function a_signed_in_user_can_see_the_single_resident_page()$/;"	f
 a_user_can_login	tests/Browser/LoginTest.php	/^    public function a_user_can_login()$/;"	f
 a_username_is_required_to_login	tests/Browser/LoginTest.php	/^    public function a_username_is_required_to_login()$/;"	f
+admit	tests/Unit/ManDaysForResidentTest.php	/^        $admit  = Carbon::create(2017, 1, 1, 12)->toDateString();$/;"	v
 admitDate	app/Http/Controllers/ReportsController.php	/^    public function admitDate()$/;"	f
 admitDate	app/Resident.php	/^            $admitDate       = $admitDateTmp->lt($firstDayOfMonth) ? $firstDayOfMonth : $admitDateTmp;$/;"	v
 admitDate	app/Resident.php	/^            $admitDate    = $admitDateTmp->lt($firstDayOfMonth) ? $firstDayOfMonth : $admitDateTmp;$/;"	v
@@ -113,14 +117,16 @@ balance	resources/views/home.blade.php	/^        $balance = money_format('%.2n',
 balance	storage/framework/views/ee2c6dd14b8919bb0881d3466d61c7ee04b13dd2.php	/^        $balance = money_format('%.2n', ($credits - $debits) \/ 100);$/;"	v
 balanceColor	resources/views/partials/transactions.blade.php	/^                $balanceColor = 'credit';$/;"	v
 balanceColor	resources/views/partials/transactions.blade.php	/^            $balanceColor = 'debit';$/;"	v
+balanceColor	storage/framework/views/06d22fd6009303ba9f76358fc1b4b0fd08e7d1ee.php	/^                $balanceColor = 'credit';$/;"	v
+balanceColor	storage/framework/views/06d22fd6009303ba9f76358fc1b4b0fd08e7d1ee.php	/^            $balanceColor = 'debit';$/;"	v
 boot	app/Providers/AppServiceProvider.php	/^    public function boot()$/;"	f
 boot	app/Providers/AuthServiceProvider.php	/^    public function boot()$/;"	f
 boot	app/Providers/BroadcastServiceProvider.php	/^    public function boot()$/;"	f
 boot	app/Providers/EventServiceProvider.php	/^    public function boot()$/;"	f
 boot	app/Providers/RouteServiceProvider.php	/^    public function boot()$/;"	f
 calculateManDays	app/Resident.php	/^    public static function calculateManDays($resident)$/;"	f
-calculateManDaysForCurrentMonth	app/Resident.php	/^    public static function calculateManDaysForCurrentMonth()$/;"	f
-calculateManDaysForMonth	app/Resident.php	/^    public static function calculateManDaysForMonth($year, $month)$/;"	f
+calculateManDaysForCurrentMonth	app/Resident.php	/^    public static function calculateManDaysForCurrentMonth($resident = null)$/;"	f
+calculateManDaysForMonth	app/Resident.php	/^    public static function calculateManDaysForMonth($year, $month, $resident = null)$/;"	f
 class	app/Http/Controllers/TransactionController.php	/^            $class = 'credit';$/;"	v
 class	app/Http/Controllers/TransactionController.php	/^            $class = 'debit';$/;"	v
 class	app/Http/Controllers/TransactionReportsController.php	/^        $class = ($credits - $debits > 0) ? 'credit' : 'debit';$/;"	v
@@ -146,6 +152,8 @@ currency	app/Transaction.php	/^        $currency = ((float)$currency) * 100;$/;"
 currency	app/Transaction.php	/^        $currency = preg_replace('\/\\$\/', '', $currencyString);$/;"	v
 currentBalance	app/Http/Controllers/TransactionController.php	/^        $currentBalance = money_format('%.2n', (($residentCredits - $residentDebits) \/ 100));$/;"	v
 currentBalance	resources/views/partials/transactions.blade.php	/^            $currentBalance = $resident->transactions()->sum('credit') \/ 100 - $resident->transactions()->sum('debit') \/ 100;$/;"	v
+currentBalance	storage/framework/views/06d22fd6009303ba9f76358fc1b4b0fd08e7d1ee.php	/^            $currentBalance = $resident->transactions()->sum('credit') \/ 100 - $resident->transactions()->sum('debit') \/ 100;$/;"	v
+currentDayOfMonth	tests/Unit/ManDaysForResidentTest.php	/^        $currentDayOfMonth = Carbon::now()->day;$/;"	v
 currentManDays	app/Http/Controllers/HomeController.php	/^        $currentManDays = Resident::calculateManDaysForCurrentMonth();$/;"	v
 data	app/Http/Controllers/TransactionController.php	/^        $data = array($/;"	v
 date	app/Http/Controllers/FacilityReportsController.php	/^        $date     = $request->date;$/;"	v
@@ -230,6 +238,8 @@ intakes	app/Http/Controllers/HomeController.php	/^        $intakes        = arra
 intakesReport	app/Http/Controllers/FacilityReportsController.php	/^    private function intakesReport($facility, $date)$/;"	f
 is	config/laravel-backup.php	/^     * You can also use your own notification classes, just make sure the class is named after one of$/;"	c
 it_has_a_login_page	tests/Browser/LoginTest.php	/^    public function it_has_a_login_page()$/;"	f
+it_should_calculate_a_residents_man_days_for_a_specified_month	tests/Unit/ManDaysForResidentTest.php	/^    public function it_should_calculate_a_residents_man_days_for_a_specified_month()$/;"	f
+it_should_calculate_a_residents_man_days_for_the_current_month	tests/Unit/ManDaysForResidentTest.php	/^    public function it_should_calculate_a_residents_man_days_for_the_current_month()$/;"	f
 it_should_calculate_all_man_days_for_specified_month	tests/Unit/ManDaysForMonthTest.php	/^    public function it_should_calculate_all_man_days_for_specified_month()$/;"	f
 it_should_calculate_man_days_for_current_month	tests/Unit/ManDaysForMonthTest.php	/^    public function it_should_calculate_man_days_for_current_month()$/;"	f
 kernel	public/index.php	/^$kernel = $app->make(Illuminate\\Contracts\\Http\\Kernel::class);$/;"	v
@@ -239,15 +249,19 @@ lastName	app/Http/Controllers/ReportsController.php	/^    public function lastNa
 listen	app/Providers/EventServiceProvider.php	/^    protected $listen = [$/;"	v
 loader	bootstrap/autoload.php	/^| Composer provides a convenient, automatically generated class loader$/;"	c
 loader	public/index.php	/^| Composer provides a convenient, automatically generated class loader for$/;"	c
+loop	storage/framework/views/06d22fd6009303ba9f76358fc1b4b0fd08e7d1ee.php	/^            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>$/;"	v
 loop	storage/framework/views/2d9c79f26e30b78dbad2cf85bbf37e19279b561c.php	/^            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>$/;"	v
 loop	storage/framework/views/49c77be5cd40e46cdf716c5e8f585fafa8f0ada9.php	/^<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>$/;"	v
 loop	storage/framework/views/6539c80e55a8b1ffb211527dac3be0aafa6fa8ea.php	/^                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>$/;"	v
 loop	storage/framework/views/97d0901927519b712ab09231224f17e9c01e4f9b.php	/^            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>$/;"	v
+loop	storage/framework/views/afc672dfb9ffdeeb28af851d838feb1e368dd47a.php	/^    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>$/;"	v
 loop	storage/framework/views/dfefa8121458367f15ce99c506da2b487ebd8f47.php	/^                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>$/;"	v
 manDays	app/Http/Controllers/HomeController.php	/^        $manDays        = array();$/;"	v
 manDays	app/Resident.php	/^        $manDays = $admitDate->diffInDays($releaseDate);$/;"	v
 manDays	tests/Unit/ManDaysForMonthTest.php	/^        $manDays = Resident::calculateManDaysForCurrentMonth();$/;"	v
 manDays	tests/Unit/ManDaysForMonthTest.php	/^        $manDays = Resident::calculateManDaysForMonth($firstDate->year, $firstDate->month);$/;"	v
+manDays	tests/Unit/ManDaysForResidentTest.php	/^        $manDays = Resident::calculateManDaysForCurrentMonth($resident);$/;"	v
+manDays	tests/Unit/ManDaysForResidentTest.php	/^        $manDays = Resident::calculateManDaysForMonth(2017, 1, $resident);$/;"	v
 manDays	tests/Unit/ManDaysTest.php	/^        $manDays = 0;$/;"	v
 manDays	tests/Unit/ManDaysTest.php	/^        $manDays = Resident::calculateManDays($resident);$/;"	v
 man_days_should_not_count_date_of_discharge	tests/Unit/ManDaysTest.php	/^    public function man_days_should_not_count_date_of_discharge()$/;"	f
@@ -281,6 +295,7 @@ redirectTo	app/Http/Controllers/Auth/LoginController.php	/^    protected $redire
 redirectTo	app/Http/Controllers/Auth/RegisterController.php	/^    protected $redirectTo = '\/home';$/;"	v
 redirectTo	app/Http/Controllers/Auth/ResetPasswordController.php	/^    protected $redirectTo = '\/home';$/;"	v
 register	app/Providers/AppServiceProvider.php	/^    public function register()$/;"	f
+release	tests/Unit/ManDaysForResidentTest.php	/^        $release = Carbon::create(2017, 2, 1, 12)->toDateString();$/;"	v
 releaseDate	app/Http/Controllers/ReportsController.php	/^    public function releaseDate()$/;"	f
 releaseDate	app/Resident.php	/^            $releaseDate     = $resident->actual_date_of_discharge == null ? $lastDayOfMonth->addDay() :$/;"	v
 releaseDate	app/Resident.php	/^            $releaseDate  = $resident->actual_date_of_discharge == null ? $tomorrow :$/;"	v
@@ -300,8 +315,10 @@ resident	app/Http/Controllers/ResidentController.php	/^        $resident = Resid
 resident	app/Http/Controllers/TransactionController.php	/^        $resident = $resident->with('transactions')->find($resident->id);$/;"	v
 resident	app/Http/Controllers/TransactionController.php	/^        $resident = Resident::find($transaction->resident_id);$/;"	v
 resident	app/Note.php	/^    public function resident()$/;"	f
+resident	app/Resident.php	/^    public static function calculateManDaysForMonth($year, $month, $resident = null)$/;"	v
 resident	app/Transaction.php	/^    public function resident()$/;"	f
 resident	tests/Browser/ResidentsTest.php	/^        $resident = factory(Resident::class)->create([$/;"	v
+resident	tests/Unit/ManDaysForResidentTest.php	/^        $resident = factory(Resident::class)->create([$/;"	v
 resident	tests/Unit/ManDaysTest.php	/^        $resident = factory(Resident::class)->create([$/;"	v
 residentCredits	app/Http/Controllers/TransactionController.php	/^        $residentCredits = Transaction::where('resident_id', $transaction->resident_id)$/;"	v
 residentDebits	app/Http/Controllers/TransactionController.php	/^        $residentDebits  = Transaction::where('resident_id', $transaction->resident_id)$/;"	v
@@ -388,6 +405,7 @@ user	app/Note.php	/^    public function user()$/;"	f
 user	tests/Browser/LoginTest.php	/^        $user = factory(User::class)->create([$/;"	v
 user	tests/Unit/LoginTest.php	/^        $user = factory(User::class)->create();$/;"	v
 user	tests/Unit/ManDaysForMonthTest.php	/^        $user = factory(User::class)->create([$/;"	v
+user	tests/Unit/ManDaysForResidentTest.php	/^        $user = factory(User::class)->create([$/;"	v
 username	app/Http/Controllers/Auth/LoginController.php	/^    public function username()$/;"	f
 validator	app/Http/Controllers/Auth/RegisterController.php	/^    protected function validator(array $data)$/;"	f
 year	app/Http/Controllers/FacilityReportsController.php	/^        $year  = $date->year;$/;"	v

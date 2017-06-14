@@ -36,11 +36,14 @@ class Resident extends Model
 
     }
 
-    public static function calculateManDaysForMonth($year, $month)
+    public static function calculateManDaysForMonth($year, $month, $resident = null)
     {
 
         $residents = DB::table('residents')
             ->where('facility', \Auth::user()->facility)
+            ->when($resident, function($query) use($resident){
+               return $query->where('id', $resident->id);
+            })
             ->whereMonth('date_of_admission', '<=', $month)
             ->whereYear('date_of_admission', '<=', $year)
             ->get();
@@ -63,7 +66,7 @@ class Resident extends Model
         return $sum;
     }
 
-    public static function calculateManDaysForCurrentMonth()
+    public static function calculateManDaysForCurrentMonth($resident = null)
     {
         $date            = Carbon::now();
         $tomorrow        = Carbon::tomorrow();
@@ -73,6 +76,9 @@ class Resident extends Model
 
         $residents = DB::table('residents')
             ->where('facility', \Auth::user()->facility)
+            ->when($resident, function($query) use($resident){
+                return $query->where('id', $resident->id);
+            })
             ->whereMonth('date_of_admission', '<=', $month)
             ->whereYear('date_of_admission', '<=', $year)
             ->get();
