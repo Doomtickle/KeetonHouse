@@ -226,7 +226,7 @@ edit	app/Http/Controllers/NoteController.php	/^    public function edit(Note $no
 edit	app/Http/Controllers/ResidentController.php	/^    public function edit(Resident $resident)$/;"	f
 edit	app/Http/Controllers/TransactionController.php	/^    public function edit(Transaction $transaction)$/;"	f
 elements	tests/Browser/Pages/HomePage.php	/^    public function elements()$/;"	f
-endDate	database/factories/ModelFactory.php	/^    $endDate = Carbon::createFromFormat('Y-m-d H:i:s', $startDate)->addMonth();$/;"	v
+endDate	database/factories/ModelFactory.php	/^    $endDate   = Carbon::createFromFormat('Y-m-d H:i:s', $startDate)->addMonth();$/;"	v
 except	app/Http/Middleware/EncryptCookies.php	/^    protected $except = [$/;"	v
 except	app/Http/Middleware/TrimStrings.php	/^    protected $except = [$/;"	v
 except	app/Http/Middleware/VerifyCsrfToken.php	/^    protected $except = [$/;"	v
@@ -391,7 +391,7 @@ residents	storage/framework/views/ee2c6dd14b8919bb0881d3466d61c7ee04b13dd2.php	/
 residents	tests/Unit/ManDaysTest.php	/^        $residents = factory(Resident::class, 2)->create([$/;"	v
 response	public/index.php	/^$response = $kernel->handle($/;"	v
 response	tests/Feature/SARInvoiceTest.php	/^        $response = $this->get('\/invoice\/select');$/;"	v
-response	tests/Feature/SARInvoiceTest.php	/^        $response = $this->post('\/invoice\/'. $resident->facility .'\/2017\/2');$/;"	v
+response	tests/Feature/SARInvoiceTest.php	/^        $response = $this->post('\/invoice\/' . $resident->facility . '\/2017\/2');$/;"	v
 response	tests/Unit/LoginTest.php	/^        $response = $this->get('\/');$/;"	v
 response	tests/Unit/LoginTest.php	/^        $response = $this->get('\/resident');$/;"	v
 response	tests/Unit/LoginTest.php	/^        $response = $this->get('\/transaction');$/;"	v

@@ -12,6 +12,7 @@
 */
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
+use App\FacilityInfo;
 use App\Note;
 use App\Resident;
 use App\Transaction;
@@ -31,10 +32,25 @@ $factory->define(User::class, function (Faker\Generator $faker) {
     ];
 });
 
+$factory->define(FacilityInfo::class, function (Faker\Generator $faker) {
+    static $password;
+
+    return [
+        'facility_name'       => 'Demo',
+        'contractor_name'     => $faker->company,
+        'street_address'      => $faker->address,
+        'fein_number'         => $faker->bankAccountNumber,
+        'contract_number'     => $faker->bankAccountNumber,
+        'max_annual_bed_days' => 219000,
+        'per_diem'            => 4750
+    ];
+});
+
 $factory->define(Resident::class, function (Faker\Generator $faker) {
 
     $startDate = Carbon::createFromTimeStamp($faker->dateTimeBetween('-6 months', 'now')->getTimestamp());
-    $endDate = Carbon::createFromFormat('Y-m-d H:i:s', $startDate)->addMonth();
+    $endDate   = Carbon::createFromFormat('Y-m-d H:i:s', $startDate)->addMonth();
+
     return [
         'age'                         => $faker->randomNumber(2),
         'dob'                         => $faker->date(),

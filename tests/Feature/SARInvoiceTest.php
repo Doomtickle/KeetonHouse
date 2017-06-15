@@ -2,6 +2,7 @@
 
 namespace Tests\Feature;
 
+use App\FacilityInfo;
 use App\Resident;
 use App\User;
 use Carbon\Carbon;
@@ -30,6 +31,8 @@ class SARInvoiceTest extends TestCase
     /** @test */
     public function it_should_generate_an_invoice()
     {
+        factory(FacilityInfo::class)->create();
+
         $user = factory(User::class)->create([
             'facility' => 'Demo'
         ]);
@@ -45,7 +48,7 @@ class SARInvoiceTest extends TestCase
             'facility'                 => 'Demo'
         ]);
 
-        $response = $this->post('/invoice/'. $resident->facility .'/2017/2');
+        $response = $this->post('/invoice/' . $resident->facility . '/2017/2');
 
         $response->assertStatus(200);
         $response->assertSeeText($resident->last_name);
