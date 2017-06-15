@@ -23,8 +23,8 @@ class ManDaysForResident extends TestCase
 
         $this->actingAs($user);
 
-        $admit  = Carbon::create(2017, 1, 1, 12)->toDateString();
-        $release = Carbon::create(2017, 2, 1, 12)->toDateString();
+        $admit  = Carbon::create(2016, 12, 20, 12)->toDateString();
+        $release = Carbon::create(2017, 6, 9, 12)->toDateString();
 
         $resident = factory(Resident::class)->create([
             'date_of_admission'        => $admit,
@@ -32,9 +32,9 @@ class ManDaysForResident extends TestCase
             'facility'                 => $user->facility
         ]);
 
-        $manDays = Resident::calculateManDaysForMonth(2017, 1, $resident);
+        $manDays = Resident::calculateManDaysForMonth(2017, 4, $resident);
 
-        self::assertEquals(31, $manDays);
+        self::assertEquals(30, $manDays);
     }
 
     /** @test */

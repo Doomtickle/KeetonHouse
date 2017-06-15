@@ -41,10 +41,9 @@ class Resident extends Model
 
         $residents = DB::table('residents')
             ->where('facility', \Auth::user()->facility)
-            ->when($resident, function($query) use($resident){
-               return $query->where('id', $resident->id);
+            ->when($resident, function ($query) use ($resident) {
+                return $query->where('id', $resident->id);
             })
-            ->whereMonth('date_of_admission', '<=', $month)
             ->whereYear('date_of_admission', '<=', $year)
             ->get();
 
@@ -54,11 +53,11 @@ class Resident extends Model
             $firstDayOfMonth = Carbon::now()->year($year)->month($month)->firstOfMonth();
             $lastDayOfMonth  = Carbon::now()->year($year)->month($month)->lastOfMonth();
             $admitDateTmp    = Carbon::parse($resident->date_of_admission);
-            $admitDate       = $admitDateTmp->lt($firstDayOfMonth) ? $firstDayOfMonth : $admitDateTmp;
-            $releaseDate     = $resident->actual_date_of_discharge == null ? $lastDayOfMonth->addDay() :
+            $admitDate       = $admitDateTmp->lessThanOrEqualTo($firstDayOfMonth) ? $firstDayOfMonth : $admitDateTmp;
+            $releaseDate     = $resident->actual_date_of_discharge == null || Carbon::parse($resident->actual_date_of_discharge)->greaterThanOrEqualTo($lastDayOfMonth) ? $lastDayOfMonth->addDay() :
                 Carbon::parse($resident->actual_date_of_discharge);
 
-            if ($releaseDate->greaterThanOrEqualTo($firstDayOfMonth)) {
+            if ($admitDate->lessThanOrEqualTo($lastDayOfMonth) && $releaseDate->greaterThanOrEqualTo($firstDayOfMonth)) {
                 $sum += $admitDate->diffInDays($releaseDate);
             }
         }
@@ -76,7 +75,7 @@ class Resident extends Model
 
         $residents = DB::table('residents')
             ->where('facility', \Auth::user()->facility)
-            ->when($resident, function($query) use($resident){
+            ->when($resident, function ($query) use ($resident) {
                 return $query->where('id', $resident->id);
             })
             ->whereMonth('date_of_admission', '<=', $month)
@@ -99,5 +98,33 @@ class Resident extends Model
         return $sum;
 
     }
+
+    public static function stayedHereDuring($year, $month, $resident)
+    {
+        $checkedDate = Carbon::create($year, $month)->firstOfMonth();
+
+        return (Carbon::parse($resident->date_of_admission)->lessThanOrEqualTo($checkedDate) &&
+            Carbon::parse($resident->actual_date_of_discharge)->greaterThanOrEqualTo($checkedDate));
+    }
+
+    public static function calculateManDaysForFiscalYear()
+    {
+        $today = Carbon::now();
+
+        $fyStart = $today->month >= 7 ? $today->copy()->month(7)->firstOfMonth() : $today->copy()->subYear(1)->month(7)->firstOfMonth();
+        $fyEnd   = $today->month > 6 ? $today->copy()->addYear(1)->month(6)->endOfMonth() : $today->copy()->month(6)->endOfMonth();
+
+        $diff = $fyStart->diffInMonths($today);
+        $sum  = 0;
+
+        for ($i = 1; $i <= $diff; $i++) {
+            $year  = Carbon::now()->subMonths($i)->year;
+            $month = Carbon::now()->subMonths($i)->month;
+            $sum += Resident::calculateManDaysForMonth($year, $month);
+        }
+
+        return $sum;
+    }
+
 
 }

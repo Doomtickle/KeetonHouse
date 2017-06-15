@@ -22,7 +22,7 @@ class Transaction extends Model
     public static function parseCurrency($currencyString)
     {
         $currency = preg_replace('/\$/', '', $currencyString);
-        $currency = ((float)$currency) * 100;
+        $currency = ((float) $currency) * 100;
 
         return $currency;
     }

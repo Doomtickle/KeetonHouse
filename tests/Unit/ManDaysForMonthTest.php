@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Unit;
+namespace Tests\Feature;
 
 use App\Resident;
 use App\User;
@@ -77,6 +77,29 @@ class ManDaysForMonthTest extends TestCase
 
         self::assertEquals($dayOfTheMonth * 2, $manDays);
 
+    }
+
+    /** @test */
+    public function it_should_calculate_man_days_for_fiscal_year()
+    {
+        $user = factory(User::class)->create([
+            'facility' => 'Demo'
+        ]);
+
+        $this->actingAs($user);
+
+        $admitDate   = Carbon::create(2016, 7, 1);
+        $releaseDate = Carbon::createFromDate(2016, 7, 31);
+
+        factory(Resident::class)->create([
+            'date_of_admission'        => $admitDate,
+            'actual_date_of_discharge' => $releaseDate,
+            'facility'                 => $user->facility
+        ]);
+
+        $manfy = Resident::calculateManDaysForFiscalYear();
+
+        self::assertEquals(31, $manfy);
     }
 
 }

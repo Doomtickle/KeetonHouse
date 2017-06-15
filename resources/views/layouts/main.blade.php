@@ -44,6 +44,12 @@
                 <a href="{{ route('resident.index') }}" class="item side-nav"><span class="icon"><i
                                 class="fa fa-user"></i></span><span
                             class="name">Residents</span></a>
+                <a href="{{ route('invoices.select') }}" class="item side-nav"><span class="icon"><i
+                                class="fa fa-list-alt"></i></span><span
+                            class="name">Invoice</span></a>
+                <a href="{{ route('facility-info.index') }}" class="item side-nav"><span class="icon"><i
+                                class="fa fa-cogs"></i></span><span
+                            class="name">Facility Settings</span></a>
                 <hr class="aside-divider">
                 <a href="/resident_reports" class="item side-nav"><span class="name">Resident&nbsp;Reports</span></a>
                 <a href="/transaction_reports" class="item side-nav"><span class="name">Transaction&nbsp;Reports</span></a>

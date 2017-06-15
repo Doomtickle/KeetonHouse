@@ -20,31 +20,19 @@
 <div id="root">
     <div class="columns">
         <div class="column admin-panel">
-            <section class="hero is-info is-bold is-small">
-                <!-- Hero content: will be in the middle -->
-                <div class="hero-body">
-                    <h1 class="title" style="padding: 10px 40px;">
+            <div class="columns">
+                <div class="column is-10">
+                    <h1 class="title is-3 padding-10-lr">
                         @yield('title')
                     </h1>
-                    <div style="padding: 10px 40px;">
+                    <div class="has-text-right" style="position:absolute; top:20px; right:20px;">
                         @yield('downloadButton')
                     </div>
                 </div>
-            </section>
+            </div>
             @yield('content')
         </div>
     </div>
-
-    <footer class="footer">
-        <div class="container">
-            <div class="has-text-centered">
-                <p>
-                    Tracking Solutions by <strong>OnPoint</strong>. The website content
-                    is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC ANS 4.0</a>.
-                </p>
-            </div>
-        </div>
-    </footer>
 </div>
 <!-- Scripts -->
 <script src="{{ asset('js/app.js') }}"></script>
