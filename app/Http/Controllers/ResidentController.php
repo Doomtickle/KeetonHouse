@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Resident;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class ResidentController extends Controller
@@ -64,7 +66,34 @@ class ResidentController extends Controller
             'payment_method'              => 'required',
             'referral_source'             => 'required',
         ]);
-        $resident = Resident::create($request->all());
+
+        $dob = Carbon::parse($request->dob);
+
+//        $resident     = Resident::create($request->all());
+
+        $resident = Resident::create([
+            'last_name'                   => $request->last_name,
+            'first_name'                  => $request->first_name,
+            'facility'                    => Auth::user()->facility,
+            'middle_initial'              => $request->middle_initial,
+            'sex'                         => $request->sex,
+            'race'                        => $request->race,
+            'document_number'             => $request->document_number,
+            'service_center_number'       => $request->service_center_number,
+            'dob'                         => $dob,
+            'age'                         => $request->age,
+            'drug'                        => $request->drug,
+            'date_of_admission'           => $request->date_of_admission,
+            'projected_date_of_discharge' => $request->projected_date_of_discharge,
+            'actual_date_of_discharge'    => $request->actual_date_of_discharge,
+            'status'                      => $request->status,
+            'status_at_discharge'         => $request->status_at_discharge,
+            'counselor'                   => $request->counselor,
+            'program_level'               => $request->program_level,
+            'employment_date'             => $request->employment_date,
+            'payment_method'              => $request->payment_method,
+            'referral_source'             => $request->referral_source
+        ]);
 
         return "Success";
     }

@@ -3,7 +3,6 @@
     </ul>
 </div>
 <form action="{{ route('resident.store') }}" method="POST" id="residentCreate">
-    <input type="hidden" name="facility" value="{{ \Auth::user()->facility }}">
     <div class="columns">
         <div class="column is-offset-1 is-half">
             <div class="columns">
