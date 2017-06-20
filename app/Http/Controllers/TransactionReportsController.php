@@ -25,14 +25,9 @@ class TransactionReportsController extends Controller
     {
         setlocale(LC_MONETARY, 'en_US.UTF-8');
         $resident_id = $request->resident_id;
-        $date        = isset($request->date) ? Carbon::parse($request->date) : null;
-        $month       = null;
-        $year        = null;
-        if ($date != null) {
-            $month = $date->month;
-            $year  = $date->year;
-        }
-        $type = isset($request->type) ? $request->type : null;
+        $start_date  = isset($request->start_date) ? Carbon::parse($request->start_date)->toDateString() : null;
+        $end_date    = isset($request->end_date) ? Carbon::parse($request->end_date)->toDateString() : null;
+        $reasons     = $request->reason;
 
 //        $report = Transaction::where(['date', 'BETWEEN', $startOfMonth], ['resident_id', '=', $resident->id])->get();
         $transactions = DB::table('transactions')
@@ -41,14 +36,14 @@ class TransactionReportsController extends Controller
             ->when($resident_id, function ($query) use ($resident_id) {
                 return $query->where('resident_id', $resident_id);
             })
-            ->when($month, function ($query) use ($month) {
-                return $query->whereMonth('date', $month);
+            ->when($start_date, function ($query) use ($start_date) {
+                return $query->where('date', '>', $start_date);
             })
-            ->when($year, function ($query) use ($year) {
-                return $query->whereYear('date', $year);
+            ->when($end_date, function ($query) use ($end_date) {
+                return $query->where('date', '<', $end_date);
             })
-            ->when($type, function ($query) use ($type) {
-                return $query->where('reason', $type);
+            ->when($reasons, function ($query) use ($reasons) {
+                return $query->whereIn('reason', $reasons);
             })
             ->get();
 

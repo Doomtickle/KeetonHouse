@@ -20,6 +20,7 @@ Route::resource('resident', 'ResidentController');
 Route::resource('transaction', 'TransactionController', ['except' => 'create']);
 Route::get('/transaction/{resident}/create', 'TransactionController@create')->name('transaction.create');
 Route::get('/report/last-name', 'ReportsController@lastName');
+Route::get('/report/counselor', 'ReportsController@counselor');
 Route::get('/report/download/{sortBy}', 'ReportsController@download');
 Route::get('/report/stream/{sortBy}', 'ReportsController@stream');
 Route::get('/report/dob', 'ReportsController@dob');

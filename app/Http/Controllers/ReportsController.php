@@ -94,6 +94,14 @@ class ReportsController extends Controller
 
         return view('reports.residentIndex', compact('residents', 'sortType', 'downloadLink'));
     }
+    public function counselor()
+    {
+        $sortType     = 'counselor';
+        $downloadLink = '/report/download/counselor';
+        $residents    = Resident::where('facility', \Auth::user()->facility)->get()->sortBy('counselor');
+
+        return view('reports.residentIndex', compact('residents', 'sortType', 'downloadLink'));
+    }
 
     public function transactionIndex()
     {

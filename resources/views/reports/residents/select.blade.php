@@ -26,6 +26,7 @@
                     <span class="select is-large">
                         <select id="sort_by" name="sort_by">
                             <option value="/report/last-name">Last Name</option>
+                            <option value="/report/counselor">Counselor</option>
                             <option value="/report/dob">Date of Birth</option>
                             <option value="/report/admit-date">Date of admission</option>
                             <option value="/report/discharge-date">Date of discharge</option>

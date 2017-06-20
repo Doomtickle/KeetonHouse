@@ -37,10 +37,6 @@
                 <th>Status at discharge</th>
                 <th>Counselor</th>
                 <th>Program Level</th>
-                <th>Employer</th>
-                <th>Employment Date</th>
-                <th>Payment Method</th>
-                <th>Referral Source</th>
             </tr>
             </thead>
             <tbody>
@@ -63,10 +59,6 @@
                     <td>{{ $resident->status_at_discharge }}</td>
                     <td>{{ $resident->counselor }}</td>
                     <td>{{ $resident->program_level }}</td>
-                    <td>{{ $resident->employer }}</td>
-                    <td>{{ $resident->employment_date }}</td>
-                    <td>{{ $resident->payment_method }}</td>
-                    <td>{{ $resident->referral_source }}</td>
                 </tr>
             @endforeach
             </tbody>
