@@ -37,10 +37,10 @@ class TransactionReportsController extends Controller
                 return $query->where('resident_id', $resident_id);
             })
             ->when($start_date, function ($query) use ($start_date) {
-                return $query->where('date', '>', $start_date);
+                return $query->where('date', '>=', $start_date);
             })
             ->when($end_date, function ($query) use ($end_date) {
-                return $query->where('date', '<', $end_date);
+                return $query->where('date', '<=', $end_date);
             })
             ->when($reasons, function ($query) use ($reasons) {
                 return $query->whereIn('reason', $reasons);
