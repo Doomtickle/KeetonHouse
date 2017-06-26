@@ -39,8 +39,8 @@ class SARInvoiceTest extends TestCase
 
         $this->actingAs($user);
 
-        $admitDate   = Carbon::create(2017, 2, 1)->toDateString();
-        $releaseDate = Carbon::create(2017, 2, 10)->toDateString();
+        $admitDate   = Carbon::create(2017, 5, 3)->toDateString();
+        $releaseDate = Carbon::create(2017, 5, 7)->toDateString();
 
         $resident = factory(Resident::class)->create([
             'date_of_admission'        => $admitDate,
@@ -48,7 +48,7 @@ class SARInvoiceTest extends TestCase
             'facility'                 => 'Demo'
         ]);
 
-        $response = $this->post('/invoice/' . $resident->facility . '/2017/2');
+        $response = $this->post('/invoice/' . $resident->facility . '/2017/5');
 
         $response->assertStatus(200);
         $response->assertSeeText($resident->last_name);

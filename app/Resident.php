@@ -101,10 +101,11 @@ class Resident extends Model
 
     public static function stayedHereDuring($year, $month, $resident)
     {
-        $checkedDate = Carbon::create($year, $month)->firstOfMonth();
+        $checkedDateEnd = Carbon::create($year, $month)->endOfMonth();
+	    $checkedDateBeginning = Carbon::create($year, $month)->firstOfMonth();
 
-        return (Carbon::parse($resident->date_of_admission)->lessThanOrEqualTo($checkedDate) &&
-            Carbon::parse($resident->actual_date_of_discharge)->greaterThanOrEqualTo($checkedDate));
+        return (Carbon::parse($resident->date_of_admission)->lessThanOrEqualTo($checkedDateEnd) &&
+            Carbon::parse($resident->actual_date_of_discharge)->greaterThanOrEqualTo($checkedDateBeginning));
     }
 
     public static function calculateManDaysForFiscalYear()

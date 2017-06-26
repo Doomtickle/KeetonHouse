@@ -111,7 +111,7 @@ admitDate	app/Http/Controllers/ReportsController.php	/^    public function admit
 admitDate	app/Resident.php	/^            $admitDate       = $admitDateTmp->lessThanOrEqualTo($firstDayOfMonth) ? $firstDayOfMonth : $admitDateTmp;$/;"	v
 admitDate	app/Resident.php	/^            $admitDate    = $admitDateTmp->lt($firstDayOfMonth) ? $firstDayOfMonth : $admitDateTmp;$/;"	v
 admitDate	app/Resident.php	/^        $admitDate   = Carbon::parse($resident->date_of_admission);$/;"	v
-admitDate	tests/Feature/SARInvoiceTest.php	/^        $admitDate   = Carbon::create(2017, 2, 1)->toDateString();$/;"	v
+admitDate	tests/Feature/SARInvoiceTest.php	/^        $admitDate   = Carbon::create(2017, 5, 3)->toDateString();$/;"	v
 admitDate	tests/Unit/ManDaysForMonthTest.php	/^        $admitDate     = Carbon::now()->firstOfMonth()->toDateString();$/;"	v
 admitDate	tests/Unit/ManDaysForMonthTest.php	/^        $admitDate   = Carbon::create(2016, 7, 1);$/;"	v
 admitDateTmp	app/Resident.php	/^            $admitDateTmp    = Carbon::parse($resident->date_of_admission);$/;"	v
@@ -141,7 +141,8 @@ calculateManDays	app/Resident.php	/^    public static function calculateManDays(
 calculateManDaysForCurrentMonth	app/Resident.php	/^    public static function calculateManDaysForCurrentMonth($resident = null)$/;"	f
 calculateManDaysForFiscalYear	app/Resident.php	/^    public static function calculateManDaysForFiscalYear()$/;"	f
 calculateManDaysForMonth	app/Resident.php	/^    public static function calculateManDaysForMonth($year, $month, $resident = null)$/;"	f
-checkedDate	app/Resident.php	/^        $checkedDate = Carbon::create($year, $month)->firstOfMonth();$/;"	v
+checkedDateBeginning	app/Resident.php	/^	    $checkedDateBeginning = Carbon::create($year, $month)->firstOfMonth();$/;"	v
+checkedDateEnd	app/Resident.php	/^        $checkedDateEnd = Carbon::create($year, $month)->endOfMonth();$/;"	v
 class	app/Http/Controllers/TransactionController.php	/^            $class = 'credit';$/;"	v
 class	app/Http/Controllers/TransactionController.php	/^            $class = 'debit';$/;"	v
 class	app/Http/Controllers/TransactionReportsController.php	/^        $class = ($credits - $debits > 0) ? 'credit' : 'debit';$/;"	v
@@ -356,7 +357,7 @@ releaseDate	app/Http/Controllers/ReportsController.php	/^    public function rel
 releaseDate	app/Resident.php	/^            $releaseDate     = $resident->actual_date_of_discharge == null || Carbon::parse($resident->actual_date_of_discharge)->greaterThanOrEqualTo($lastDayOfMonth) ? $lastDayOfMonth->addDay() :$/;"	v
 releaseDate	app/Resident.php	/^            $releaseDate  = $resident->actual_date_of_discharge == null ? $tomorrow :$/;"	v
 releaseDate	app/Resident.php	/^        $releaseDate = $resident->actual_date_of_discharge == null ? Carbon::now() :$/;"	v
-releaseDate	tests/Feature/SARInvoiceTest.php	/^        $releaseDate = Carbon::create(2017, 2, 10)->toDateString();$/;"	v
+releaseDate	tests/Feature/SARInvoiceTest.php	/^        $releaseDate = Carbon::create(2017, 5, 7)->toDateString();$/;"	v
 releaseDate	tests/Unit/ManDaysForMonthTest.php	/^        $releaseDate = Carbon::createFromDate(2016, 7, 31);$/;"	v
 releases	app/Http/Controllers/FacilityReportsController.php	/^                $releases = $this->releasesReport($facility, $date);$/;"	v
 releases	app/Http/Controllers/FacilityReportsController.php	/^            $releases = DB::table('residents')$/;"	v
@@ -401,7 +402,7 @@ residents	storage/framework/views/ee2c6dd14b8919bb0881d3466d61c7ee04b13dd2.php	/
 residents	tests/Unit/ManDaysTest.php	/^        $residents = factory(Resident::class, 2)->create([$/;"	v
 response	public/index.php	/^$response = $kernel->handle($/;"	v
 response	tests/Feature/SARInvoiceTest.php	/^        $response = $this->get('\/invoice\/select');$/;"	v
-response	tests/Feature/SARInvoiceTest.php	/^        $response = $this->post('\/invoice\/' . $resident->facility . '\/2017\/2');$/;"	v
+response	tests/Feature/SARInvoiceTest.php	/^        $response = $this->post('\/invoice\/' . $resident->facility . '\/2017\/5');$/;"	v
 response	tests/Unit/LoginTest.php	/^        $response = $this->get('\/');$/;"	v
 response	tests/Unit/LoginTest.php	/^        $response = $this->get('\/resident');$/;"	v
 response	tests/Unit/LoginTest.php	/^        $response = $this->get('\/transaction');$/;"	v
