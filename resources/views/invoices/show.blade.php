@@ -49,6 +49,7 @@
                         <th>Exit Date</th>
                         <th>Discharge Code</th>
                         <th>Bed Days</th>
+                        <th>Total Per Diem</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -70,6 +71,8 @@
                                 @endif
                             </td>
                             <td>{{ App\Resident::calculateManDaysForMonth($year, $month, $resident) }}</td>
+                            <td>
+                                ${{ number_format($facilityInfo->per_diem * App\Resident::calculateManDaysForMonth($year, $month, $resident), 2, '.', ',') }}</td>
                         </tr>
                     @endforeach
                     </tbody>
