@@ -9,9 +9,9 @@
 @endsection
 
 @section('content')
-    <div class="column">
+    <div class="column invoice-table">
         <div class="columns">
-            <div class="column is-10" style="margin-top:30px;">
+            <div class="column" style="margin-top:30px;">
                 <table class="table is-striped is-bordered">
                     <tr>
                         <td><strong>Contractor Name</strong></td>
@@ -37,7 +37,7 @@
             </div>
         </div>
         <div class="columns">
-            <div class="column is-10">
+            <div class="column">
                 <table class="table is-striped is-bordered" style="margin-bottom:-10px;">
                     <thead>
                     <tr>
@@ -79,7 +79,7 @@
                 </table>
             </div>
         </div>
-        <div class="column is-10">
+        <div class="column">
             <table class="table is-striped is-bordered">
                 <tr>
                     <td class="has-text-right">Total days in month:</td>
@@ -110,24 +110,24 @@
         </div>
         <div class="columns">
             <div class="column">
-                Authorized Signature ________________________________________
+                Authorized Signature <br><br> ________________________________________
             </div>
             <div class="column">
-                Date _______________________________________________
+                Date <br><br>_______________________________________________
             </div>
         </div>
         <hr>
         <div class="columns">
             <div class="column">
-                Verified By <p> _______________________________________________</p>
+                Verified By <br><br> _______________________________________________</p>
             </div>
             <div class="column">
-                Printed Name <p>_______________________________________________</p>
+                Printed Name <br><br>_______________________________________________</p>
             </div>
         </div>
         <div class="columns">
             <div class="column">
-                Title <p>_______________________________________________</p>
+                Title <br><br>_______________________________________________</p>
             </div>
         </div>
     </div>
