@@ -25,7 +25,7 @@ class InvoiceController extends Controller
 
         $residents = array();
         $facilityInfo = FacilityInfo::where('facility_name', \Auth::user()->facility)->first();
-        $manDaysFY = Resident::calculateManDaysForFiscalYear();
+        $manDaysFY = Resident::calculateManDaysForFiscalYear($year, $month);
 
         $totalBedDaysForMonth = 0;
         $invoiceMonth = Carbon::create($year, $month)->format('F, Y');

@@ -108,9 +108,9 @@ class Resident extends Model
             Carbon::parse($resident->actual_date_of_discharge)->greaterThanOrEqualTo($checkedDateBeginning));
     }
 
-    public static function calculateManDaysForFiscalYear()
+    public static function calculateManDaysForFiscalYear($year, $month)
     {
-        $today = Carbon::now();
+        $today = Carbon::create($year, $month)->firstOfMonth();
 
         $fyStart = $today->month >= 7 ? $today->copy()->month(7)->firstOfMonth() : $today->copy()->subYear(1)->month(7)->firstOfMonth();
 

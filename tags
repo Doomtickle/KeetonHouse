@@ -119,7 +119,7 @@ admitDate	app/Resident.php	/^        $admitDate   = Carbon::parse($resident->dat
 admitDate	tests/Feature/SARInvoiceTest.php	/^		$admitDate   = Carbon::create(2017, 1, 10)->toDateString();$/;"	v
 admitDate	tests/Feature/SARInvoiceTest.php	/^        $admitDate   = Carbon::create(2017, 5, 3)->toDateString();$/;"	v
 admitDate	tests/Unit/ManDaysForMonthTest.php	/^        $admitDate     = Carbon::now()->firstOfMonth()->toDateString();$/;"	v
-admitDate	tests/Unit/ManDaysForMonthTest.php	/^        $admitDate   = Carbon::create(2017, 6, 1);$/;"	v
+admitDate	tests/Unit/ManDaysForMonthTest.php	/^        $admitDate   = Carbon::create(2017, 5, 1);$/;"	v
 admitDateTmp	app/Resident.php	/^            $admitDateTmp    = Carbon::parse($resident->date_of_admission);$/;"	v
 admitDateTmp	app/Resident.php	/^            $admitDateTmp = Carbon::parse($resident->date_of_admission);$/;"	v
 aliases	config/app.php	/^    | This array of class aliases will be registered when this application$/;"	c
@@ -145,7 +145,7 @@ boot	app/Providers/EventServiceProvider.php	/^    public function boot()$/;"	f
 boot	app/Providers/RouteServiceProvider.php	/^    public function boot()$/;"	f
 calculateManDays	app/Resident.php	/^    public static function calculateManDays($resident)$/;"	f
 calculateManDaysForCurrentMonth	app/Resident.php	/^    public static function calculateManDaysForCurrentMonth($resident = null)$/;"	f
-calculateManDaysForFiscalYear	app/Resident.php	/^    public static function calculateManDaysForFiscalYear()$/;"	f
+calculateManDaysForFiscalYear	app/Resident.php	/^    public static function calculateManDaysForFiscalYear($year, $month)$/;"	f
 calculateManDaysForMonth	app/Resident.php	/^    public static function calculateManDaysForMonth($year, $month, $resident = null)$/;"	f
 checkedDateBeginning	app/Resident.php	/^	    $checkedDateBeginning = Carbon::create($year, $month)->firstOfMonth();$/;"	v
 checkedDateEnd	app/Resident.php	/^        $checkedDateEnd = Carbon::create($year, $month)->endOfMonth();$/;"	v
@@ -321,9 +321,9 @@ manDays	tests/Unit/ManDaysForResidentTest.php	/^        $manDays = Resident::cal
 manDays	tests/Unit/ManDaysForResidentTest.php	/^        $manDays = Resident::calculateManDaysForMonth(2017, 4, $resident);$/;"	v
 manDays	tests/Unit/ManDaysTest.php	/^        $manDays = 0;$/;"	v
 manDays	tests/Unit/ManDaysTest.php	/^        $manDays = Resident::calculateManDays($resident);$/;"	v
-manDaysFY	app/Http/Controllers/InvoiceController.php	/^        $manDaysFY = Resident::calculateManDaysForFiscalYear();$/;"	v
+manDaysFY	app/Http/Controllers/InvoiceController.php	/^        $manDaysFY = Resident::calculateManDaysForFiscalYear($year, $month);$/;"	v
 man_days_should_not_count_date_of_discharge	tests/Unit/ManDaysTest.php	/^    public function man_days_should_not_count_date_of_discharge()$/;"	f
-manfy	tests/Unit/ManDaysForMonthTest.php	/^        $manfy = Resident::calculateManDaysForFiscalYear();$/;"	v
+manfy	tests/Unit/ManDaysForMonthTest.php	/^        $manfy = Resident::calculateManDaysForFiscalYear(2017, 5);$/;"	v
 map	app/Providers/RouteServiceProvider.php	/^    public function map()$/;"	f
 mapApiRoutes	app/Providers/RouteServiceProvider.php	/^    protected function mapApiRoutes()$/;"	f
 mapWebRoutes	app/Providers/RouteServiceProvider.php	/^    protected function mapWebRoutes()$/;"	f
@@ -363,7 +363,7 @@ releaseDate	app/Resident.php	/^            $releaseDate  = $resident->actual_dat
 releaseDate	app/Resident.php	/^        $releaseDate = $resident->actual_date_of_discharge == null ? Carbon::now() :$/;"	v
 releaseDate	tests/Feature/SARInvoiceTest.php	/^		$releaseDate = Carbon::create(2017, 6, 30)->toDateString();$/;"	v
 releaseDate	tests/Feature/SARInvoiceTest.php	/^        $releaseDate = Carbon::create(2017, 5, 7)->toDateString();$/;"	v
-releaseDate	tests/Unit/ManDaysForMonthTest.php	/^        $releaseDate = Carbon::createFromDate(2017, 6, 30);$/;"	v
+releaseDate	tests/Unit/ManDaysForMonthTest.php	/^        $releaseDate = Carbon::createFromDate(2017, 5, 30);$/;"	v
 releases	app/Http/Controllers/FacilityReportsController.php	/^                $releases = $this->releasesReport($facility, $date);$/;"	v
 releases	app/Http/Controllers/FacilityReportsController.php	/^            $releases = DB::table('residents')$/;"	v
 releases	app/Http/Controllers/FacilityReportsController.php	/^        $releases = DB::table('residents')$/;"	v
@@ -457,7 +457,7 @@ sum	app/Resident.php	/^        $sum = 0;$/;"	v
 table	app/FacilityInfo.php	/^    protected $table = 'facility_info';$/;"	v
 testBasicTest	tests/Unit/ExampleTest.php	/^    public function testBasicTest()$/;"	f
 to	config/dompdf.php	/^         * Canvas_Factory} ultimately determines which rendering class to instantiate$/;"	c
-today	app/Resident.php	/^        $today = Carbon::now();$/;"	v
+today	app/Resident.php	/^        $today = Carbon::create($year, $month)->firstOfMonth();$/;"	v
 tomorrow	app/Resident.php	/^        $tomorrow        = Carbon::tomorrow();$/;"	v
 totalBedDaysForMonth	app/Http/Controllers/InvoiceController.php	/^        $totalBedDaysForMonth = 0;$/;"	v
 totalBedDaysForMonth	tests/Feature/SARInvoiceTest.php	/^		$totalBedDaysForMonth = Resident::calculateManDaysForMonth(2017, 6, $resident);$/;"	v
