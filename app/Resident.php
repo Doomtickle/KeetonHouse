@@ -110,7 +110,7 @@ class Resident extends Model
 
     public static function calculateManDaysForFiscalYear($year, $month)
     {
-        $today = Carbon::create($year, $month)->firstOfMonth();
+        $today = Carbon::create($year, $month)->endOfMonth();
 
         $fyStart = $today->month >= 7 ? $today->copy()->month(7)->firstOfMonth() : $today->copy()->subYear(1)->month(7)->firstOfMonth();
 

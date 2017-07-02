@@ -457,7 +457,7 @@ sum	app/Resident.php	/^        $sum = 0;$/;"	v
 table	app/FacilityInfo.php	/^    protected $table = 'facility_info';$/;"	v
 testBasicTest	tests/Unit/ExampleTest.php	/^    public function testBasicTest()$/;"	f
 to	config/dompdf.php	/^         * Canvas_Factory} ultimately determines which rendering class to instantiate$/;"	c
-today	app/Resident.php	/^        $today = Carbon::create($year, $month)->firstOfMonth();$/;"	v
+today	app/Resident.php	/^        $today = Carbon::create($year, $month)->endOfMonth();$/;"	v
 tomorrow	app/Resident.php	/^        $tomorrow        = Carbon::tomorrow();$/;"	v
 totalBedDaysForMonth	app/Http/Controllers/InvoiceController.php	/^        $totalBedDaysForMonth = 0;$/;"	v
 totalBedDaysForMonth	tests/Feature/SARInvoiceTest.php	/^		$totalBedDaysForMonth = Resident::calculateManDaysForMonth(2017, 6, $resident);$/;"	v
