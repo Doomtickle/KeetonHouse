@@ -116,9 +116,10 @@ admitDate	app/Http/Controllers/ReportsController.php	/^    public function admit
 admitDate	app/Resident.php	/^            $admitDate       = $admitDateTmp->lessThanOrEqualTo($firstDayOfMonth) ? $firstDayOfMonth : $admitDateTmp;$/;"	v
 admitDate	app/Resident.php	/^            $admitDate    = $admitDateTmp->lt($firstDayOfMonth) ? $firstDayOfMonth : $admitDateTmp;$/;"	v
 admitDate	app/Resident.php	/^        $admitDate   = Carbon::parse($resident->date_of_admission);$/;"	v
+admitDate	tests/Feature/SARInvoiceTest.php	/^		$admitDate   = Carbon::create(2017, 1, 10)->toDateString();$/;"	v
 admitDate	tests/Feature/SARInvoiceTest.php	/^        $admitDate   = Carbon::create(2017, 5, 3)->toDateString();$/;"	v
 admitDate	tests/Unit/ManDaysForMonthTest.php	/^        $admitDate     = Carbon::now()->firstOfMonth()->toDateString();$/;"	v
-admitDate	tests/Unit/ManDaysForMonthTest.php	/^        $admitDate   = Carbon::create(2016, 7, 1);$/;"	v
+admitDate	tests/Unit/ManDaysForMonthTest.php	/^        $admitDate   = Carbon::create(2017, 6, 1);$/;"	v
 admitDateTmp	app/Resident.php	/^            $admitDateTmp    = Carbon::parse($resident->date_of_admission);$/;"	v
 admitDateTmp	app/Resident.php	/^            $admitDateTmp = Carbon::parse($resident->date_of_admission);$/;"	v
 aliases	config/app.php	/^    | This array of class aliases will be registered when this application$/;"	c
@@ -202,7 +203,7 @@ destroy	app/Http/Controllers/FacilityInfoController.php	/^    public function de
 destroy	app/Http/Controllers/NoteController.php	/^    public function destroy(Note $note)$/;"	f
 destroy	app/Http/Controllers/ResidentController.php	/^    public function destroy(Resident $resident)$/;"	f
 destroy	app/Http/Controllers/TransactionController.php	/^    public function destroy(Transaction $transaction)$/;"	f
-diff	app/Resident.php	/^        $diff = $fyStart->diffInMonths($today);$/;"	v
+diff	app/Resident.php	/^        $diff = $fyStart->diffInMonths($today) != 0 ? $fyStart->diffInMonths($today) : 12;$/;"	v
 dob	app/Http/Controllers/ReportsController.php	/^    public function dob()$/;"	f
 dob	app/Http/Controllers/ResidentController.php	/^        $dob = Carbon::parse($request->dob);$/;"	v
 dompdf	config/dompdf.php	/^         * $dompdf = new DOMPDF();	$dompdf->load_html($htmldata); $dompdf->render(); $pdfdata = $dompdf->output();$/;"	v
@@ -254,7 +255,6 @@ firstDayOfMonth	app/Resident.php	/^            $firstDayOfMonth = Carbon::now()-
 firstDayOfMonth	app/Resident.php	/^        $firstDayOfMonth = Carbon::now()->firstOfMonth();$/;"	v
 first_day_should_be_counted	tests/Unit/ManDaysTest.php	/^    public function first_day_should_be_counted()$/;"	f
 flatpickr	resources/assets/js/app.js	/^var flatpickr = require("flatpickr");$/;"	v
-fyEnd	app/Resident.php	/^        $fyEnd   = $today->month > 6 ? $today->copy()->addYear(1)->month(6)->endOfMonth() : $today->copy()->month(6)->endOfMonth();$/;"	v
 fyStart	app/Resident.php	/^        $fyStart = $today->month >= 7 ? $today->copy()->month(7)->firstOfMonth() : $today->copy()->subYear(1)->month(7)->firstOfMonth();$/;"	v
 generate	app/Http/Controllers/InvoiceController.php	/^    public function generate($facility, $year, $month)$/;"	f
 getAge	resources/assets/js/app.js	/^function getAge(dateStr) {$/;"	f
@@ -293,6 +293,7 @@ it_should_edit_a_resident	tests/Unit/ResidentTest.php	/^    public function it_s
 it_should_generate_an_invoice	tests/Feature/SARInvoiceTest.php	/^    public function it_should_generate_an_invoice()$/;"	f
 it_should_handle_all_date_formats_for_dob	tests/Unit/ResidentTest.php	/^    public function it_should_handle_all_date_formats_for_dob()$/;"	f
 it_should_have_an_invoice_select_page	tests/Feature/SARInvoiceTest.php	/^    public function it_should_have_an_invoice_select_page()$/;"	f
+it_should_not_calculate_the_last_day	tests/Feature/SARInvoiceTest.php	/^	public function it_should_not_calculate_the_last_day() {$/;"	f
 kernel	public/index.php	/^$kernel = $app->make(Illuminate\\Contracts\\Http\\Kernel::class);$/;"	v
 knownDate	tests/Unit/ManDaysTest.php	/^        $knownDate = Carbon::create(2017, 1, 1, 0);$/;"	v
 lastDayOfMonth	app/Resident.php	/^            $lastDayOfMonth  = Carbon::now()->year($year)->month($month)->lastOfMonth();$/;"	v
@@ -357,11 +358,12 @@ redirectTo	app/Http/Controllers/Auth/ResetPasswordController.php	/^    protected
 register	app/Providers/AppServiceProvider.php	/^    public function register()$/;"	f
 release	tests/Unit/ManDaysForResidentTest.php	/^        $release = Carbon::create(2017, 6, 9, 12)->toDateString();$/;"	v
 releaseDate	app/Http/Controllers/ReportsController.php	/^    public function releaseDate()$/;"	f
-releaseDate	app/Resident.php	/^            $releaseDate     = $resident->actual_date_of_discharge == null || Carbon::parse($resident->actual_date_of_discharge)->greaterThanOrEqualTo($lastDayOfMonth) ? $lastDayOfMonth->addDay() :$/;"	v
+releaseDate	app/Resident.php	/^            $releaseDate     = $resident->actual_date_of_discharge == null || Carbon::parse($resident->actual_date_of_discharge)->greaterThan($lastDayOfMonth) ? $lastDayOfMonth->addDay() :$/;"	v
 releaseDate	app/Resident.php	/^            $releaseDate  = $resident->actual_date_of_discharge == null ? $tomorrow :$/;"	v
 releaseDate	app/Resident.php	/^        $releaseDate = $resident->actual_date_of_discharge == null ? Carbon::now() :$/;"	v
+releaseDate	tests/Feature/SARInvoiceTest.php	/^		$releaseDate = Carbon::create(2017, 6, 30)->toDateString();$/;"	v
 releaseDate	tests/Feature/SARInvoiceTest.php	/^        $releaseDate = Carbon::create(2017, 5, 7)->toDateString();$/;"	v
-releaseDate	tests/Unit/ManDaysForMonthTest.php	/^        $releaseDate = Carbon::createFromDate(2016, 7, 31);$/;"	v
+releaseDate	tests/Unit/ManDaysForMonthTest.php	/^        $releaseDate = Carbon::createFromDate(2017, 6, 30);$/;"	v
 releases	app/Http/Controllers/FacilityReportsController.php	/^                $releases = $this->releasesReport($facility, $date);$/;"	v
 releases	app/Http/Controllers/FacilityReportsController.php	/^            $releases = DB::table('residents')$/;"	v
 releases	app/Http/Controllers/FacilityReportsController.php	/^        $releases = DB::table('residents')$/;"	v
@@ -381,6 +383,7 @@ resident	app/Note.php	/^    public function resident()$/;"	f
 resident	app/Resident.php	/^    public static function calculateManDaysForMonth($year, $month, $resident = null)$/;"	v
 resident	app/Transaction.php	/^    public function resident()$/;"	f
 resident	tests/Browser/ResidentsTest.php	/^        $resident = factory(Resident::class)->create([$/;"	v
+resident	tests/Feature/SARInvoiceTest.php	/^		$resident = factory(Resident::class)->create([$/;"	v
 resident	tests/Feature/SARInvoiceTest.php	/^        $resident = factory(Resident::class)->create([$/;"	v
 resident	tests/Unit/ManDaysForResidentTest.php	/^        $resident = factory(Resident::class)->create([$/;"	v
 resident	tests/Unit/ManDaysTest.php	/^        $resident = factory(Resident::class)->create([$/;"	v
@@ -457,6 +460,7 @@ to	config/dompdf.php	/^         * Canvas_Factory} ultimately determines which re
 today	app/Resident.php	/^        $today = Carbon::now();$/;"	v
 tomorrow	app/Resident.php	/^        $tomorrow        = Carbon::tomorrow();$/;"	v
 totalBedDaysForMonth	app/Http/Controllers/InvoiceController.php	/^        $totalBedDaysForMonth = 0;$/;"	v
+totalBedDaysForMonth	tests/Feature/SARInvoiceTest.php	/^		$totalBedDaysForMonth = Resident::calculateManDaysForMonth(2017, 6, $resident);$/;"	v
 transaction	app/Http/Controllers/TransactionController.php	/^        $transaction = Transaction::create([$/;"	v
 transactionIndex	app/Http/Controllers/ReportsController.php	/^    public function transactionIndex()$/;"	f
 transactions	app/Http/Controllers/ReportsController.php	/^        $transactions = Transaction::where('facility', \\Auth::user()->facility)->get()->sortBy('date');$/;"	v
@@ -487,6 +491,7 @@ url	tests/Browser/Pages/HomePage.php	/^    public function url()$/;"	f
 use	config/dompdf.php	/^         * direct class use like:$/;"	c
 user	app/Note.php	/^    public function user()$/;"	f
 user	tests/Browser/LoginTest.php	/^        $user = factory(User::class)->create([$/;"	v
+user	tests/Feature/SARInvoiceTest.php	/^		$user = factory(User::class)->create([$/;"	v
 user	tests/Feature/SARInvoiceTest.php	/^        $user = factory(User::class)->create();$/;"	v
 user	tests/Feature/SARInvoiceTest.php	/^        $user = factory(User::class)->create([$/;"	v
 user	tests/Unit/LoginTest.php	/^        $user = factory(User::class)->create();$/;"	v

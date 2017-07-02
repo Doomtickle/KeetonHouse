@@ -53,5 +53,29 @@ class SARInvoiceTest extends TestCase
         $response->assertStatus(200);
         $response->assertSeeText($resident->last_name);
     }
+    /** @test */
+	public function it_should_not_calculate_the_last_day() {
+		factory(FacilityInfo::class)->create();
+
+		$user = factory(User::class)->create([
+			'facility' => 'Demo'
+		]);
+
+		$this->actingAs($user);
+
+		$admitDate   = Carbon::create(2017, 1, 10)->toDateString();
+		$releaseDate = Carbon::create(2017, 6, 30)->toDateString();
+
+		$resident = factory(Resident::class)->create([
+			'date_of_admission'        => $admitDate,
+			'actual_date_of_discharge' => $releaseDate,
+			'facility'                 => 'Demo'
+		]);
+
+		$totalBedDaysForMonth = Resident::calculateManDaysForMonth(2017, 6, $resident);
+
+		self::assertEquals(29, $totalBedDaysForMonth);
+
+    }
 
 }

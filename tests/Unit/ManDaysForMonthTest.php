@@ -88,8 +88,9 @@ class ManDaysForMonthTest extends TestCase
 
         $this->actingAs($user);
 
-        $admitDate   = Carbon::create(2016, 7, 1);
-        $releaseDate = Carbon::createFromDate(2016, 7, 31);
+        $admitDate   = Carbon::create(2017, 6, 1);
+        $releaseDate = Carbon::createFromDate(2017, 6, 30);
+
 
         factory(Resident::class)->create([
             'date_of_admission'        => $admitDate,
@@ -99,7 +100,7 @@ class ManDaysForMonthTest extends TestCase
 
         $manfy = Resident::calculateManDaysForFiscalYear();
 
-        self::assertEquals(31, $manfy);
+        self::assertEquals(29, $manfy);
     }
 
 }

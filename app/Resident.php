@@ -54,7 +54,7 @@ class Resident extends Model
             $lastDayOfMonth  = Carbon::now()->year($year)->month($month)->lastOfMonth();
             $admitDateTmp    = Carbon::parse($resident->date_of_admission);
             $admitDate       = $admitDateTmp->lessThanOrEqualTo($firstDayOfMonth) ? $firstDayOfMonth : $admitDateTmp;
-            $releaseDate     = $resident->actual_date_of_discharge == null || Carbon::parse($resident->actual_date_of_discharge)->greaterThanOrEqualTo($lastDayOfMonth) ? $lastDayOfMonth->addDay() :
+            $releaseDate     = $resident->actual_date_of_discharge == null || Carbon::parse($resident->actual_date_of_discharge)->greaterThan($lastDayOfMonth) ? $lastDayOfMonth->addDay() :
                 Carbon::parse($resident->actual_date_of_discharge);
 
             if ($admitDate->lessThanOrEqualTo($lastDayOfMonth) && $releaseDate->greaterThanOrEqualTo($firstDayOfMonth)) {
@@ -113,12 +113,11 @@ class Resident extends Model
         $today = Carbon::now();
 
         $fyStart = $today->month >= 7 ? $today->copy()->month(7)->firstOfMonth() : $today->copy()->subYear(1)->month(7)->firstOfMonth();
-        $fyEnd   = $today->month > 6 ? $today->copy()->addYear(1)->month(6)->endOfMonth() : $today->copy()->month(6)->endOfMonth();
 
-        $diff = $fyStart->diffInMonths($today);
+        $diff = $fyStart->diffInMonths($today) != 0 ? $fyStart->diffInMonths($today) : 12;
         $sum  = 0;
 
-        for ($i = 1; $i <= $diff; $i++) {
+        for ($i = 1; $i < $diff; $i++) {
             $year  = Carbon::now()->subMonths($i)->year;
             $month = Carbon::now()->subMonths($i)->month;
             $sum += Resident::calculateManDaysForMonth($year, $month);
