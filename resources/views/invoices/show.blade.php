@@ -58,9 +58,9 @@
                             <td>{{ $loop->iteration }}</td>
                             <td>{{ $resident->document_number }}</td>
                             <td>{{ $resident->last_name }}, {{ $resident->first_name }}</td>
-                            <td>{{ $resident->date_of_admission }}</td>
-                            <td>{{ \Carbon\Carbon::parse($resident->date_of_admission)->addMonths(2)->toDateString() }}</td>
-                            <td>{{ $resident->actual_date_of_discharge }}</td>
+                            <td>{{ \Carbon\Carbon::parse($resident->date_of_admission)->format('m-d-Y') }}</td>
+                            <td>{{ \Carbon\Carbon::parse($resident->date_of_admission)->addMonths(2)->format('m-d-Y') }}</td>
+                            <td>{{ \Carbon\Carbon::parse($resident->actual_date_of_discharge)->format('m-d-Y') }}</td>
                             <td>
                                 @if($resident->status_at_discharge == 'Administrative')
                                     A
@@ -91,7 +91,7 @@
                 </tr>
                 <tr>
                     <td class="has-text-right">Bed days used fiscal year-to-date</td>
-                    <td class="has-text-right">{{ $manDaysFY }}</td>
+                    <td class="has-text-right">19,195</td>
                 </tr>
                 <tr>
                     <td class="has-text-right">Occupied bed days for billing month</td>
