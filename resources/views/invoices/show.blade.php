@@ -33,34 +33,28 @@
                         <td><strong>Invoice #:</strong></td>
                         <td>{{ $invoiceNumber }}</td>
                     </tr>
-                </table>
-            </div>
-        </div>
-        <div class="columns">
-            <div class="column">
-                <table class="table is-striped is-bordered">
                     <tr>
-                        <td>Total days in month:</td>
+                        <td><strong>Total days in month:</strong></td>
                         <td>{{ \Carbon\Carbon::create($year, $month)->daysInMonth }}</td>
                     </tr>
                     <tr>
-                        <td>Maximum annualized bed days</td>
+                        <td><strong>Maximum annualized bed days</strong></td>
                         <td>{{ $facilityInfo->max_annual_bed_days }}</td>
                     </tr>
                     <tr>
-                        <td>Bed days used fiscal year-to-date</td>
+                        <td><strong>*Cumulative Bed Days Used Fiscal Year-to-Date (through last day of prior billing month):<strong></td>
                         <td>19,195</td>
                     </tr>
                     <tr>
-                        <td>Occupied bed days for billing month</td>
+                        <td><strong>Occupied bed days for billing month</strong></td>
                         <td>{{ $totalBedDaysForMonth }}</td>
                     </tr>
                     <tr>
-                        <td>Per Diem Billing Rate</td>
+                        <td><strong>Per Diem Billing Rate</strong></td>
                         <td>${{ $facilityInfo->per_diem }}</td>
                     </tr>
                     <tr>
-                        <td>Total</td>
+                        <td><strong>Total</strong></td>
                         <td>
                             ${{ number_format($facilityInfo->per_diem * $totalBedDaysForMonth , 2, '.', ',') }}</td>
                     </tr>
