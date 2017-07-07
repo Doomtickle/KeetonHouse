@@ -38,6 +38,37 @@
         </div>
         <div class="columns">
             <div class="column">
+                <table class="table is-striped is-bordered">
+                    <tr>
+                        <td>Total days in month:</td>
+                        <td>{{ \Carbon\Carbon::create($year, $month)->daysInMonth }}</td>
+                    </tr>
+                    <tr>
+                        <td>Maximum annualized bed days</td>
+                        <td>{{ $facilityInfo->max_annual_bed_days }}</td>
+                    </tr>
+                    <tr>
+                        <td>Bed days used fiscal year-to-date</td>
+                        <td>19,195</td>
+                    </tr>
+                    <tr>
+                        <td>Occupied bed days for billing month</td>
+                        <td>{{ $totalBedDaysForMonth }}</td>
+                    </tr>
+                    <tr>
+                        <td>Per Diem Billing Rate</td>
+                        <td>${{ $facilityInfo->per_diem }}</td>
+                    </tr>
+                    <tr>
+                        <td>Total</td>
+                        <td>
+                            ${{ number_format($facilityInfo->per_diem * $totalBedDaysForMonth , 2, '.', ',') }}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="columns">
+            <div class="column">
                 <table class="table is-striped is-bordered" style="margin-bottom:-10px;">
                     <thead>
                     <tr>
@@ -78,35 +109,6 @@
                     </tbody>
                 </table>
             </div>
-        </div>
-        <div class="column">
-            <table class="table is-striped is-bordered">
-                <tr>
-                    <td class="has-text-right">Total days in month:</td>
-                    <td class="has-text-right">{{ \Carbon\Carbon::create($year, $month)->daysInMonth }}</td>
-                </tr>
-                <tr>
-                    <td class="has-text-right">Maximum annualized bed days</td>
-                    <td class="has-text-right">{{ $facilityInfo->max_annual_bed_days }}</td>
-                </tr>
-                <tr>
-                    <td class="has-text-right">Bed days used fiscal year-to-date</td>
-                    <td class="has-text-right">19,195</td>
-                </tr>
-                <tr>
-                    <td class="has-text-right">Occupied bed days for billing month</td>
-                    <td class="has-text-right">{{ $totalBedDaysForMonth }}</td>
-                </tr>
-                <tr>
-                    <td class="has-text-right">Per Diem Billing Rate</td>
-                    <td class="has-text-right">${{ $facilityInfo->per_diem }}</td>
-                </tr>
-                <tr>
-                    <td class="has-text-right total">Total</td>
-                    <td class="has-text-right total">
-                        ${{ number_format($facilityInfo->per_diem * $totalBedDaysForMonth , 2, '.', ',') }}</td>
-                </tr>
-            </table>
         </div>
         <div class="columns">
             <div class="column">
