@@ -10,7 +10,7 @@
 
 @section('content')
     <div class="column invoice-table">
-        <div class="columns">
+        <div class="columns page-break">
             <div class="column" style="margin-top:30px;">
                 <table class="table is-striped is-bordered">
                     <tr>

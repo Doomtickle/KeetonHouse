@@ -380,6 +380,9 @@ span.select2 {
     overflow-x: visible;
     overflow-y: visible;
   }
+  .page-break{
+    page-break-after: always;
+  }
   table {
     font-size: .9rem;
   }
