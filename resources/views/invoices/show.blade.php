@@ -5,7 +5,13 @@
 @endsection
 
 @section('downloadButton')
-    <button class="button is-warning" onClick="window.print()">Print</button>
+    <form action="" method="post">
+        {{ csrf_field() }}
+        <input type="hidden" id="facility" name="facility" value="{{ $facilityInfo->facility_name }}">
+        <input type="hidden" id="year" name="year" value="{{ $year }}">
+        <input type="hidden" id="month" name="month" value="{{ $month }}">
+    <button class="button is-warning" id="reportSubmit">Printble Version</button>
+    </form>
 @endsection
 
 @section('content')
@@ -104,27 +110,19 @@
                 </table>
             </div>
         </div>
-        <div class="columns">
-            <div class="column">
-                Authorized Signature <br><br> ________________________________________
-            </div>
-            <div class="column">
-                Date <br><br>_______________________________________________
-            </div>
-        </div>
-        <hr>
-        <div class="columns">
-            <div class="column">
-                Verified By <br><br> _______________________________________________</p>
-            </div>
-            <div class="column">
-                Printed Name <br><br>_______________________________________________</p>
-            </div>
-        </div>
-        <div class="columns">
-            <div class="column">
-                Title <br><br>_______________________________________________</p>
-            </div>
-        </div>
     </div>
+@endsection
+@section('scripts.footer')
+    <script>
+        $(document).ready(function () {
+            $('#reportSubmit').on('click', function (e) {
+                e.preventDefault();
+                var form = $(this).closest('form');
+                var facility = $("#facility").val();
+                var year = $("#year").val();
+                var month = $("#month").val();
+                form.attr('action', '/printable/' + facility + '/' + year + '/' + month).submit();
+            });
+        });
+    </script>
 @endsection

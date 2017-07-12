@@ -25,7 +25,7 @@
                             <label class="label">Type of Report</label>
                             <p class="control">
                     <span class="select is-large">
-                        <select id="sort_by" name="report">
+                        <select id="sort_by" name="report" required>
                             <option value="">Select report</option>
                             <option value="intakes">Intakes</option>
                             <option value="releases">Releases</option>

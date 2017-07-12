@@ -11,7 +11,7 @@
 @section('content')
     <div class="column wide-table">
         <p class="title">Balance: <span class="{{ $class }}">{{ $balance }}</span></p>
-        <table class="table">
+        <table class="table transaction-table">
             <thead>
             <tr>
                 <th>Transaction ID</th>

@@ -34,6 +34,7 @@ Route::get('/facility_report/select', 'FacilityReportsController@select');
 Route::get('/facility_report/router', 'FacilityReportsController@router')->name('determine_facility_report');
 Route::get('/invoice/select', 'InvoiceController@select')->name('invoices.select');
 Route::post('/invoice/{facility}/{year}/{month}', 'InvoiceController@generate')->name('invoice.generate');
+Route::post('/printable/{facility}/{year}/{month}', 'InvoiceController@printable')->name('invoice.printable');
 Route::resource('facility-info', 'FacilityInfoController');
 
 Route::post('/notes', 'NoteController@store')->name('note.store');
