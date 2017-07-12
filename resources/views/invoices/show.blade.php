@@ -10,7 +10,7 @@
         <input type="hidden" id="facility" name="facility" value="{{ $facilityInfo->facility_name }}">
         <input type="hidden" id="year" name="year" value="{{ $year }}">
         <input type="hidden" id="month" name="month" value="{{ $month }}">
-    <button class="button is-warning" id="reportSubmit">Printble Version</button>
+    <button class="button is-warning" id="reportSubmit">Printable Version</button>
     </form>
 @endsection
 
