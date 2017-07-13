@@ -86,6 +86,7 @@ __construct	app/Http/Controllers/TransactionController.php	/^    function __cons
 __construct	app/Http/Controllers/TransactionReportsController.php	/^    function __construct()$/;"	f
 __currentLoopData	storage/framework/views/06d22fd6009303ba9f76358fc1b4b0fd08e7d1ee.php	/^            <?php $__currentLoopData = $resident->transactions; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $transaction): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>$/;"	v
 __currentLoopData	storage/framework/views/12543b0c6f9f329b5b9489e00ceef0536db510a0.php	/^                            <?php $__currentLoopData = $errors->all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $error): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>$/;"	v
+__currentLoopData	storage/framework/views/1e58fe51fc8581d3a7b1ca8b9d0acada96c5eda0.php	/^                <?php $__currentLoopData = $residents; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $resident): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>$/;"	v
 __currentLoopData	storage/framework/views/21bcabccb9f3993d730d36f621316dee5280695e.php	/^            <?php $__currentLoopData = $residents; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $resident): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>$/;"	v
 __currentLoopData	storage/framework/views/2d9c79f26e30b78dbad2cf85bbf37e19279b561c.php	/^            <?php $__currentLoopData = $intakes; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $intake): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>$/;"	v
 __currentLoopData	storage/framework/views/3aa49362e48d26557c465bb3d482edc7c879b07a.php	/^                            <?php $__currentLoopData = $errors->all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $error): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>$/;"	v
@@ -299,6 +300,7 @@ loader	bootstrap/autoload.php	/^| Composer provides a convenient, automatically 
 loader	public/index.php	/^| Composer provides a convenient, automatically generated class loader for$/;"	c
 loop	storage/framework/views/06d22fd6009303ba9f76358fc1b4b0fd08e7d1ee.php	/^            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>$/;"	v
 loop	storage/framework/views/12543b0c6f9f329b5b9489e00ceef0536db510a0.php	/^                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>$/;"	v
+loop	storage/framework/views/1e58fe51fc8581d3a7b1ca8b9d0acada96c5eda0.php	/^                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>$/;"	v
 loop	storage/framework/views/21bcabccb9f3993d730d36f621316dee5280695e.php	/^            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>$/;"	v
 loop	storage/framework/views/2d9c79f26e30b78dbad2cf85bbf37e19279b561c.php	/^            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>$/;"	v
 loop	storage/framework/views/3aa49362e48d26557c465bb3d482edc7c879b07a.php	/^                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>$/;"	v
@@ -346,6 +348,7 @@ pdfLink	app/Http/Controllers/ReportsController.php	/^        $pdfLink      = '\/
 per_diem	app/Http/Requests/FacilityInfoRequest.php	/^    protected $per_diem;$/;"	v
 policies	app/Providers/AuthServiceProvider.php	/^    protected $policies = [$/;"	v
 prepare	tests/DuskTestCase.php	/^    public static function prepare()$/;"	f
+printable	app/Http/Controllers/InvoiceController.php	/^    public function printable($facility, $year, $month)$/;"	f
 quicksearch	resources/views/residents/index.blade.php	/^        var $quicksearch = $('.quicksearch').keyup(debounce(function () {$/;"	v
 quicksearch	storage/framework/views/6539c80e55a8b1ffb211527dac3be0aafa6fa8ea.php	/^        var $quicksearch = $('.quicksearch').keyup(debounce(function () {$/;"	v
 reasons	app/Http/Controllers/TransactionReportsController.php	/^        $reasons     = $request->reason;$/;"	v

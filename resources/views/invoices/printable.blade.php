@@ -7,7 +7,7 @@
                 font-family:Arial, sans-serif;
             }
         </style>
-        <table style="width:60%;">
+        <table style="width:80%; margin:50px auto 0">
             <tr>
                 <td style="border:1px solid #000; padding:5px;" class="has-text-centered"><strong>SUBSTANCE ABUSE
                         RESIDENTIAL MONTHLY PROGRAM INVOICE</strong></td>
@@ -26,7 +26,7 @@
                 </td>
             </tr>
         </table>
-        <table style="width:60%; margin:0;">
+        <table style="width:80%; margin:0 auto;">
             <tr>
                 <td style="border:1px solid #000; width:45%; padding:5px;"><strong>Contract
                         Number</strong>: {{ $facilityInfo->contract_number }} </td>
@@ -34,13 +34,13 @@
                         #:</strong> {{ $invoiceNumber }}</td>
             </tr>
         </table>
-        <table style="margin-top:10px; width:60%;">
+        <table style="margin:10px auto; width:80%;">
             <tr>
                 <td style="border:1px solid #000; padding:5px;"><strong>BILLING INVOICE FOR (MONTH AND
                         YEAR): {{ Carbon\Carbon::create($year, $month)->format('F Y') }}</strong></td>
             </tr>
         </table>
-        <table style="margin-top:10px; width:60%">
+        <table style="margin:0 auto; width:80%">
             <td style="border:1px solid #000; text-align: right; padding:5px;"><strong>Total of Days in Month:</strong>
             </td>
             <td style="border:1px solid #000; text-align: center; padding:5px;">{{ \Carbon\Carbon::create($year, $month)->daysInMonth }}</td>
@@ -82,7 +82,7 @@
             </tr>
         </table>
     </div>
-    <div class="columns" style="margin-top:35px;">
+    <div class="columns" style="margin:35px 10px 0;">
         <div class="column">
             <table class="table is-striped is-bordered" style="margin-bottom:-10px;">
                 <thead>
