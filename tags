@@ -66,6 +66,7 @@ SARInvoiceTest	tests/Feature/SARInvoiceTest.php	/^class SARInvoiceTest extends T
 TestCase	tests/TestCase.php	/^abstract class TestCase extends BaseTestCase$/;"	c
 Transaction	app/Transaction.php	/^class Transaction extends Model$/;"	c
 TransactionController	app/Http/Controllers/TransactionController.php	/^class TransactionController extends Controller$/;"	c
+TransactionCreated	app/Mail/TransactionCreated.php	/^class TransactionCreated extends Mailable$/;"	c
 TransactionReportsController	app/Http/Controllers/TransactionReportsController.php	/^class TransactionReportsController extends Controller$/;"	c
 TransactionRequest	app/Http/Requests/TransactionRequest.php	/^class TransactionRequest extends FormRequest$/;"	c
 TrimStrings	app/Http/Middleware/TrimStrings.php	/^class TrimStrings extends BaseTrimmer$/;"	c
@@ -84,6 +85,7 @@ __construct	app/Http/Controllers/ResidentController.php	/^    function __constru
 __construct	app/Http/Controllers/ResidentReportsController.php	/^    function __construct()$/;"	f
 __construct	app/Http/Controllers/TransactionController.php	/^    function __construct()$/;"	f
 __construct	app/Http/Controllers/TransactionReportsController.php	/^    function __construct()$/;"	f
+__construct	app/Mail/TransactionCreated.php	/^    public function __construct(Transaction $transaction)$/;"	f
 __currentLoopData	storage/framework/views/06d22fd6009303ba9f76358fc1b4b0fd08e7d1ee.php	/^            <?php $__currentLoopData = $resident->transactions; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $transaction): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>$/;"	v
 __currentLoopData	storage/framework/views/12543b0c6f9f329b5b9489e00ceef0536db510a0.php	/^                            <?php $__currentLoopData = $errors->all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $error): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>$/;"	v
 __currentLoopData	storage/framework/views/1e58fe51fc8581d3a7b1ca8b9d0acada96c5eda0.php	/^                <?php $__currentLoopData = $residents; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $resident): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>$/;"	v
@@ -94,6 +96,7 @@ __currentLoopData	storage/framework/views/49c77be5cd40e46cdf716c5e8f585fafa8f0ad
 __currentLoopData	storage/framework/views/49c77be5cd40e46cdf716c5e8f585fafa8f0ada9.php	/^<?php $__currentLoopData = $outroLines; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $line): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>$/;"	v
 __currentLoopData	storage/framework/views/6539c80e55a8b1ffb211527dac3be0aafa6fa8ea.php	/^                <?php $__currentLoopData = $residents; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $resident): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>$/;"	v
 __currentLoopData	storage/framework/views/97d0901927519b712ab09231224f17e9c01e4f9b.php	/^            <?php $__currentLoopData = $transactions; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $transaction): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>$/;"	v
+__currentLoopData	storage/framework/views/9ca4947af62948fe5575172e1c2db02e25f4c229.php	/^            <?php $__currentLoopData = $errors->all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $error): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>$/;"	v
 __currentLoopData	storage/framework/views/a02a19c467436cc80e17e760962c14d6d1506433.php	/^                    <?php $__currentLoopData = $residents; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $resident): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>$/;"	v
 __currentLoopData	storage/framework/views/afc672dfb9ffdeeb28af851d838feb1e368dd47a.php	/^    <?php $__currentLoopData = $resident->notes; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $note): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>$/;"	v
 __currentLoopData	storage/framework/views/c92a323516a3bf0d5c5dc66bf7b0ed4d50251dfe.php	/^            <?php $__currentLoopData = $residents; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $resident): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>$/;"	v
@@ -144,6 +147,7 @@ boot	app/Providers/AuthServiceProvider.php	/^    public function boot()$/;"	f
 boot	app/Providers/BroadcastServiceProvider.php	/^    public function boot()$/;"	f
 boot	app/Providers/EventServiceProvider.php	/^    public function boot()$/;"	f
 boot	app/Providers/RouteServiceProvider.php	/^    public function boot()$/;"	f
+build	app/Mail/TransactionCreated.php	/^    public function build()$/;"	f
 calculateManDays	app/Resident.php	/^    public static function calculateManDays($resident)$/;"	f
 calculateManDaysForCurrentMonth	app/Resident.php	/^    public static function calculateManDaysForCurrentMonth($resident = null)$/;"	f
 calculateManDaysForFiscalYear	app/Resident.php	/^    public static function calculateManDaysForFiscalYear($year, $month)$/;"	f
@@ -242,6 +246,7 @@ except	app/Http/Middleware/EncryptCookies.php	/^    protected $except = [$/;"	v
 except	app/Http/Middleware/TrimStrings.php	/^    protected $except = [$/;"	v
 except	app/Http/Middleware/VerifyCsrfToken.php	/^    protected $except = [$/;"	v
 facility	app/Http/Controllers/FacilityReportsController.php	/^        $facility = $request->facility;$/;"	v
+facility	app/Mail/TransactionCreated.php	/^        $facility = $resident->facility;$/;"	v
 facilityInfo	app/Http/Controllers/FacilityInfoController.php	/^        $facilityInfo = FacilityInfo::where('facility_name', \\Auth::user()->facility)->first();$/;"	v
 facilityInfo	app/Http/Controllers/InvoiceController.php	/^        $facilityInfo = FacilityInfo::where('facility_name', \\Auth::user()->facility)->first();$/;"	v
 facilityName	app/Http/Controllers/FacilityInfoController.php	/^        $facilityName = \\Auth::user()->facility;$/;"	v
@@ -311,6 +316,7 @@ loop	storage/framework/views/3aa49362e48d26557c465bb3d482edc7c879b07a.php	/^    
 loop	storage/framework/views/49c77be5cd40e46cdf716c5e8f585fafa8f0ada9.php	/^<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>$/;"	v
 loop	storage/framework/views/6539c80e55a8b1ffb211527dac3be0aafa6fa8ea.php	/^                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>$/;"	v
 loop	storage/framework/views/97d0901927519b712ab09231224f17e9c01e4f9b.php	/^            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>$/;"	v
+loop	storage/framework/views/9ca4947af62948fe5575172e1c2db02e25f4c229.php	/^            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>$/;"	v
 loop	storage/framework/views/a02a19c467436cc80e17e760962c14d6d1506433.php	/^                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>$/;"	v
 loop	storage/framework/views/afc672dfb9ffdeeb28af851d838feb1e368dd47a.php	/^    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>$/;"	v
 loop	storage/framework/views/c92a323516a3bf0d5c5dc66bf7b0ed4d50251dfe.php	/^            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>$/;"	v
@@ -382,6 +388,8 @@ resident	app/Http/Controllers/ResidentController.php	/^        $resident = Resid
 resident	app/Http/Controllers/ResidentController.php	/^\/\/        $resident     = Resident::create($request->all());$/;"	v
 resident	app/Http/Controllers/TransactionController.php	/^        $resident = $resident->with('transactions')->find($resident->id);$/;"	v
 resident	app/Http/Controllers/TransactionController.php	/^        $resident = Resident::find($transaction->resident_id);$/;"	v
+resident	app/Http/Controllers/TransactionController.php	/^        $resident = Resident::findOrFail($transaction->resident_id);$/;"	v
+resident	app/Mail/TransactionCreated.php	/^        $resident = Resident::findOrFail($this->transaction->resident->id);$/;"	v
 resident	app/Note.php	/^    public function resident()$/;"	f
 resident	app/Resident.php	/^    public static function calculateManDaysForMonth($year, $month, $resident = null)$/;"	v
 resident	app/Transaction.php	/^    public function resident()$/;"	f
@@ -465,6 +473,8 @@ tomorrow	app/Resident.php	/^        $tomorrow        = Carbon::tomorrow();$/;"	v
 totalBedDaysForMonth	app/Http/Controllers/InvoiceController.php	/^        $totalBedDaysForMonth = 0;$/;"	v
 totalBedDaysForMonth	tests/Feature/SARInvoiceTest.php	/^		$totalBedDaysForMonth = Resident::calculateManDaysForMonth(2017, 6, $resident);$/;"	v
 transaction	app/Http/Controllers/TransactionController.php	/^        $transaction = Transaction::create([$/;"	v
+transaction	app/Mail/TransactionCreated.php	/^        $this->transaction = $transaction;$/;"	v
+transaction	app/Mail/TransactionCreated.php	/^    public $transaction;$/;"	v
 transactionIndex	app/Http/Controllers/ReportsController.php	/^    public function transactionIndex()$/;"	f
 transactions	app/Http/Controllers/ReportsController.php	/^        $transactions = Transaction::where('facility', \\Auth::user()->facility)->get()->sortBy('date');$/;"	v
 transactions	app/Http/Controllers/TransactionReportsController.php	/^        $transactions = DB::table('transactions')$/;"	v

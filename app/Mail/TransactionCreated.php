@@ -1,0 +1,42 @@
+<?php
+
+namespace App\Mail;
+
+use App\Resident;
+use App\Transaction;
+use Illuminate\Bus\Queueable;
+use Illuminate\Mail\Mailable;
+use Illuminate\Queue\SerializesModels;
+use Illuminate\Contracts\Queue\ShouldQueue;
+
+class TransactionCreated extends Mailable
+{
+    use Queueable, SerializesModels;
+
+    public $transaction;
+    /**
+     * Create a new message instance.
+     * @param Transaction $transaction
+     */
+    public function __construct(Transaction $transaction)
+    {
+        $this->transaction = $transaction;
+    }
+
+    /**
+     * Build the message.
+     *
+     * @return $this
+     */
+    public function build()
+    {
+        $resident = Resident::findOrFail($this->transaction->resident->id);
+        $facility = $resident->facility;
+
+        return $this->markdown('emails.transactionCreated')
+            ->with([
+                'facility' => $facility,
+                'residentName' => $resident->first_name . ' ' . $resident->last_name
+            ]);
+    }
+}
