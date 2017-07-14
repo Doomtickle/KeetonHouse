@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\TransactionRequest;
+use App\Mail\TransactionCreated;
 use App\Resident;
 use App\Transaction;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 
 class TransactionController extends Controller
@@ -82,6 +84,11 @@ class TransactionController extends Controller
             'current_balance' => $currentBalance,
             'class'           => $class
         );
+
+
+        $resident = Resident::findOrFail($transaction->resident_id);
+
+        Mail::to($resident->email)->queue(new TransactionCreated($transaction));
 
         return response()->json($data);
     }

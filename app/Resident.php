@@ -4,10 +4,12 @@ namespace App;
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\DB;
 
 class Resident extends Model
 {
+    use Notifiable;
     protected $guarded = [];
 
     public function transactions()
