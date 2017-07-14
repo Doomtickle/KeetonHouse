@@ -66,7 +66,7 @@ SARInvoiceTest	tests/Feature/SARInvoiceTest.php	/^class SARInvoiceTest extends T
 TestCase	tests/TestCase.php	/^abstract class TestCase extends BaseTestCase$/;"	c
 Transaction	app/Transaction.php	/^class Transaction extends Model$/;"	c
 TransactionController	app/Http/Controllers/TransactionController.php	/^class TransactionController extends Controller$/;"	c
-TransactionCreated	app/Mail/TransactionCreated.php	/^class TransactionCreated extends Mailable$/;"	c
+TransactionCreated	app/Mail/TransactionCreated.php	/^class TransactionCreated extends Mailable implements ShouldQueue$/;"	c
 TransactionReportsController	app/Http/Controllers/TransactionReportsController.php	/^class TransactionReportsController extends Controller$/;"	c
 TransactionRequest	app/Http/Requests/TransactionRequest.php	/^class TransactionRequest extends FormRequest$/;"	c
 TrimStrings	app/Http/Middleware/TrimStrings.php	/^class TrimStrings extends BaseTrimmer$/;"	c

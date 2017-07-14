@@ -88,7 +88,7 @@ class TransactionController extends Controller
 
         $resident = Resident::findOrFail($transaction->resident_id);
 
-        Mail::to($resident->email)->queue(new TransactionCreated($transaction));
+        Mail::to($resident->email)->send(new TransactionCreated($transaction));
 
         return response()->json($data);
     }
