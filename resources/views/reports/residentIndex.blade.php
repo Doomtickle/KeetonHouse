@@ -22,7 +22,6 @@
             <tr>
                 <th>Last Name</th>
                 <th>First Name</th>
-                <th>Middle Initial</th>
                 <th>Sex</th>
                 <th>Race</th>
                 <th>Document Number</th>
@@ -34,9 +33,7 @@
                 <th>Projected Date of Discharge</th>
                 <th>Actual Discharge</th>
                 <th>Status</th>
-                <th>Status at discharge</th>
                 <th>Counselor</th>
-                <th>Program Level</th>
             </tr>
             </thead>
             <tbody>
@@ -44,7 +41,6 @@
                 <tr class="has-text-centered">
                     <td><a href="/resident/{{ $resident->id }}" class="blackish">{{ $resident->last_name }}</a></td>
                     <td>{{ $resident->first_name }}</td>
-                    <td>{{ $resident->middle_initial }}</td>
                     <td>{{ $resident->sex }}</td>
                     <td>{{ $resident->race }}</td>
                     <td>{{ $resident->document_number }}</td>
@@ -56,9 +52,7 @@
                     <td>{{ $resident->projected_date_of_discharge }}</td>
                     <td>{{ $resident->actual_date_of_discharge }}</td>
                     <td>{{ $resident->status }}</td>
-                    <td>{{ $resident->status_at_discharge }}</td>
                     <td>{{ $resident->counselor }}</td>
-                    <td>{{ $resident->program_level }}</td>
                 </tr>
             @endforeach
             </tbody>
