@@ -52,6 +52,7 @@ class TransactionController extends Controller
         setlocale(LC_MONETARY, 'en_US.UTF-8');
         $debit  = Transaction::parseCurrency($request->debit);
         $credit = Transaction::parseCurrency($request->credit);
+        $user = auth()->user();
 
 
         $transaction = Transaction::create([
@@ -88,7 +89,7 @@ class TransactionController extends Controller
 
         $resident = Resident::findOrFail($transaction->resident_id);
 
-        Mail::to($resident->email)->send(new TransactionCreated($transaction));
+        Mail::to([$resident->email, $user])->send(new TransactionCreated($transaction));
 
         return response()->json($data);
     }

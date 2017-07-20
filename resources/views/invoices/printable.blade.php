@@ -22,7 +22,7 @@
             </tr>
             <tr>
                 <td style="border:1px solid #000; padding:5px;">
-                    <strong>FEIN#:</strong>: {{ $facilityInfo->fein_number }}
+                    <strong>FEIN#:</strong> {{ $facilityInfo->fein_number }}
                 </td>
             </tr>
         </table>
@@ -48,7 +48,7 @@
             <tr>
                 <td style="border:1px solid #000; text-align: right; padding:5px;"><strong>Maximum Number of Annualized
                         Bed
-                        Days:<strong></td>
+                        Days:</strong></td>
                 <td style="border:1px solid #000; text-align: center; padding:5px;">{{ $facilityInfo->max_annual_bed_days }}</td>
             </tr>
             <tr>

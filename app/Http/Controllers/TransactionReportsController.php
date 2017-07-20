@@ -29,7 +29,26 @@ class TransactionReportsController extends Controller
         $end_date    = isset($request->end_date) ? Carbon::parse($request->end_date)->toDateString() : null;
         $reasons     = $request->reason;
 
-//        $report = Transaction::where(['date', 'BETWEEN', $startOfMonth], ['resident_id', '=', $resident->id])->get();
+        if ($resident_id == null) {
+
+            //this is pretty freaking gross. I know there's a better way... just can't find it
+            $residents = Resident::with(['transactions' => function ($query) use ($start_date, $end_date, $reasons) {
+                $query->when($start_date, function ($query) use ($start_date) {
+                    return $query->where('date', '>=', $start_date);
+                });
+                $query->when($end_date, function ($query) use ($end_date) {
+                    return $query->where('date', '<=', $end_date);
+                });
+                $query->when($reasons, function ($query) use ($reasons) {
+                    return $query->where('reason', $reasons);
+                });
+
+            }])->get();
+
+            return view('reports.transactions.transactionIndexRunningTotal', compact('residents'));
+
+        }
+
         $transactions = DB::table('transactions')
             ->join('residents', 'residents.id', '=', 'transactions.resident_id')
             ->where('residents.facility', '=', \Auth::user()->facility)

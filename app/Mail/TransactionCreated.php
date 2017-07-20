@@ -14,6 +14,7 @@ class TransactionCreated extends Mailable implements ShouldQueue
     use Queueable, SerializesModels;
 
     public $transaction;
+
     /**
      * Create a new message instance.
      * @param Transaction $transaction
@@ -30,13 +31,16 @@ class TransactionCreated extends Mailable implements ShouldQueue
      */
     public function build()
     {
-        $resident = Resident::findOrFail($this->transaction->resident->id);
-        $facility = $resident->facility;
+        $residentId   = $this->transaction->resident->id;
+        $resident     = Resident::findOrFail($residentId);
+        $facility     = $resident->facility;
+        $totalBalance = Resident::totalBalance($residentId);
 
         return $this->markdown('emails.transactionCreated')
             ->with([
-                'facility' => $facility,
-                'residentName' => $resident->first_name . ' ' . $resident->last_name
+                'facility'     => $facility,
+                'residentName' => $resident->first_name . ' ' . $resident->last_name,
+                'totalBalance' => $totalBalance
             ]);
     }
 }

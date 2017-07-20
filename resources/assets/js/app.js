@@ -137,7 +137,9 @@ $("#transactionCreate").on("submit", function (e) {
                 data.date,
                 data.reason,
                 "<span class='debit'> - " + data.debit + "</span>",
-                "<span class='credit'>" + data.credit + "</span>"
+                "<span class='credit'>" + data.credit + "</span>",
+                "<a href=\"/transaction/" + data.id + "/edit\"><i class=\"fa fa-pencil\"></i></a>"
+
             ]).draw();
             $("#current_balance").html(data.current_balance);
             $("#current_balance").removeClass();

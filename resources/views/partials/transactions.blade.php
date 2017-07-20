@@ -15,6 +15,7 @@
                 <th>Reason</th>
                 <th>Debit</th>
                 <th>Credit</th>
+                <th>Edit</th>
             </tr>
             </thead>
             <tbody>
@@ -33,6 +34,7 @@
                     @else
                         <td>&nbsp;</td>
                     @endif
+                    <td><a href="/transaction/{{ $transaction->id }}/edit"><i class="fa fa-pencil"></i></a></td>
                 </tr>
             @endforeach
             </tbody>

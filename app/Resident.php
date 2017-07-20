@@ -128,5 +128,14 @@ class Resident extends Model
         return $sum;
     }
 
+    public static function totalBalance($id)
+    {
+        $credit = Transaction::where('resident_id', $id)->pluck('credit')->sum();
+        $debit = Transaction::where('resident_id', $id)->pluck('debit')->sum();
+        $total = $credit - $debit;
+
+        return ($total);
+    }
+
 
 }
