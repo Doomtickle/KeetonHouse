@@ -42,7 +42,7 @@ class TransactionReportsController extends Controller
                     return $query->whereIn('reason', $reasons);
                 });
 
-            }])->get()->sortBy('last_name');
+            }])->where('facility', auth()->user()->facility)->get()->sortBy('last_name');
 
             return view('reports.transactions.transactionIndexRunningTotal', compact('residents'));
 
