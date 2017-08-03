@@ -56,7 +56,7 @@
                         Fiscal
                         Year-to-Date (through last day of prior billing
                         month):</strong></td>
-                <td style="border:1px solid #000; text-align: center; padding:5px;">19,195</td>
+                <td style="border:1px solid #000; text-align: center; padding:5px;">1,434</td>
             </tr>
             <tr>
                 <td style="border:1px solid #000; text-align: right; padding:5px;"><strong>Billing Month Occupied Bed
