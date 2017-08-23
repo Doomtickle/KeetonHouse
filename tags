@@ -80,12 +80,12 @@ __construct	app/Http/Controllers/Auth/RegisterController.php	/^    public functi
 __construct	app/Http/Controllers/Auth/ResetPasswordController.php	/^    public function __construct()$/;"	f
 __construct	app/Http/Controllers/HomeController.php	/^    public function __construct()$/;"	f
 __construct	app/Http/Controllers/InvoiceController.php	/^    function __construct()$/;"	f
-__construct	app/Http/Controllers/NoteController.php	/^    function __construct()$/;"	f
+__construct	app/Http/Controllers/NoteController.php	/^    public function __construct()$/;"	f
 __construct	app/Http/Controllers/ReportsController.php	/^    function __construct()$/;"	f
 __construct	app/Http/Controllers/ResidentController.php	/^    function __construct()$/;"	f
 __construct	app/Http/Controllers/ResidentReportsController.php	/^    function __construct()$/;"	f
 __construct	app/Http/Controllers/TransactionController.php	/^    function __construct()$/;"	f
-__construct	app/Http/Controllers/TransactionReportsController.php	/^    function __construct()$/;"	f
+__construct	app/Http/Controllers/TransactionReportsController.php	/^    public function __construct()$/;"	f
 __construct	app/Mail/TransactionCreated.php	/^    public function __construct(Transaction $transaction)$/;"	f
 __currentLoopData	storage/framework/views/06d22fd6009303ba9f76358fc1b4b0fd08e7d1ee.php	/^            <?php $__currentLoopData = $resident->transactions; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $transaction): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>$/;"	v
 __currentLoopData	storage/framework/views/12543b0c6f9f329b5b9489e00ceef0536db510a0.php	/^                            <?php $__currentLoopData = $errors->all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $error): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>$/;"	v

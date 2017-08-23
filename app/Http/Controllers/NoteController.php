@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class NoteController extends Controller
 {
-    function __construct()
+    public function __construct()
     {
         $this->middleware('auth');
     }
@@ -29,7 +29,7 @@ class NoteController extends Controller
      */
     public function create()
     {
-
+        //
     }
 
     /**

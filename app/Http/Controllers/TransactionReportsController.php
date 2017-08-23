@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\DB;
 
 class TransactionReportsController extends Controller
 {
-    function __construct()
+    public function __construct()
     {
         $this->middleware('auth');
     }
@@ -30,7 +30,6 @@ class TransactionReportsController extends Controller
         $reasons     = $request->reason;
 
         if ($resident_id == null) {
-
             $residents = Resident::with(['transactions' => function ($query) use ($start_date, $end_date, $reasons) {
                 $query->when($start_date, function ($query) use ($start_date) {
                     return $query->where('date', '>=', $start_date);
@@ -41,11 +40,9 @@ class TransactionReportsController extends Controller
                 $query->when($reasons, function ($query) use ($reasons) {
                     return $query->whereIn('reason', $reasons);
                 });
-
             }])->where('facility', auth()->user()->facility)->get()->sortBy('last_name');
 
             return view('reports.transactions.transactionIndexRunningTotal', compact('residents'));
-
         }
 
         $transactions = DB::table('transactions')
@@ -72,6 +69,5 @@ class TransactionReportsController extends Controller
         $class = ($credits - $debits > 0) ? 'credit' : 'debit';
 
         return view('reports.transactions.transactionIndex', compact('transactions', 'balance', 'class'));
-
     }
 }

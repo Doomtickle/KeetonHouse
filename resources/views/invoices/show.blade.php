@@ -49,7 +49,7 @@
                     </tr>
                     <tr>
                         <td><strong>*Cumulative Bed Days Used Fiscal Year-to-Date (through last day of prior billing month):<strong></td>
-                        <td>1,434</td>
+                        <td>1,423</td>
                     </tr>
                     <tr>
                         <td><strong>Occupied bed days for billing month</strong></td>
