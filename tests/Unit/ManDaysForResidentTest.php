@@ -61,4 +61,29 @@ class ManDaysForResident extends TestCase
         self::assertEquals($currentDayOfMonth, $manDays);
     }
 
+    /** @test */
+    public function it_should_calculate_man_days_for_the_current_year()
+    {
+        $user = factory(User::class)->create([
+            'facility' => 'Demo'
+        ]);
+
+        $this->actingAs($user);
+
+        $admit  = Carbon::create(2017, 1, 1)->toDateString();
+        $discharge = Carbon::create(2017, 2, 1)->toDateString();
+
+        $resident = factory(Resident::class)->create([
+            'date_of_admission'        => $admit,
+            'actual_date_of_discharge' => $discharge,
+            'facility'                 => $user->facility
+        ]);
+
+        $daysForFY = Resident::calculateManDaysForFiscalYear(2017, 1);
+
+        self::assertEquals(31, $daysForFY);
+
+
+    }
+
 }

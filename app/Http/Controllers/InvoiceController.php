@@ -32,8 +32,8 @@ class InvoiceController extends Controller
         $invoiceNumber = Carbon::create($year, $month)->format('m-Y');
         foreach($allResidents as $resident){
             if(Resident::stayedHereDuring($year, $month, $resident)){
-                $residents[] = $resident;
                 $totalBedDaysForMonth += Resident::calculateManDaysForMonth($year, $month, $resident);
+                $residents[] = $resident;
 
             }
         }

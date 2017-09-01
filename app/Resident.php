@@ -40,7 +40,6 @@ class Resident extends Model
 
     public static function calculateManDaysForMonth($year, $month, $resident = null)
     {
-
         $residents = DB::table('residents')
             ->where('facility', \Auth::user()->facility)
             ->when($resident, function ($query) use ($resident) {
@@ -48,7 +47,6 @@ class Resident extends Model
             })
             ->whereYear('date_of_admission', '<=', $year)
             ->get();
-
 
         $sum = 0;
         foreach ($residents as $resident) {
@@ -106,8 +104,8 @@ class Resident extends Model
         $checkedDateEnd = Carbon::create($year, $month)->endOfMonth();
 	    $checkedDateBeginning = Carbon::create($year, $month)->firstOfMonth();
 
-        return (Carbon::parse($resident->date_of_admission)->lessThanOrEqualTo($checkedDateEnd) &&
-            Carbon::parse($resident->actual_date_of_discharge)->greaterThanOrEqualTo($checkedDateBeginning));
+        return ((Carbon::parse($resident->date_of_admission)->lessThanOrEqualTo($checkedDateEnd) &&
+            Carbon::parse($resident->actual_date_of_discharge)->greaterThanOrEqualTo($checkedDateBeginning)));
     }
 
     public static function calculateManDaysForFiscalYear($year, $month)
@@ -116,12 +114,13 @@ class Resident extends Model
 
         $fyStart = $today->month >= 7 ? $today->copy()->month(7)->firstOfMonth() : $today->copy()->subYear(1)->month(7)->firstOfMonth();
 
+
         $diff = $fyStart->diffInMonths($today) != 0 ? $fyStart->diffInMonths($today) : 12;
         $sum  = 0;
 
-        for ($i = 1; $i < $diff; $i++) {
-            $year  = Carbon::now()->subMonths($i)->year;
-            $month = Carbon::now()->subMonths($i)->month;
+        for ($i = 0; $i <= $diff; $i++) {
+            $year  = $today->copy()->subMonthsNoOverflow($i)->year;
+            $month = $today->copy()->subMonthsNoOverflow($i)->month;
             $sum += Resident::calculateManDaysForMonth($year, $month);
         }
 
