@@ -15,13 +15,11 @@ class FacilityReportsController extends Controller
 
     public function router(Request $request)
     {
-
         $facility = $request->facility;
         $report   = $request->report;
         $date     = $request->date;
 
         switch ($report) {
-
             case 'intakes':
                 $intakes = $this->intakesReport($facility, $date);
                 $count   = $intakes->count();
@@ -33,15 +31,12 @@ class FacilityReportsController extends Controller
 
                 return view('reports.facilities.releasesIndex', compact('releases', 'count', 'date'));
                 break;
-//            case'man days':
-//                $this->mandaysReport($facility, $report, $date);
-//                break;
         }
     }
 
     private function intakesReport($facility, $date)
     {
-        if($date == 'year_to_date'){
+        if ($date == 'year_to_date') {
             $intakes = DB::table('residents')
                 ->select(DB::raw('*'))
                 ->where('facility', $facility)
@@ -63,12 +58,11 @@ class FacilityReportsController extends Controller
 
 
         return $intakes;
-
     }
 
     private function releasesReport($facility, $date)
     {
-        if($date == 'year_to_date'){
+        if ($date == 'year_to_date') {
             $releases = DB::table('residents')
                 ->select(DB::raw('*'))
                 ->where('facility', $facility)
@@ -91,5 +85,4 @@ class FacilityReportsController extends Controller
 
         return $releases;
     }
-
 }

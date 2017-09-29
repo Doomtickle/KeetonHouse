@@ -3,9 +3,9 @@
 namespace App;
 
 use Carbon\Carbon;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
-use Illuminate\Support\Facades\DB;
 
 class Resident extends Model
 {
@@ -35,7 +35,6 @@ class Resident extends Model
         }
 
         return $manDays;
-
     }
 
     public static function calculateManDaysForMonth($year, $month, $resident = null)
@@ -96,13 +95,12 @@ class Resident extends Model
         }
 
         return $sum;
-
     }
 
     public static function stayedHereDuring($year, $month, $resident)
     {
         $checkedDateEnd = Carbon::create($year, $month)->endOfMonth();
-	    $checkedDateBeginning = Carbon::create($year, $month)->firstOfMonth();
+        $checkedDateBeginning = Carbon::create($year, $month)->firstOfMonth();
 
         return ((Carbon::parse($resident->date_of_admission)->lessThanOrEqualTo($checkedDateEnd) &&
             Carbon::parse($resident->actual_date_of_discharge)->greaterThanOrEqualTo($checkedDateBeginning)));
@@ -135,6 +133,4 @@ class Resident extends Model
 
         return ($total);
     }
-
-
 }

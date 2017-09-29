@@ -79,7 +79,7 @@ __construct	app/Http/Controllers/Auth/LoginController.php	/^    public function 
 __construct	app/Http/Controllers/Auth/RegisterController.php	/^    public function __construct()$/;"	f
 __construct	app/Http/Controllers/Auth/ResetPasswordController.php	/^    public function __construct()$/;"	f
 __construct	app/Http/Controllers/HomeController.php	/^    public function __construct()$/;"	f
-__construct	app/Http/Controllers/InvoiceController.php	/^    function __construct()$/;"	f
+__construct	app/Http/Controllers/InvoiceController.php	/^    public function __construct()$/;"	f
 __construct	app/Http/Controllers/NoteController.php	/^    public function __construct()$/;"	f
 __construct	app/Http/Controllers/ReportsController.php	/^    function __construct()$/;"	f
 __construct	app/Http/Controllers/ResidentController.php	/^    function __construct()$/;"	f
@@ -151,7 +151,7 @@ calculateManDays	app/Resident.php	/^    public static function calculateManDays(
 calculateManDaysForCurrentMonth	app/Resident.php	/^    public static function calculateManDaysForCurrentMonth($resident = null)$/;"	f
 calculateManDaysForFiscalYear	app/Resident.php	/^    public static function calculateManDaysForFiscalYear($year, $month)$/;"	f
 calculateManDaysForMonth	app/Resident.php	/^    public static function calculateManDaysForMonth($year, $month, $resident = null)$/;"	f
-checkedDateBeginning	app/Resident.php	/^	    $checkedDateBeginning = Carbon::create($year, $month)->firstOfMonth();$/;"	v
+checkedDateBeginning	app/Resident.php	/^        $checkedDateBeginning = Carbon::create($year, $month)->firstOfMonth();$/;"	v
 checkedDateEnd	app/Resident.php	/^        $checkedDateEnd = Carbon::create($year, $month)->endOfMonth();$/;"	v
 class	app/Http/Controllers/TransactionController.php	/^            $class = 'credit';$/;"	v
 class	app/Http/Controllers/TransactionController.php	/^            $class = 'debit';$/;"	v
@@ -413,7 +413,7 @@ residentCredits	app/Http/Controllers/TransactionController.php	/^        $reside
 residentDebits	app/Http/Controllers/TransactionController.php	/^        $residentDebits  = Transaction::where('resident_id', $transaction->resident_id)$/;"	v
 residentId	app/Mail/TransactionCreated.php	/^        $residentId   = $this->transaction->resident->id;$/;"	v
 resident_id	app/Http/Controllers/TransactionReportsController.php	/^        $resident_id = $request->resident_id;$/;"	v
-residents	app/Http/Controllers/InvoiceController.php	/^        $residents = array();$/;"	v
+residents	app/Http/Controllers/InvoiceController.php	/^        $residents = [];$/;"	v
 residents	app/Http/Controllers/ReportsController.php	/^                $residents = Resident::where('facility', \\Auth::user()->facility)->get()->sortBy($sortBy);$/;"	v
 residents	app/Http/Controllers/ReportsController.php	/^        $residents    = Resident::where('facility', \\Auth::user()->facility)->get()->sortBy('actual_date_of_discharge');$/;"	v
 residents	app/Http/Controllers/ReportsController.php	/^        $residents    = Resident::where('facility', \\Auth::user()->facility)->get()->sortBy('counselor');$/;"	v

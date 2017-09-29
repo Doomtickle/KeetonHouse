@@ -35,9 +35,7 @@ class ReportsController extends Controller
                 $residents = Resident::where('facility', \Auth::user()->facility)->get()->sortBy($sortBy);
 
                 $sheet->loadView('reports.residentIndexXLS', compact('residents'));
-
             });
-
         })->download('xls');
     }
 
@@ -50,9 +48,7 @@ class ReportsController extends Controller
                 $residents = Resident::where('facility', \Auth::user()->facility)->get()->sortBy($sortBy);
 
                 $sheet->loadView('reports.residentIndexXLS', compact('residents'));
-
             });
-
         })->export('pdf');
     }
 

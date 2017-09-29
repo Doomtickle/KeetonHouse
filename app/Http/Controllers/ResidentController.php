@@ -156,7 +156,6 @@ class ResidentController extends Controller
         $resident->update($request->all());
 
         return redirect()->action('HomeController@index');
-
     }
 
     /**
