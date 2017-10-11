@@ -106,7 +106,9 @@
                         <td>{{ $resident->last_name }}, {{ $resident->first_name }}</td>
                         <td>{{ \Carbon\Carbon::parse($resident->date_of_admission)->format('m-d-Y') }}</td>
                         <td>{{ \Carbon\Carbon::parse($resident->date_of_admission)->addMonths(2)->format('m-d-Y') }}</td>
-                        <td>{{ \Carbon\Carbon::parse($resident->actual_date_of_discharge)->format('m-d-Y') }}</td>
+                        <td>@if($resident->actual_date_of_discharge != null)
+                            {{ \Carbon\Carbon::parse($resident->actual_date_of_discharge)->format('m-d-Y') }}
+                        </td>
                         <td>
                             @if($resident->status_at_discharge == 'Administrative')
                                 A
