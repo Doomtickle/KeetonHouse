@@ -49,9 +49,6 @@
     <div class="content">
         <div class="title">
             The site is down for maintenance and upgrades.
-            <br>
-            <br>
-            Be right back ...
         </div>
     </div>
 </div>
