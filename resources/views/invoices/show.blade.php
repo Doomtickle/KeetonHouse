@@ -10,6 +10,14 @@
         <input type="hidden" id="facility" name="facility" value="{{ $facilityInfo->facility_name }}">
         <input type="hidden" id="year" name="year" value="{{ $year }}">
         <input type="hidden" id="month" name="month" value="{{ $month }}">
+        <input type="hidden" id="veteran" value="{{ $veteran }}">
+        <input type="hidden" id="pride" value="{{ $pride }}">
+        <input type="hidden" id="paid" value="{{ $paid }}">
+        <input type="hidden" id="totalAllocation" value="{{ $totalAllocation }}">
+        <input type="hidden" id="contractTerm" value="{{ $contractTerm }}">
+        <input type="hidden" id="totalPaid" value="{{ $totalPaid }}">
+        <input type="hidden" id="balance" value="{{ $balance }}">
+        <input type="hidden" id="expended" value="{{ $expended }}">
     <button class="button is-warning" id="reportSubmit">Printable Version</button>
     </form>
 @endsection
@@ -128,7 +136,16 @@
                 var facility = $("#facility").val();
                 var year = $("#year").val();
                 var month = $("#month").val();
-                form.attr('action', '/printable/' + facility + '/' + year + '/' + month).submit();
+                var veteran = $("#veteran").val();
+                var pride = $("#pride").val();
+                var paid = $("#paid").val();
+                var totalAllocation = $("#totalAllocation").val();
+                console.log(totalAllocation);
+                var contractTerm = $("#contractTerm").val();
+                var totalPaid = $("#totalPaid").val();
+                var balance = $("#balance").val();
+                var expended = $("#expended").val();
+                form.attr('action', '/printable/' + facility + '/' + year + '/' + month + '?veteran=' + veteran  + '&pride=' + pride  + '&paid=' + paid + '&totalAllocation=' + totalAllocation + '&contractTerm=' + contractTerm + '&totalPaid=' + totalPaid + '&balance=' + balance + '&expended=' + expended).submit();
             });
         });
     </script>

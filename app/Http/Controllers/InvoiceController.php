@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Resident;
 use Carbon\Carbon;
 use App\FacilityInfo;
+use Illuminate\Http\Request;
 
 class InvoiceController extends Controller
 {
@@ -18,8 +19,16 @@ class InvoiceController extends Controller
         return view('invoices.select');
     }
 
-    public function generate($facility, $year, $month)
+    public function generate(Request $request, $facility, $year, $month)
     {
+        $veteran = $request->veteran;
+        $pride = $request->pride;
+        $paid = $request->paid;
+        $totalAllocation = $request->totalAllocation;
+        $contractTerm = $request->contractTerm;
+        $totalPaid = $request->totalPaid;
+        $balance = $request->balance;
+        $expended = $request->expended;
         $allResidents = Resident::where('facility', $facility)->get()->sortBy('last_name');
 
 
@@ -37,16 +46,27 @@ class InvoiceController extends Controller
             }
         }
 
-        return view('invoices.show', compact('residents', 'totalBedDaysForMonth', 'invoiceNumber', 'invoiceMonth', 'year', 'month', 'facilityInfo', 'manDaysFY'));
+        return view('invoices.show', compact('residents', 'balance', 'expended', 'totalAllocation', 'contractTerm', 'totalPaid', 'veteran', 'pride', 'paid','totalBedDaysForMonth', 'invoiceNumber', 'invoiceMonth', 'year', 'month', 'facilityInfo', 'manDaysFY'));
     }
 
-    public function printable($facility, $year, $month)
+    public function printable(Request $request, $facility, $year, $month)
     {
         $allResidents = Resident::where('facility', $facility)->get()->sortBy('last_name');
+        setlocale(LC_MONETARY, 'en_US');
+        $veteran = $request->veteran;
+        $pride = $request->pride;
+        $paid = $request->paid;
+        $totalAllocation = $request->totalAllocation;
+        $contractTerm = $request->contractTerm;
+        $totalPaid = $request->totalPaid;
+        $balance = $request->balance;
+        $expended = $request->expended;
 
         $residents = [];
         $facilityInfo = FacilityInfo::where('facility_name', \Auth::user()->facility)->first();
         $manDaysFY = Resident::calculateManDaysForFiscalYear($year, $month);
+        $monthOfServiceDelivery = strtoupper(Carbon::parse(Carbon::create($year, $month))->format('MY'));
+        $daysInMonth = Carbon::create($year, $month)->daysInMonth;
 
         $totalBedDaysForMonth = 0;
         $invoiceMonth = Carbon::create($year, $month)->format('F, Y');
@@ -59,6 +79,6 @@ class InvoiceController extends Controller
         }
 
 
-        return view('invoices.printable', compact('residents', 'totalBedDaysForMonth', 'invoiceNumber', 'invoiceMonth', 'year', 'month', 'facilityInfo', 'manDaysFY'));
+        return view('invoices.printable', compact('residents', 'balance', 'expended', 'totalAllocation', 'contractTerm', 'totalPaid', 'veteran', 'pride', 'paid', 'daysInMonth', 'totalBedDaysForMonth', 'monthOfServiceDelivery','invoiceNumber', 'invoiceMonth', 'year', 'month', 'facilityInfo', 'manDaysFY'));
     }
 }
